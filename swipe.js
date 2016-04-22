@@ -114,10 +114,10 @@ $(document).ready(function() {
 	//	console.log(text);
 	
 		
-		$("*").first().click(function(event) { // when someone clicks these links
+		$("*").click(function(event) { // when someone clicks these links
 			//event.preventDefault(); // don't open the link yet
 			
-			var text = $(this).text();
+			var text = $(event.target).text();
 			console.log(text+"|"+event.target.nodeName+"|"+window.location.href);
 			_gaq.push(["_trackEvent", "Click", text+"|"+event.target.nodeName+"|"+window.location.href, , false]); // create a custom event
 			//setTimeout(function() { // now wait 300 milliseconds...
