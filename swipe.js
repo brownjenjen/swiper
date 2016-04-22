@@ -119,7 +119,7 @@ $(document).ready(function() {
 			
 			var text = $(event.target).text();
 			console.log(text+"|"+event.target.nodeName+"|"+window.location.href);
-			_gaq.push(["_trackEvent", event.target.nodeName, text , window.location.href , false]); // create a custom event
+			_gaq.push(["_trackEvent", event.target.nodeName, text , window.location.href, , false]); 
 			//setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
 			//},300);
