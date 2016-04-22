@@ -36,7 +36,7 @@ var arr = [];
 arr =   data;console.log(arr);
 var entryHTML ='';
 var link = 
-$("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' title='"+arr['tumblelog']['description']+"'>"+getReplacementString(arr['tumblelog']['title'])+"</a></h2></div></div>");
+$("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' >"+getReplacementString(arr['tumblelog']['title'])+"</a></h2></div></div>");
 //for (var i=0;i< arr['posts'].length;i++)
 for (var i=0;i< arr['posts'].length;i++)		 
 {
