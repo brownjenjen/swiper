@@ -2,6 +2,7 @@
     return str.replace(/https?\:\/\/([^\s]*)/gi,function(match){
         return match.substring(0,50) + "..."
     });
+ }
  function in_array(needle, haystack, argStrict) {
     var key = '',
     strict = !! argStrict;
@@ -110,7 +111,7 @@ $(document).ready(function() {
 		var text = $(this).text();
 		$(this).click(function(event) { // when someone clicks these links
 			event.preventDefault(); // don't open the link yet
-			_gaq.push(["_trackEvent", "Links", "Clicked", href, , false]); // create a custom event
+			_gaq.push(["_trackEvent", "Links", text, href, , false]); // create a custom event
 			setTimeout(function() { // now wait 300 milliseconds...
 				window.open(href,(!target?"_self":target)); // ...and open the link as usual
 			},300);
