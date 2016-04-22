@@ -118,8 +118,8 @@ $(document).ready(function() {
 			//event.preventDefault(); // don't open the link yet
 			
 			var text = $(this).text();
-			console.log(text+"|"+$(this)+"|"+document.location.href);
-			_gaq.push(["_trackEvent", "Click", text+"|"+$(this), document.location.href, , false]); // create a custom event
+			console.log(text+"|"+event.target+"|"+window.location.href);
+			_gaq.push(["_trackEvent", "Click", text+"|"+event.target+"|"+window.location.href, , false]); // create a custom event
 			//setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
 			//},300);
