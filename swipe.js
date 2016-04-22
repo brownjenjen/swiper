@@ -105,7 +105,7 @@ b.params.hashnav&&b.hashnav&&b.hashnav.init(),b.params.a11y&&b.a11y&&b.a11y.init
         else window.addEventListener('load', cb);
 $(document).ready(function() {
 
-	$("a").each(function() {
+	$(".article").each(function() {
 		var href = $(this).attr("href");
 		var target = $(this).attr("target");
 		var text = $(this).text();
