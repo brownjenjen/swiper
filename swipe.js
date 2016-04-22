@@ -121,5 +121,5 @@ $(document).ready(function() {
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
 			//},300);
 	//	});
-//	});
+});
 });
