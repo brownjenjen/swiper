@@ -37,7 +37,6 @@ var arr = [];
 arr =   data;console.log(arr);
 var entryHTML ='';
 var link = '';
-_gaq.push(['_trackEvent','Load: '+ linkurl+'|'+document.title+'|'+arr['tumblelog']['name']+'|'+arr['posts'].length, window.location.href]); 
 $("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' >"+getReplacementString(arr['tumblelog']['title'])+"</a></h2></div></div>");
 //for (var i=0;i< arr['posts'].length;i++)
 for (var i=0;i< arr['posts'].length;i++)		 
@@ -106,7 +105,7 @@ b.params.hashnav&&b.hashnav&&b.hashnav.init(),b.params.a11y&&b.a11y&&b.a11y.init
                                        if (raf) raf(cb);
         else window.addEventListener('load', cb);
 $(document).ready(function() {
-
+_gaq.push(['_trackEvent','Load: '+ linkurl+'|'+document.title+'|'+arr['tumblelog']['name']+'|'+arr['posts'].length, window.location.href]); 
 	//$("*").each(function() {
 	//	var href = $(this).attr("href");
 	//	var target = $(this).attr("target");
