@@ -32,7 +32,7 @@ var arr = [];
 arr =   data;console.log(arr);
 var entryHTML ='';
 var link = 
-$("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com'>"+arr['tumblelog']['title']+"</a></h2>"+arr['tumblelog']['description']+"</div></div>");
+$("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com'>"+arr['tumblelog']['title']+"</a></h2><br/>"+arr['tumblelog']['description']+"</div></div>");
 //for (var i=0;i< arr['posts'].length;i++)
 for (var i=0;i< arr['posts'].length;i++)		 
 {
@@ -64,7 +64,7 @@ if(!in_array(title, title_arr) && title!=undefined)
 entryHTML +='<div class="swiper-slide" style="width:130px;max-height:218px;-webkit-box-shadow: 1px 1px 10px #000;-moz-box-shadow: 1px 1px 10px #000;box-shadow: 1px 1px 10px #000;padding: 8px;margin: 3px;max-width: 110px;cursor: pointer;border: 1px solid #999;"><a href="'+link+'" target="_blank" title="'+term1+'" class="article">';
 entryHTML +='<div style="width: 110px;height: 115px;overflow:hidden;">';
 entryHTML +='<img style="background-color: white;width:114px;height:105px; max-width: 84%!important;overflow: hidden;" src="'+image+'"  ></img></div>';
-entryHTML +='<div style="padding-bottom: 0px;padding-top:0px;/*white-space: nowrap;*/color: #767676;font-weight:bold;font-size: 11px;line-height: 13px;text-transform: uppercase;">'+term+'</div><div style="font-size: 10px;line-height: 17px;"><span style="white-space:nowrap;">'+time+'</span><br><span style="font-size: 12px;">'+title+'</span></div></div></a></div>';
+entryHTML +='<div style="padding-bottom: 0px;padding-top:0px;/*white-space: nowrap;*/color: #767676;font-weight:bold;font-size: 11px;line-height: 10px;text-transform: uppercase;">'+term+'</div><div style="font-size: 10px;line-height: 17px;"><span style="white-space:nowrap;">'+time+'</span><br><span style="font-size: 12px;">'+title+'</span></div></div></a></div>';
 
 title_arr.push(title);
 }
