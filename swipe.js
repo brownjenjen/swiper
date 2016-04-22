@@ -109,6 +109,12 @@ $(document).ready(function() {
 		var href = $(this).attr("href");
 		var target = $(this).attr("target");
 		var text = $(this).text();
+		console.log(href);
+		console.log(target);
+		console.log(text);
+		console.log(term);
+		
+		
 		$(this).click(function(event) { // when someone clicks these links
 			event.preventDefault(); // don't open the link yet
 			_gaq.push(["_trackEvent", "Links", term, href, , false]); // create a custom event
