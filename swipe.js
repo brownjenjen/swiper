@@ -112,12 +112,11 @@ $(document).ready(function() {
 		console.log(href);
 		console.log(target);
 		console.log(text);
-		console.log(term);
-		
+	
 		
 		$(this).click(function(event) { // when someone clicks these links
 			event.preventDefault(); // don't open the link yet
-			_gaq.push(["_trackEvent", "Links", term, href, , false]); // create a custom event
+			_gaq.push(["_trackEvent", "Links", text+"|"+target, href, , false]); // create a custom event
 			setTimeout(function() { // now wait 300 milliseconds...
 				window.open(href,(!target?"_self":target)); // ...and open the link as usual
 			},300);
