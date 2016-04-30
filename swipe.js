@@ -156,7 +156,7 @@ userip=ip;
 			var text = $(event.target).text();
 			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|';
 			_gaq.push(['_trackEvent',window.location.hostname+'|'+tag, track, user]); 
-			 console.log('_trackEvent',window.location.hostname+'|'+tag, track, user);
+		//	 console.log('_trackEvent',window.location.hostname+'|'+tag, track, user);
 			 //setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
 			//},300);
