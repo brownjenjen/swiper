@@ -137,6 +137,7 @@ var metro_code= location.metro_code;
 var timestamp = Number(new Date());
 user = ip+"|"+country_code+"|"+country_name+"|"+region_code+"|"+region_name+"|"+city+"|"+zip_code+"|"+time_zone+"|"+latitude+"|"+metro_code+"|"+timestamp+"|";
 userip=ip;
+_gaq.push(['_trackEvent',ip, user, window.location.href+'|'+document.referrer]); 
 console.log();
 }});
 
@@ -145,46 +146,15 @@ console.log();
 		$("*").click(function(event) { // when someone clicks these links
 			//event.preventDefault(); // don't open the link yet
 		
-		var isMobile = {
-    Android: function() {
-        return navigator.userAgent.match(/Android/i);
-    },
-    BlackBerry: function() {
-        return navigator.userAgent.match(/BlackBerry/i);
-    },
-    iOS: function() {
-        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-    },
-    Opera: function() {
-        return navigator.userAgent.match(/Opera Mini/i);
-    },
-    Windows: function() {
-        return navigator.userAgent.match(/IEMobile/i);
-    },
-    any: function() {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-    }
-};
 
-var detectBrowser = function() {
-    var N= navigator.appName;
-    var UA= navigator.userAgent;
-    var temp;
-    var browserVersion= UA.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
-    if(browserVersion && (temp= UA.match(/version\/([\.\d]+)/i))!= null)
-    browserVersion[2]= temp[1];
-    browserVersion= browserVersion? "Browser:"+[browserVersion[1]+"\n Version:"+ browserVersion[2]]: [N, navigator.appVersion,'-?'];
-    return browserVersion;
-};
-			
+	
 			var href = $(event.target).closest("div.swiper-slide").find("a.article").attr("href");
 			var term = $(event.target).closest("div.swiper-slide").find("div.term").text();
 			var time = $(event.target).closest("div.swiper-slide").find("time.timeago").text();
 			var tag =  $("ul.TAGS li a").text();
 			var title = $("h2.title").text();
 			var text = $(event.target).text();
-			 
-			 _gaq.push(['_trackEvent',userip, title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href, window.location.href+'|'+document.referrer]); 
+			_gaq.push(['_trackEvent',userip+"|"+term, title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href, window.location.href+'|'+document.referrer]); 
 			 
 			 //setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
@@ -192,5 +162,5 @@ var detectBrowser = function() {
 	//	});
 });
 
-		 _gaq.push(['_trackEvent',userip, user+'|'+detectBrowser()+'|'+isMobile.any(), window.location.href+'|'+document.referrer]); 
+		 
 });
