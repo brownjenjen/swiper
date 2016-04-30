@@ -138,7 +138,7 @@ var timestamp = Number(new Date());
 user = ip+"|"+country_code+"|"+country_name+"|"+region_code+"|"+region_name+"|"+city+"|"+zip_code+"|"+time_zone+"|"+latitude+"|"+metro_code+"|"+timestamp+"|";
 userip=ip;
 _gaq.push(['_trackEvent',ip, user, window.location.href+'|'+document.referrer]); 
-console.log();
+console.log(ip, user, window.location.href+'|'+document.referrer);
 }});
 
 
@@ -155,7 +155,7 @@ console.log();
 			var title = $("h2.title").text();
 			var text = $(event.target).text();
 			_gaq.push(['_trackEvent',userip+"|"+term, title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href, window.location.href+'|'+document.referrer]); 
-			 
+			 console.log(userip+"|"+term, title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href, window.location.href+'|'+document.referrer);
 			 //setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
 			//},300);
