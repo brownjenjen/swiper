@@ -70,7 +70,7 @@ if(!in_array(title, title_arr) && title!=undefined)
 	
 entryHTML +='<div class="swiper-slide" style="width:130px;max-height:218px;-webkit-box-shadow: 1px 1px 10px #000;-moz-box-shadow: 1px 1px 10px #000;box-shadow: 1px 1px 10px #000;padding: 8px;margin: 3px;max-width: 110px;cursor: pointer;border: 1px solid #999;">';
 entryHTML +="<a  ";
-//onclick=\"javascript:_gaq.push(['_trackEvent','Click: '+ title+'|'+link+'|'+term+'|'+window.location.href, window.location.href]);\"   
+entryHTML +="onclick=\"javascript:_gaq.push(['_trackEvent','Click: '+ title+'|'+link+'|'+term+'|'+window.location.href, document.referrer]);\"   ";
 entryHTML +="href='"+link+"' target=\"_blank\" title='"+term1+"' class=\"article\"   >";
 entryHTML +='<div style="width: 110px;height: 115px;overflow:hidden;">';
 entryHTML +='<img style="background-color: white;width:114px;height:105px; max-width: 84%!important;overflow: hidden;" src="'+image+'"  ></img></div>';
@@ -140,7 +140,8 @@ userip=ip;
 console.log();
 }});
 
-
+	 _gaq.push(['_trackEvent',userip, user+'|'+detectBrowser()+'|'+isMobile.any(), window.location.href+'|'+document.referrer]); 
+	 
 		$("*").click(function(event) { // when someone clicks these links
 			//event.preventDefault(); // don't open the link yet
 		
@@ -182,10 +183,10 @@ var detectBrowser = function() {
 			var tag =  $("ul.TAGS li a").text();
 			var title = $("h2.title").text();
 			var text = $(event.target).text();
-			console.log(title+"|"+term+"|"+time+"|"+event.target.nodeName+"|"+href+"|",window.location.href+"|"+tag+"|"+document.referrer+"|"+isMobile.any()+"|"+user+"|"+detectBrowser());
-			 _gaq.push(['_trackEvent','[0]| '+userip, user+'|'+detectBrowser()+'|'+isMobile.any(), window.location.href+'|'+document.referrer]); 
-			 _gaq.push(['_trackEvent','[1]| '+userip, title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href, window.location.href+'|'+document.referrer]); 
-			//setTimeout(function() { // now wait 300 milliseconds...
+			 
+			 _gaq.push(['_trackEvent',userip, title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href, window.location.href+'|'+document.referrer]); 
+			 
+			 //setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
 			//},300);
 	//	});
