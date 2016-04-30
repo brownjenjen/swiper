@@ -34,10 +34,11 @@ var linkurl = arr_sites[rand];
 $.ajax({url:'http://'+linkurl+'.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',success: function(data) {
 var title_arr=[];
 var arr = [];
-arr =   data;console.log(arr);
+arr =   data;
+console.log(arr);
 var entryHTML ='';
 var link = '';
-$("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' >"+getReplacementString(arr['tumblelog']['title'])+"</a></h2></div></div>");
+$("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 class='title' style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' >"+getReplacementString(arr['tumblelog']['title'])+"</a></h2></div></div>");
 //for (var i=0;i< arr['posts'].length;i++)
 for (var i=0;i< arr['posts'].length;i++)		 
 {
@@ -66,11 +67,14 @@ var time = '<time class="timeago" datetime="'+published_s+'">'+jQuery.timeago(pu
 var term1='';
 if(!in_array(title, title_arr) && title!=undefined)
 {
+	
 entryHTML +='<div class="swiper-slide" style="width:130px;max-height:218px;-webkit-box-shadow: 1px 1px 10px #000;-moz-box-shadow: 1px 1px 10px #000;box-shadow: 1px 1px 10px #000;padding: 8px;margin: 3px;max-width: 110px;cursor: pointer;border: 1px solid #999;">';
-entryHTML +="<a  onclick=\"javascript:_gaq.push(['_trackEvent','Click: '+ title+'|'+link+'|'+term+'|'+window.location.href, window.location.href]);\"   href='"+link+"' target=\"_blank\" title='"+term1+"' class=\"article\"   >";
+entryHTML +="<a  ";
+//onclick=\"javascript:_gaq.push(['_trackEvent','Click: '+ title+'|'+link+'|'+term+'|'+window.location.href, window.location.href]);\"   
+entryHTML +="href='"+link+"' target=\"_blank\" title='"+term1+"' class=\"article\"   >";
 entryHTML +='<div style="width: 110px;height: 115px;overflow:hidden;">';
 entryHTML +='<img style="background-color: white;width:114px;height:105px; max-width: 84%!important;overflow: hidden;" src="'+image+'"  ></img></div>';
-entryHTML +='<div style="padding-bottom: 0px;padding-top:0px;/*white-space: nowrap;*/color: #767676;font-weight:bold;font-size: 11px;line-height: 13px;text-transform: uppercase;">'+term+'</div><div style="font-size: 10px;line-height: 17px;"><span style="white-space:nowrap;">'+time+'</span><br><span style="font-size: 12px;">'+title+'</span></div></div></a></div>';
+entryHTML +='<div style="padding-bottom: 0px;padding-top:0px;/*white-space: nowrap;*/color: #767676;font-weight:bold;font-size: 11px;line-height: 13px;text-transform: uppercase;" class="term">'+term+'</div><div style="font-size: 10px;line-height: 17px;"><span style="white-space:nowrap;">'+time+'</span><br><span style="font-size: 12px;">'+title+'</span></div></div></a></div>';
 
 title_arr.push(title);
 }
@@ -114,14 +118,73 @@ $(document).ready(function() {
 	//	console.log(target);
 	//	console.log(text);
 	
-		
+
+var user='';
+var userip='';
+$.ajax({ url: 'http://freegeoip.net/json/',async:true, type: 'POST', dataType: 'jsonp', success: function(location) 
+{ 
+var ip = location.ip; 
+var country_code = location.country_code; 
+var country_name = location.country_name; 
+var region_code = location.region_code; 
+var region_name = location.region_name; 
+var city = location.city; 
+var zip_code = location.zip_code; 
+var time_zone = location.time_zone; 
+var latitude = location.latitude; 
+var longitude = location.longitude; 
+var metro_code= location.metro_code; 
+var timestamp = Number(new Date());
+user = ip+"|"+country_code+"|"+country_name+"|"+region_code+"|"+region_name+"|"+city+"|"+zip_code+"|"+time_zone+"|"+latitude+"|"+metro_code+"|"+timestamp+"|";
+userip=ip;
+console.log();
+}});
+
+
 		$("*").click(function(event) { // when someone clicks these links
 			//event.preventDefault(); // don't open the link yet
+		
+		var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
+var detectBrowser = function() {
+    var N= navigator.appName;
+    var UA= navigator.userAgent;
+    var temp;
+    var browserVersion= UA.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+    if(browserVersion && (temp= UA.match(/version\/([\.\d]+)/i))!= null)
+    browserVersion[2]= temp[1];
+    browserVersion= browserVersion? "Browser:"+[browserVersion[1]+"\n Version:"+ browserVersion[2]]: [N, navigator.appVersion,'-?'];
+    return browserVersion;
+};
 			
+			var href = $(event.target).closest("div.swiper-slide").find("a.article").attr("href");
+			var term = $(event.target).closest("div.swiper-slide").find("div.term").text();
+			var time = $(event.target).closest("div.swiper-slide").find("time.timeago").text();
+			var tag =  $("ul.TAGS li a").text();
+			var title = $("h2.title").text();
 			var text = $(event.target).text();
-			console.log(text+"|"+event.target.nodeName+"|",window.location.href);
-			  _gaq.push(['_trackEvent','Click: '+event.target.nodeName+"|"+text+"|"+window.location.href, window.location.href]); 
-			
+			console.log(title+"|"+term+"|"+time+"|"+event.target.nodeName+"|"+href+"|",window.location.href+"|"+tag+"|"+document.referrer+"|"+isMobile.any()+"|"+user+"|"+detectBrowser());
+			 _gaq.push(['_trackEvent','[0]| '+userip, user+'|'+detectBrowser()+'|'+isMobile.any(), window.location.href+'|'+document.referrer]); 
+			 _gaq.push(['_trackEvent','[1]| '+userip, title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href, window.location.href+'|'+document.referrer]); 
 			//setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
 			//},300);
