@@ -154,9 +154,9 @@ console.log(ip, user, window.location.href+'|'+document.referrer);
 			var tag =  $("ul.TAGS li a").text();
 			var title = $("h2.title").text();
 			var text = $(event.target).text();
-			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|';
-			_gaq.push(['_trackEvent',userip+'|'+term, track, window.location.href+'|'+document.referrer]); 
-			 console.log(userip+'|'+term, track, window.location.href+'|'+document.referrer);
+			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'++document.referrer;
+			_gaq.push(['_trackEvent',window.location.hostname+'|'+tag, track, user]); 
+			 console.log('_trackEvent',window.location.hostname+'|'+tag, track, user);
 			 //setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
 			//},300);
