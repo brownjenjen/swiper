@@ -121,7 +121,7 @@ $(document).ready(function() {
 
 var user='';
 var userip='';
-$.ajax({ url: 'http://freegeoip.net/json/',async:true, type: 'POST', dataType: 'jsonp', success: function(location) 
+$.ajax({ url: '//freegeoip.net/json/',async:true, type: 'POST', dataType: 'jsonp', success: function(location) 
 { 
 var ip = location.ip; 
 var country_code = location.country_code; 
