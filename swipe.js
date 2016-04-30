@@ -137,8 +137,8 @@ var metro_code= location.metro_code;
 var timestamp = Number(new Date());
 user = ip+"|"+country_code+"|"+country_name+"|"+region_code+"|"+region_name+"|"+city+"|"+zip_code+"|"+time_zone+"|"+latitude+"|"+metro_code+"|"+timestamp+"|";
 userip=ip;
-_gaq.push(['_trackEvent',ip, user, window.location.href+'|'+document.referrer]); 
-console.log(ip, user, window.location.href+'|'+document.referrer);
+//_gaq.push(['_trackEvent',ip, user, window.location.href+'|'+document.referrer]); 
+//console.log(ip, user, window.location.href+'|'+document.referrer);
 }});
 
 
