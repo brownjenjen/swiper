@@ -140,7 +140,7 @@ userip=ip;
 console.log();
 }});
 
-	 _gaq.push(['_trackEvent',userip, user+'|'+detectBrowser()+'|'+isMobile.any(), window.location.href+'|'+document.referrer]); 
+
 	 
 		$("*").click(function(event) { // when someone clicks these links
 			//event.preventDefault(); // don't open the link yet
@@ -191,4 +191,6 @@ var detectBrowser = function() {
 			//},300);
 	//	});
 });
+
+		 _gaq.push(['_trackEvent',userip, user+'|'+detectBrowser()+'|'+isMobile.any(), window.location.href+'|'+document.referrer]); 
 });
