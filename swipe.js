@@ -180,7 +180,11 @@ userip=ip;
 
 
 	 
-		$("*").click(function(event) { // when someone clicks these links
+	//	$("*").click(function(event) { // when someone clicks these links
+$(document).on('touchstart click', '*', function(event){
+      //  event.stopPropagation();
+       // event.preventDefault();		
+		
 			//event.preventDefault(); // don't open the link yet
 			var href = $(event.target).closest("div.swiper-slide").find("a.article").attr("href");
 			var term = $(event.target).closest("div.swiper-slide").find("div.term").text();
