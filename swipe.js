@@ -194,16 +194,17 @@ $(document).on('touchstart click', '*', function(event){
 			var text = $(event.target).text();
 			var type = event.type;
 			var x,y;
+if(type=='click'){	
 			x= event.clientX;
 			y= event.clientY;
-			if(type=='touchstart')
-			{
+}
+if(type=='touchstart'){
 var touch = event.touches[0];
  x = touch.pageX;
  y = touch.pageY;
 			}
 			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-			_gaq.push(['_trackEvent',window.location.hostname,event.type+"|"+tag+"|"+x+"|"+y+"|"+screen.width+"|"+screen.height ,track+"||"+user]); 
+			_gaq.push(['_trackEvent',window.location.hostname,"|"+tag+"|"+x+"|"+y+"|"+screen.width+"|"+screen.height+"|"+type ,track+"||"+user]); 
 		//	 console.log('_trackEvent',window.location.hostname+'|'+tag, track, user);
 			 //setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
