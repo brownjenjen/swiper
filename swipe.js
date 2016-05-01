@@ -210,7 +210,7 @@ $(document).on('touchstart click touchend mouseup touchcancel touchmove mousemov
 			 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 			//_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
-			_gaq.push(['_trackEvent',window.location.hostname,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+screen.width+"|"+screen.height+"|"+type+"|"+diff ,track+"||"+user]); 
+			_gaq.push(['_trackEvent',window.location.hostname+"|"+userip,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+screen.width+"|"+screen.height+"|"+type+"|"+diff ,track+"||"+user]); 
 	//	 console.log('_trackEvent',window.location.hostname+'|'+tag, track, user);
 			 //setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
