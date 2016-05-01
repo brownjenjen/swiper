@@ -199,9 +199,8 @@ if(type=='click'){
 			y= event.clientY;
 }
 if(type=='touchstart'){
-var touch = event.touches[0];
- x = touch.pageX;
- y = touch.pageY;
+ x = event.changedTouches[0].pageX;
+ y = event.changedTouches[0].pageY;
 			}
 			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 			_gaq.push(['_trackEvent',window.location.hostname,"|"+tag+"|"+x+"|"+y+"|"+screen.width+"|"+screen.height+"|"+type ,track+"||"+user]); 
