@@ -178,7 +178,9 @@ userip=ip;
 //console.log(ip, user, window.location.href+'|'+document.referrer);
 }});
 
-
+var getPointerEvent = function(event) {
+    return event.originalEvent.targetTouches ? event.originalEvent.targetTouches[0] : event;
+};
 	 
 	//	$("*").click(function(event) { // when someone clicks these links
 $(document).on('touchstart click', '*', function(event){
@@ -187,6 +189,10 @@ $(document).on('touchstart click', '*', function(event){
 		
 			//event.preventDefault(); // don't open the link yet
 			
+    var pointer = getPointerEvent(event);
+    var cachedX  = pointer.pageX;
+    var cachedY  = pointer.pageY;
+			
 			var href = $(event.target).closest("div.swiper-slide").find("a.article").attr("href");
 			var term = $(event.target).closest("div.swiper-slide").find("div.term").text();
 			var time = $(event.target).closest("div.swiper-slide").find("time.timeago").text();
@@ -194,15 +200,12 @@ $(document).on('touchstart click', '*', function(event){
 			var title = $("h2.title").text();
 			var text = $(event.target).text();
 			var type = event.type;
-			var newTouch = event.changedTouches[0];
-			var x='';
-			var y='';
-if(type=='click'){	
-			x= event.clientX;
-			y= event.clientY;
-}
+
+			var x= event.clientX;
+			var y= event.clientY;
+
 			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-			_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+x+"|"+y+"|"+screen.width+"|"+screen.height+"|"+type ,track+"||"+user]); 
+			_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+cachedX+"|"+cachedY+"|"+"|"+x+"|"+y+"|"+screen.width+"|"+screen.height+"|"+type ,track+"||"+user]); 
 		 console.log('_trackEvent',window.location.hostname+'|'+tag, track, user);
 			 //setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
