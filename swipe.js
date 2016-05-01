@@ -200,10 +200,12 @@ $(document).on('touchstart click', '*', function(event){
 			var title = $("h2.title").text();
 			var text = $(event.target).text();
 			var type = event.type;
+			var width = $(document).width();
+			var height = $(document).height();
 			//var x= event.clientX;
 			//var y= event.clientY;
 			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-			_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+screen.width+"|"+screen.height+"|"+type ,track+"||"+user]); 
+			_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
 	//	 console.log('_trackEvent',window.location.hostname+'|'+tag, track, user);
 			 //setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
