@@ -192,13 +192,15 @@ $(document).on('touchstart click', '*', function(event){
 			var tag =  $("ul.TAGS li a").text();
 			var title = $("h2.title").text();
 			var text = $(event.target).text();
+			var type = event.type;
 			var x,y;
 			x= event.clientX;
 			y= event.clientY;
-			if(x==undefined && y == undefined)
+			if(type=='touchstart')
 			{
-			x=event.pageX;
-                        y=event.pageY;
+var touch = event.touches[0];
+ x = touch.pageX;
+ y = touch.pageY;
 			}
 			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 			_gaq.push(['_trackEvent',window.location.hostname,event.type+"|"+tag+"|"+x+"|"+y+"|"+screen.width+"|"+screen.height ,track+"||"+user]); 
