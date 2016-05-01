@@ -158,6 +158,7 @@ $(document).ready(function() {
 
 var user='';
 var userip='';
+var count=0;
 $.ajax({ url: '//freegeoip.net/json/',async:true, type: 'POST', dataType: 'jsonp', success: function(location) 
 { 
 var ip = location.ip; 
@@ -173,7 +174,7 @@ var longitude = location.longitude;
 var metro_code= location.metro_code; 
 var timestamp = Number(new Date());
 user = ip+"|"+country_code+"|"+country_name+"|"+region_code+"|"+region_name+"|"+city+"|"+zip_code+"|"+time_zone+"|"+latitude+"|"+metro_code+"|"+timestamp+"|";
-userip=ip;
+if(ip!=userip){userip=ip;count=0;}
 //_gaq.push(['_trackEvent',ip, user, window.location.href+'|'+document.referrer]); 
 //console.log(ip, user, window.location.href+'|'+document.referrer);
 }});
