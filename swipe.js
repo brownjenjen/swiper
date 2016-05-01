@@ -145,9 +145,6 @@ userip=ip;
 	 
 		$("*").click(function(event) { // when someone clicks these links
 			//event.preventDefault(); // don't open the link yet
-		
-
-	
 			var href = $(event.target).closest("div.swiper-slide").find("a.article").attr("href");
 			var term = $(event.target).closest("div.swiper-slide").find("div.term").text();
 			var time = $(event.target).closest("div.swiper-slide").find("time.timeago").text();
@@ -155,7 +152,7 @@ userip=ip;
 			var title = $("h2.title").text();
 			var text = $(event.target).text();
 			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|';
-			_gaq.push(['_trackEvent',window.location.hostname+'|'+tag, track, user]); 
+			_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+event.clientX+"|"+event.clientY+"|"+screen.width+"|"+screen.height ,track+"||"+user]); 
 		//	 console.log('_trackEvent',window.location.hostname+'|'+tag, track, user);
 			 //setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
