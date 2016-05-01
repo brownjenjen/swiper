@@ -186,6 +186,7 @@ $(document).on('touchstart click', '*', function(event){
        // event.preventDefault();		
 		
 			//event.preventDefault(); // don't open the link yet
+			
 			var href = $(event.target).closest("div.swiper-slide").find("a.article").attr("href");
 			var term = $(event.target).closest("div.swiper-slide").find("div.term").text();
 			var time = $(event.target).closest("div.swiper-slide").find("time.timeago").text();
@@ -193,14 +194,15 @@ $(document).on('touchstart click', '*', function(event){
 			var title = $("h2.title").text();
 			var text = $(event.target).text();
 			var type = event.type;
+			var newTouch = event.changedTouches[0];
 			var x,y;
 if(type=='click'){	
 			x= event.clientX;
 			y= event.clientY;
 }
 if(type=='touchstart'){
- x = event.changedTouches[0].pageX;
- y = event.changedTouches[0].pageY;
+ x = newTouch.x;
+ y = newTouch.y;
 			}
 			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 			_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+x+"|"+y+"|"+screen.width+"|"+screen.height+"|"+type ,track+"||"+user]); 
