@@ -181,9 +181,11 @@ userip=ip;
 var getPointerEvent = function(event) {
     return event.originalEvent.targetTouches ? event.originalEvent.targetTouches[0] : event;
 };
+
+var count=0;
 	 
 	//	$("*").click(function(event) { // when someone clicks these links
-$(document).on('touchstart click', '*', function(event){
+$(document).on('touchstart click touchend mouseup touchcancel touchmove mousemove', '*', function(event){
       //  event.stopPropagation();
        // event.preventDefault();		
 		
@@ -204,14 +206,17 @@ $(document).on('touchstart click', '*', function(event){
 			var height = $(document).height();
 			//var x= event.clientX;
 			//var y= event.clientY;
+			var timeNow = (new Date()).getTime();
 			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 			//_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
-			_gaq.push(['_trackEvent',window.location.hostname,window.location.href+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+screen.width+"|"+screen.height+"|"+type ,track+"||"+user]); 
+			_gaq.push(['_trackEvent',window.location.hostname,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+screen.width+"|"+screen.height+"|"+type+"|"+timeNow ,track+"||"+user]); 
 	//	 console.log('_trackEvent',window.location.hostname+'|'+tag, track, user);
 			 //setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
 			//},300);
 	//	});
+
+	count++;
 });
 
 		 
