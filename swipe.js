@@ -23,8 +23,9 @@
   return false;
 }
 var sites='';
+var ua='':
 var customizeForDevice = function(){
-    var ua = navigator.userAgent;
+    ua = navigator.userAgent;
     var checker = {
       iphone: ua.match(/(iPhone|iPod)/),
 	ipad: ua.match(/(iPad)/),
@@ -74,7 +75,7 @@ arr =   data;
 console.log(arr);
 var entryHTML ='';
 var link = '';
-$("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 class='title' style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' >"+arr['tumblelog']['title'].replace(/^(.{30}[^\s]*).*/, "$1")+"</a></h2></div></div>");
+$("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 class='title' style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' >"+arr['tumblelog']['title'].replace(/^(.{25}[^\s]*).*/, "$1")+"...</a></h2></div></div>");
 //for (var i=0;i< arr['posts'].length;i++)
 for (var i=0;i< arr['posts'].length;i++)		 
 {
@@ -187,7 +188,7 @@ userip=ip;
 			var tag =  $("ul.TAGS li a").text();
 			var title = $("h2.title").text();
 			var text = $(event.target).text();
-			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|';
+			var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 			_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+event.clientX+"|"+event.clientY+"|"+screen.width+"|"+screen.height ,track+"||"+user]); 
 		//	 console.log('_trackEvent',window.location.hostname+'|'+tag, track, user);
 			 //setTimeout(function() { // now wait 300 milliseconds...
