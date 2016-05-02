@@ -267,7 +267,7 @@ var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+windo
 if(touchStarted)   
 {
 _gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|Swiping|"+parseInt(diff)+"|"+userip+"," ,track+"||"+user]); 
-
+}
 	
 });
 		 
