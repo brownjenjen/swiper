@@ -214,8 +214,8 @@ touchStarted = true;
 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 if(lastEvent!="touchstart"){
-	move_str += count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchstarted|"+event.type+"|,";
-_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
+	move_str = count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
+_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
     last = event.timeStamp;
    count++;
    lastEvent="touchstart";
@@ -223,8 +223,8 @@ _gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.he
 //_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
 setTimeout(function (){
 if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
-move_str += count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Tap|"+event.type+"|,";	
-_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
+move_str = count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
+_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
  lastEvent="tap";
 	
 }
@@ -255,8 +255,8 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 			//var y= event.clientY;
 
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-move_str += count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchended|"+event.type+"|,";
-_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
+move_str = count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
+_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
 lastEvent="touchend";
 	
 });
@@ -284,8 +284,8 @@ $touchArea.on('touchmove mousemove', function(event){
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 if(touchStarted && lastEvent!='swiping')   
 {
-move_str += count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Swiping|"+event.type+"|,";
-_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
+move_str = count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
+_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
  count++;
 lastEvent="swiping";
 }
