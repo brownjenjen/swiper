@@ -183,7 +183,7 @@ var getPointerEvent = function(event) {
     return event.originalEvent.targetTouches ? event.originalEvent.targetTouches[0] : event;
 };
 
-var count=0;
+
 var last, diff,lasteve;
 var touchStarted = false,    currX = 0,    currY = 0,    cachedX = 0,    cachedY = 0;
 	//	$("*").click(function(event) { // when someone clicks these links
@@ -208,16 +208,15 @@ $(document).on('touchstart mousedown', '*', function(event){
 		
 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|Touchstarted|"+parseInt(diff)+"|"+userip+"," ,track+"||"+user]); 
+_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchstarted|," ,track+"||"+user]); 
 //_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
 setTimeout(function (){
 if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
-_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|Tap|"+parseInt(diff)+"|"+userip+"," ,track+"||"+user]); 
+_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Tap|," ,track+"||"+user]); 
  last = event.timeStamp;
- count++;
    }
     },200);
-	
+ count++;	
 });
 
 
@@ -241,7 +240,9 @@ $(document).on('touchend mouseup touchcancel', '*', function(event){
 			//var y= event.clientY;
 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|Touchended|"+parseInt(diff)+"|"+userip+"," ,track+"||"+user]); 
+_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchended|," ,track+"||"+user]); 
+
+ count++;	
 });
 
 
@@ -266,9 +267,9 @@ if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 if(touchStarted)   
 {
-_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|Swiping|"+parseInt(diff)+"|"+userip+"," ,track+"||"+user]); 
+_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Swiping|," ,track+"||"+user]); 
 }
-	
+ count++;	
 });
 		 
 });
