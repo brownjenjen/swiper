@@ -245,11 +245,11 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 			var height = $(document).height();
 			//var x= event.clientX;
 			//var y= event.clientY;
-if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
+
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 _gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchended|," ,track+"||"+user]); 
 
- count++;	
+	
 });
 
 
@@ -271,7 +271,7 @@ $touchArea.on('touchmove mousemove', function(event){
 			var height = $(document).height();
 			//var x= event.clientX;
 			//var y= event.clientY;
-if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
+
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 if(touchStarted)   
 {
