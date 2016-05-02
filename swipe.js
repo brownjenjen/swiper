@@ -214,7 +214,7 @@ touchStarted = true;
 		
 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-if(lastEvent!="touchstart" && (lastX!=parseInt(cachedX) || lastY!=parseInt(chachedY))){
+if(lastEvent!="touchstart" && (lastX!=parseInt(cachedX) || lastY!=parseInt(cachedY))){
 	
 move_str = count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
