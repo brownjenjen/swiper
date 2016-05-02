@@ -185,7 +185,7 @@ var getPointerEvent = function(event) {
 
 
 var last, diff;
-vat lastEvent='';
+var lastEvent='';
 var $touchArea = $("body");
 var touchStarted = false,    currX = 0,    currY = 0,    cachedX = 0,    cachedY = 0;
 	//	$("*").click(function(event) { // when someone clicks these links
