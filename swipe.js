@@ -188,7 +188,8 @@ var last, diff,lasteve;
 var touchStarted = false,    currX = 0,    currY = 0,    cachedX = 0,    cachedY = 0;
 	//	$("*").click(function(event) { // when someone clicks these links
 $(document).on('touchstart mousedown', '*', function(event){
-         event.preventDefault();		
+         event.preventDefault();
+         event.stopPropagation();
     var pointer = getPointerEvent(event);
     cachedX  =  currX = pointer.pageX;
     cachedY  = currY  = pointer.pageY;
@@ -221,7 +222,8 @@ _gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.he
 
 
 $(document).on('touchend mouseup touchcancel', '*', function(event){
-         event.preventDefault();		
+         event.preventDefault();
+         event.stopPropagation();
     var pointer = getPointerEvent(event);
     cachedX  =  currX = pointer.pageX;
     cachedY  = currY  = pointer.pageY;
@@ -247,7 +249,8 @@ _gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.he
 
 
 $(document).on('touchmove mousemove', '*', function(event){
-         event.preventDefault();		
+         event.preventDefault();
+         event.stopPropagation();
     var pointer = getPointerEvent(event);
   currX = pointer.pageX;
    currY  = pointer.pageY;
