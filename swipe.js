@@ -184,7 +184,7 @@ var getPointerEvent = function(event) {
 };
 
 var count=0;
-var last, diff;
+var last, diff,lasteve;
 	//	$("*").click(function(event) { // when someone clicks these links
 $(document).on('touchstart click touchend mouseup touchcancel touchmove mousemove', '*', function(event){
        event.stopPropagation();
@@ -209,10 +209,11 @@ $(document).on('touchstart click touchend mouseup touchcancel touchmove mousemov
 			//var y= event.clientY;
 		
 			 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
-if(diff>0){
+			 
+if(diff>1000){
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 			//_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
-			_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+type+"|"+parseInt(diff)+"|"+userip+"," ,track+"||"+user]); 
+_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+type+"|"+parseInt(diff)+"|"+userip+"," ,track+"||"+user]); 
 	//	 console.log('_trackEvent',window.location.hostname+'|'+tag, track, user);
 			 //setTimeout(function() { // now wait 300 milliseconds...
 			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
