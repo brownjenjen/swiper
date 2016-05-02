@@ -72,7 +72,7 @@ $.ajax({url:'http://'+linkurl+'.tumblr.com/api/read/json?callback=?',async:true,
 var title_arr=[];
 var arr = [];
 arr =   data;
-console.log(arr);
+//console.log(arr);
 var entryHTML ='';
 var link = '';
 $("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 class='title' style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' >"+arr['tumblelog']['title'].replace(/^(.{25}[^\s]*).*/, "$1")+"</a></h2></div></div>");
@@ -215,21 +215,21 @@ touchStarted = true;
 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 if(lastEvent!="touchstart" && (lastX!=parseInt(pointer.pageY) || lastY!=parseInt(pointer.pageX))){
-move_str = "["+count+"] "+event.timeStamp+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
+move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
 lastX=parseInt(pointer.pageX);
 lastY=parseInt(pointer.pageY);
     last = event.timeStamp;
    count++;
    lastEvent="touchstart";
-   console.log("touchstart|"+pointer.pageX+"|"+pointer.pageY);
+   //console.log("touchstart|"+pointer.pageX+"|"+pointer.pageY);
 }
 //_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
 setTimeout(function (){
 if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
    count++;
-move_str ="["+count+"] "+event.timeStamp+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
-   console.log("tap|"+pointer.pageX+"|"+pointer.pageY);
+move_str ="["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
+   //console.log("tap|"+pointer.pageX+"|"+pointer.pageY);
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
  lastEvent="tap";
 	
@@ -262,9 +262,9 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 count++;
-move_str = "["+count+"] "+event.timeStamp+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
+move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
-console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
+//console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="touchend";
 	
 });
@@ -293,9 +293,9 @@ var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+windo
 if(touchStarted && lastEvent!='swiping' &&  (lastX!=parseInt(pointer.pageX) || lastY!=parseInt(pointer.pageY)))   
 {
    count++;
-move_str = "["+count+"] "+event.timeStamp+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
+move_str =  "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
-console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
+//console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="swiping";
 lastX=parseInt(pointer.pageX);
 lastY==parseInt(pointer.pageY);
