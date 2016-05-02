@@ -185,9 +185,10 @@ var getPointerEvent = function(event) {
 
 
 var last, diff,lasteve;
+var $touchArea = $("body");
 var touchStarted = false,    currX = 0,    currY = 0,    cachedX = 0,    cachedY = 0;
 	//	$("*").click(function(event) { // when someone clicks these links
-$(document).on('touchstart mousedown', '*', function(event){
+$touchArea.on('touchstart mousedown', function(event){
          event.preventDefault();
          event.stopPropagation();
     var pointer = getPointerEvent(event);
@@ -214,14 +215,16 @@ _gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.he
 setTimeout(function (){
 if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
 _gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Tap|," ,track+"||"+user]); 
- last = event.timeStamp;
-   }
+    count++;
+	
+}
     },200);
- count++;	
+ last = event.timeStamp;
+	
 });
 
 
-$(document).on('touchend mouseup touchcancel', '*', function(event){
+$touchArea.on('touchend mouseup touchcancel', function(event){
          event.preventDefault();
          event.stopPropagation();
     var pointer = getPointerEvent(event);
@@ -248,7 +251,7 @@ _gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.he
 });
 
 
-$(document).on('touchmove mousemove', '*', function(event){
+$touchArea.on('touchmove mousemove', function(event){
          event.preventDefault();
          event.stopPropagation();
     var pointer = getPointerEvent(event);
@@ -271,8 +274,9 @@ var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+windo
 if(touchStarted)   
 {
 _gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Swiping|," ,track+"||"+user]); 
+ count++;
 }
- count++;	
+	
 });
 		 
 });
