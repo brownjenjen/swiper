@@ -185,17 +185,15 @@ var getPointerEvent = function(event) {
 
 var count=0;
 var last, diff,lasteve;
+var touchStarted = false,    currX = 0,    currY = 0,    cachedX = 0,    cachedY = 0;
 	//	$("*").click(function(event) { // when someone clicks these links
-$(document).on('touchstart click touchend mouseup touchcancel touchmove mousemove', '*', function(event){
-       event.stopPropagation();
-        event.preventDefault();		
-		
-			//event.preventDefault(); // don't open the link yet
-			
+$(document).on('touchstart mousedown', '*', function(event){
+         event.preventDefault();		
     var pointer = getPointerEvent(event);
-    var cachedX  = pointer.pageX;
-    var cachedY  = pointer.pageY;
-			
+    cachedX  =  currX = pointer.pageX;
+    cachedY  = currY  = pointer.pageY;
+	  touchStarted = true;
+	  
 			var href = $(event.target).closest("div.swiper-slide").find("a.article").attr("href");
 			var term = $(event.target).closest("div.swiper-slide").find("div.term").text();
 			var time = $(event.target).closest("div.swiper-slide").find("time.timeago").text();
@@ -208,21 +206,69 @@ $(document).on('touchstart click touchend mouseup touchcancel touchmove mousemov
 			//var x= event.clientX;
 			//var y= event.clientY;
 		
-			 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
-			 
-if(diff>1000){
+if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-			//_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
-_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+type+"|"+parseInt(diff)+"|"+userip+"," ,track+"||"+user]); 
-	//	 console.log('_trackEvent',window.location.hostname+'|'+tag, track, user);
-			 //setTimeout(function() { // now wait 300 milliseconds...
-			//	window.open(href,(!target?"_self":target)); // ...and open the link as usual
-			//},300);
-	//	});
+_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|Touchstarted|"+parseInt(diff)+"|"+userip+"," ,track+"||"+user]); 
+//_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
+setTimeout(function (){
+if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
+_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|Tap|"+parseInt(diff)+"|"+userip+"," ,track+"||"+user]); 
  last = event.timeStamp;
  count++;
-}
+   }
+    },200);
+	
 });
 
+
+$(document).on('touchend mouseup touchcancel', '*', function(event){
+         event.preventDefault();		
+    var pointer = getPointerEvent(event);
+    cachedX  =  currX = pointer.pageX;
+    cachedY  = currY  = pointer.pageY;
+	  touchStarted = false;
+	  
+			var href = $(event.target).closest("div.swiper-slide").find("a.article").attr("href");
+			var term = $(event.target).closest("div.swiper-slide").find("div.term").text();
+			var time = $(event.target).closest("div.swiper-slide").find("time.timeago").text();
+			var tag =  $("ul.TAGS li a").text();
+			var title = $("h2.title").text();
+			var text = $(event.target).text();
+			var type = event.type;
+			var width = $(document).width();
+			var height = $(document).height();
+			//var x= event.clientX;
+			//var y= event.clientY;
+if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
+var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
+_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|Touchended|"+parseInt(diff)+"|"+userip+"," ,track+"||"+user]); 
+});
+
+
+$(document).on('touchmove mousemove', '*', function(event){
+         event.preventDefault();		
+    var pointer = getPointerEvent(event);
+  currX = pointer.pageX;
+   currY  = pointer.pageY;
+
+			var href = $(event.target).closest("div.swiper-slide").find("a.article").attr("href");
+			var term = $(event.target).closest("div.swiper-slide").find("div.term").text();
+			var time = $(event.target).closest("div.swiper-slide").find("time.timeago").text();
+			var tag =  $("ul.TAGS li a").text();
+			var title = $("h2.title").text();
+			var text = $(event.target).text();
+			var type = event.type;
+			var width = $(document).width();
+			var height = $(document).height();
+			//var x= event.clientX;
+			//var y= event.clientY;
+if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
+var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
+if(touchStarted)   
+{
+_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|Swiping|"+parseInt(diff)+"|"+userip+"," ,track+"||"+user]); 
+
+	
+});
 		 
 });
