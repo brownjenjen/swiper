@@ -209,7 +209,7 @@ $(document).on('touchstart click touchend mouseup touchcancel touchmove mousemov
 			//var y= event.clientY;
 		
 			 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
-if(diff>1000){
+if(diff>0){
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 			//_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
 			_gaq.push(['_trackEvent',window.location.hostname+"|"+screen.width+"|"+screen.height,count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+type+"|"+parseInt(diff)+"|"+userip+"," ,track+"||"+user]); 
