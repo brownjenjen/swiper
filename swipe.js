@@ -294,7 +294,7 @@ if(touchStarted && lastEvent!='swiping' &&  (lastX!=parseInt(pointer.pageX) || l
 {
    count++;
 move_str =  "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
-_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
+//_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
 //console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="swiping";
 lastX=parseInt(pointer.pageX);
