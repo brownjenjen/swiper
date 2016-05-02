@@ -286,7 +286,7 @@ $touchArea.on('touchmove mousemove', function(event){
 			//var y= event.clientY;
 
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-if(touchStarted && lastEvent!='swiping' &&  (lastX!=parseInt(currX) || lastY!=parseInt(currY))   
+if(touchStarted && lastEvent!='swiping' &&  (lastX!=parseInt(currX) || lastY!=parseInt(currY)))   
 {
 move_str = count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(currX)+"|"+parseInt(currY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
