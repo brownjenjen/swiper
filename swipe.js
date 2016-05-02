@@ -188,6 +188,7 @@ var last, diff;
 var lastEvent='';
 var $touchArea = $("body");
 var touchStarted = false,    currX = 0,    currY = 0,    cachedX = 0,    cachedY = 0;
+var lastX=0;var lastY=0;
 var move_str='';
 	//	$("*").click(function(event) { // when someone clicks these links
 $touchArea.on('touchstart mousedown', function(event){
@@ -213,9 +214,12 @@ touchStarted = true;
 		
 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-if(lastEvent!="touchstart"){
-	move_str = count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
+if(lastEvent!="touchstart" && (lastX!=parseInt(cachedX) || lastY!=parseInt(chachedX))) ){
+	
+move_str = count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
+lastX=parseInt(cachedX);
+lastY==parseInt(cachedY);
     last = event.timeStamp;
    count++;
    lastEvent="touchstart";
@@ -238,8 +242,8 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
          event.preventDefault();
          event.stopPropagation();
     var pointer = getPointerEvent(event);
-    cachedX  =  currX = pointer.pageX;
-    cachedY  = currY  = pointer.pageY;
+    lastX = pointer.pageX;
+    lastY  = pointer.pageY;
 	  touchStarted = false;
 	  
 			var href = $(event.target).closest("div.swiper-slide").find("a.article").attr("href");
@@ -255,7 +259,7 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 			//var y= event.clientY;
 
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-move_str = count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
+move_str = count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(lastX)+"|"+parseInt(lastY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
 lastEvent="touchend";
 	
@@ -282,12 +286,14 @@ $touchArea.on('touchmove mousemove', function(event){
 			//var y= event.clientY;
 
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-if(touchStarted && lastEvent!='swiping')   
+if(touchStarted && lastEvent!='swiping' &&  (lastX!=parseInt(currX) || lastY!=parseInt(currY))   
 {
-move_str = count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
+move_str = count+"|"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(currX)+"|"+parseInt(currY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
  count++;
 lastEvent="swiping";
+lastX=parseInt(currX);
+lastY==parseInt(currY);
 }
 	
 });
