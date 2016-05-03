@@ -227,7 +227,6 @@ lastY=parseInt(pointer.pageY);
 //_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
 setTimeout(function (){
 if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
-   count++;
 move_str ="["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
    //console.log("tap|"+pointer.pageX+"|"+pointer.pageY);
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
@@ -261,7 +260,6 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 			//var y= event.clientY;
 
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-count++;
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
 //console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
@@ -292,7 +290,6 @@ $touchArea.on('touchmove mousemove', function(event){
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 if(touchStarted && lastEvent!='swiping' &&  (lastX!=parseInt(pointer.pageX) || lastY!=parseInt(pointer.pageY)))   
 {
-   count++;
 move_str =  "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
 //console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
