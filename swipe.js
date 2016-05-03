@@ -192,6 +192,7 @@ var lastX=0;var lastY=0;
 var move_str='';
 var nodeName='';
 var ads=0;
+var done=0;
 	//	$("*").click(function(event) { // when someone clicks these links
 $touchArea.on('touchstart mousedown', function(event){
          event.preventDefault();
@@ -222,8 +223,12 @@ var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+windo
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
 if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 {
-	if(nodeName=='INS'){var name='INS';} else {var name='ADS';}
+if(nodeName=='INS'){var name='INS';} else {var name='ADS';}
+if(done!=1)
+{
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user]); 
+done=1;
+}	
 }
 
 lastX=parseInt(pointer.pageX);
@@ -271,8 +276,13 @@ var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+windo
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
 if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 {
-	if(nodeName=='INS'){var name='INS';} else {var name='ADS';}
+if(nodeName=='INS'){var name='INS';} else {var name='ADS';}
+if(done!=1)
+{
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user]); 
+done=1;
+	
+}
 }
 //console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="touchend";
@@ -307,7 +317,11 @@ move_str =  "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+p
 if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 {
 	if(nodeName=='INS'){var name='INS';} else {var name='ADS';}
+	if(done!=1)
+	{
 	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user]); 
+	done=1;
+	}
 }
 //console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="swiping";
