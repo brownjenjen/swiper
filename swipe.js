@@ -217,7 +217,11 @@ var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+windo
 if(lastEvent!="touchstart" && (lastX!=parseInt(pointer.pageY) || lastY!=parseInt(pointer.pageX))){
  count++;
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
+if(event.target.nodeName=='INS')
+{
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
+}
+
 lastX=parseInt(pointer.pageX);
 lastY=parseInt(pointer.pageY);
     last = event.timeStamp;
