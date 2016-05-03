@@ -226,7 +226,7 @@ if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 if(nodeName=='INS'){var name='INS';} else {var name='ADS';}
 if(done!=1)
 {
-_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user]); 
+_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+text]); 
 done=1;
 }	
 }
@@ -279,7 +279,7 @@ if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 if(nodeName=='INS'){var name='INS';} else {var name='ADS';}
 if(done!=1)
 {
-_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user]); 
+_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+text]); 
 done=1;
 	
 }
@@ -319,7 +319,7 @@ if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 	if(nodeName=='INS'){var name='INS';} else {var name='ADS';}
 	if(done!=1)
 	{
-	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user]); 
+	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+text]); 
 	done=1;
 	}
 }
