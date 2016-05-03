@@ -243,7 +243,7 @@ move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+pa
 var occu = occurrences(text, "adsbygoogle");
 if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 {
-if(nodeName=='INS'){var name='INS';} else {var name='ADS';}
+if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
 if(done!=1)
 {
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
@@ -297,7 +297,7 @@ move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+pa
 var occu = occurrences(text, "adsbygoogle");
 if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 {
-if(nodeName=='INS'){var name='INS';} else {var name='ADS';}
+if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
 if(done!=1)
 {
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
@@ -338,7 +338,7 @@ move_str =  "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+p
 var occu = occurrences(text, "adsbygoogle");
 if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 {
-	if(nodeName=='INS'){var name='INS';} else {var name='ADS';}
+	if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
 	if(done!=1)
 	{
 	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
