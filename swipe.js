@@ -190,6 +190,7 @@ var $touchArea = $("body");
 var touchStarted = false,    currX = 0,    currY = 0,    cachedX = 0,    cachedY = 0;
 var lastX=0;var lastY=0;
 var move_str='';
+var nodeName='';
 	//	$("*").click(function(event) { // when someone clicks these links
 $touchArea.on('touchstart mousedown', function(event){
          event.preventDefault();
@@ -212,12 +213,13 @@ touchStarted = true;
 			//var x= event.clientX;
 			//var y= event.clientY;
 		
+			nodeName=event.target.nodeName;		
 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-if(lastEvent!="touchstart" && (lastX!=parseInt(pointer.pageY) || lastY!=parseInt(pointer.pageX))){
+//if(lastEvent!="touchstart" && (lastX!=parseInt(pointer.pageY) || lastY!=parseInt(pointer.pageX))){
  count++;
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
-if(event.target.nodeName=='INS')
+if(nodeName=='INS')
 {
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
 }
@@ -227,7 +229,7 @@ lastY=parseInt(pointer.pageY);
     last = event.timeStamp;
      lastEvent="touchstart";
    //console.log("touchstart|"+pointer.pageX+"|"+pointer.pageY);
-}
+//}
 //_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
 setTimeout(function (){
 if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
@@ -262,10 +264,13 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 			var height = $(document).height();
 			//var x= event.clientX;
 			//var y= event.clientY;
-
+			nodeName=event.target.nodeName;	
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
-//_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
+if(nodeName=='INS')
+{
+_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
+}
 //console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="touchend";
 	
@@ -290,17 +295,21 @@ $touchArea.on('touchmove mousemove', function(event){
 			var height = $(document).height();
 			//var x= event.clientX;
 			//var y= event.clientY;
-
+			nodeName=event.target.nodeName;	
+			
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-if(touchStarted && lastEvent!='swiping' &&  (lastX!=parseInt(pointer.pageX) || lastY!=parseInt(pointer.pageY)))   
-{
+//if(touchStarted && lastEvent!='swiping' &&  (lastX!=parseInt(pointer.pageX) || lastY!=parseInt(pointer.pageY)))   
+//{
 move_str =  "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
-//_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
+if(nodeName=='INS')
+{
+	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
+}
 //console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="swiping";
 lastX=parseInt(pointer.pageX);
 lastY==parseInt(pointer.pageY);
-}
+//}
 	
 });
 		 
