@@ -191,6 +191,7 @@ var touchStarted = false,    currX = 0,    currY = 0,    cachedX = 0,    cachedY
 var lastX=0;var lastY=0;
 var move_str='';
 var nodeName='';
+var ads=0;
 	//	$("*").click(function(event) { // when someone clicks these links
 $touchArea.on('touchstart mousedown', function(event){
          event.preventDefault();
@@ -212,14 +213,14 @@ touchStarted = true;
 			var height = $(document).height();
 			//var x= event.clientX;
 			//var y= event.clientY;
-		
+		        
 			nodeName=event.target.nodeName;		
 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 //if(lastEvent!="touchstart" && (lastX!=parseInt(pointer.pageY) || lastY!=parseInt(pointer.pageX))){
  count++;
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
-if(nodeName=='INS')
+if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 {
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
 }
@@ -267,7 +268,7 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 			nodeName=event.target.nodeName;	
 var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
-if(nodeName=='INS')
+if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 {
 _gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
 }
@@ -301,7 +302,7 @@ var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+windo
 //if(touchStarted && lastEvent!='swiping' &&  (lastX!=parseInt(pointer.pageX) || lastY!=parseInt(pointer.pageY)))   
 //{
 move_str =  "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(diff)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
-if(nodeName=='INS')
+if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 {
 	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
 }
