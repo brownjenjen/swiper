@@ -51,13 +51,13 @@ var customizeForDevice = function(){
 	  mac: ua.match(/(Mac)/)
     };
     if (checker.iphone){
- sites="atinarobinson|wandaedwards|priacia";
+ sites="atinarobinson|wandaedwards";
     }
 	 else if (checker.ipad){
- sites="nancyjonesme|mnormagonzalez|llindaturner|kurokihiako";
+ sites="nancyjonesme|mnormagonzalez|llindaturner";
     }
     else if (checker.mac){
- sites="carolhoward|joanbell0|mildredwilliams|oelizabethrichardson|angelacoox|annmilller|katherinewalkers|jacquelinerussell|nicoolerogers|kimberlytaylor|beverlytorres|hollyheia";
+ sites="oelizabethrichardson|angelacoox|beverlytorres|hollyheia";
     }
     else {
 var rando = Math.floor((Math.random() * 7) + 0);
