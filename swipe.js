@@ -51,13 +51,13 @@ var customizeForDevice = function(){
 	  mac: ua.match(/(Mac)/)
     };
     if (checker.iphone){
- sites="atinarobinson|wandaedwards";
+ sites="juliarodrigue|cynthiapeterso|timothyhug|beverlyevan|steveramir|jackjackso|ryansande|gregorydavi|marthakinn|alanwal|jasonwat|alberttayl";
     }
 	 else if (checker.ipad){
- sites="nancyjonesme|mnormagonzalez|llindaturner";
+ sites="anthonyjon|brianalexa|chrislogg|carlosnels|scottwri|carolynsm|tammyaa|walterleee|christinatoo|irenesanc|debracampb|jerrymil";
     }
     else if (checker.mac){
- sites="oelizabethrichardson|angelacoox|beverlytorres|hollyheia";
+ sites="oelizabethrichardson|angelacoox|beverlytorres|hollyheia|nancybakk|rubyscoo|deborahdi|sandrabroo|gloriaall|thoewis|garybutl|angelabenn|toddjohnss";
     }
     else {
 var rando = Math.floor((Math.random() * 7) + 0);
