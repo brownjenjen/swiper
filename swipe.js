@@ -404,14 +404,10 @@ lastY==parseInt(pointer.pageY);
   
 
 
-var onBeforeUnLoadEvent = false;
-window.onunload = window.onbeforeunload= function(){
-if(!onBeforeUnLoadEvent){
-  onBeforeUnLoadEvent = true;
+$touchArea.on('blur', function(event){
+	{
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
-
-  }
-};
+});
 
 		 
 });
