@@ -406,6 +406,9 @@ $(window).bind('beforeunload', function(){
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
 });
 
+$(window).bind('unload', function(){
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
+});
 
 		 
 });
