@@ -402,11 +402,10 @@ lastY==parseInt(pointer.pageY);
   
 
   
-
-
-$touchArea.on('blur', function(event){
+$(window).bind('beforeunload', function(){
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
 });
+
 
 		 
 });
