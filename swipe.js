@@ -405,7 +405,6 @@ lastY==parseInt(pointer.pageY);
 
 
 $touchArea.on('blur', function(event){
-	{
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
 });
 
