@@ -362,17 +362,64 @@ lastY==parseInt(pointer.pageY);
 	
 });
 
-           $(window).scroll(function(){        
-           function GetScrollPercent()      {
-             var bottom = $(window).height() + $(window).scrollTop();
-             var height = $(document).height();
-             return Math.round(100*bottom/height);        }   	
-           	scrollPercent = GetScrollPercent();   
-           	console.log(scrollPercent);
-           	
-           }); 
+  
+               function throttle(func, wait) {
+      var context, args, result;
+      var timeout = null;
+      var previous = 0;
+      var later = function() {
+        previous = new Date;
+        timeout = null;
+        result = func.apply(context, args);
+      };
+      return function() {
+        var now = new Date;
+        if (!previous) previous = now;
+        var remaining = wait - (now - previous);
+        context = this;
+        args = arguments;
+        if (remaining <= 0) {
+          clearTimeout(timeout);
+          timeout = null;
+          previous = now;
+          result = func.apply(context, args);
+        } else if (!timeout) {
+          timeout = setTimeout(later, remaining);
+        }
+        scrollPercent=result;
+        return result;
+      };
+    }
+
+    /*
+     * Scroll Event
+     */
+
+    $window.on('scroll.scrollDepth', throttle(function() {
+      var docHeight = $(document).height(),
+        winHeight = window.innerHeight ? window.innerHeight : $window.height(),
+        scrollDistance = $window.scrollTop() + winHeight,
+        marks = calculateMarks(docHeight),
+        timing = +new Date - startTime;
         
-            
+      if (cache.length >= 4 + options.elements.length) {
+        $window.off('scroll.scrollDepth');
+        return;
+      }
+
+      if (options.elements) {
+        checkElements(options.elements, scrollDistance, timing);
+      }
+
+      if (options.percentage) {        
+        checkMarks(marks, scrollDistance, timing);
+      }
+    }, 500));
+
+  };
+
+})( jQuery, window, document );
+jQuery.scrollDepth();
 
 
 var onBeforeUnLoadEvent = false;
