@@ -214,6 +214,7 @@ var ads=0;
 var done=0;
 var param='';
 var track='';
+var settings_str='';
 	//	$("*").click(function(event) { // when someone clicks these links
 $touchArea.on('touchstart mousedown', function(event){
          event.preventDefault();
@@ -358,12 +359,13 @@ lastY==parseInt(pointer.pageY);
 	
 });
 
+$(document).ajaxSend(function(event, xhr, settings){    settings_str += settings.url;    });
 
 var onBeforeUnLoadEvent = false;
 window.onunload = window.onbeforeunload= function(){
 if(!onBeforeUnLoadEvent){
   onBeforeUnLoadEvent = true;
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"]); 
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+settings_str+"||"]); 
 
   }
 };
