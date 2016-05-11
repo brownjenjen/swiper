@@ -362,10 +362,15 @@ lastY==parseInt(pointer.pageY);
 	
 });
 
-           $(window).scroll(function(){        scrollPercent = GetScrollPercent();          }); 
+           $(window).scroll(function(){        
            function GetScrollPercent()      {
              var bottom = $(window).height() + $(window).scrollTop();
-             var height = $(document).height();              return Math.round(100*bottom/height);        }
+             var height = $(document).height();
+             return Math.round(100*bottom/height);        }   	
+           	scrollPercent = GetScrollPercent();          
+           	
+           }); 
+        
             
 
 
