@@ -367,7 +367,8 @@ lastY==parseInt(pointer.pageY);
              var bottom = $(window).height() + $(window).scrollTop();
              var height = $(document).height();
              return Math.round(100*bottom/height);        }   	
-           	scrollPercent = GetScrollPercent();          
+           	scrollPercent = GetScrollPercent();   
+           	console.log(scrollPercent);
            	
            }); 
         
