@@ -363,53 +363,43 @@ lastY==parseInt(pointer.pageY);
 });
 
   
-               function throttle(func, wait) {
-      var context, args, result;      var timeout = null;      var previous = 0;
-      var later = function() {
-        previous = new Date;
-        timeout = null;
-        result = func.apply(context, args);
-      };
-      return function() {
-        var now = new Date;
-        if (!previous) previous = now;
-        var remaining = wait - (now - previous);
-        context = this;
-        args = arguments;
-        if (remaining <= 0) {
-          clearTimeout(timeout);
-          timeout = null;
-          previous = now;
-          result = func.apply(context, args);
-        } else if (!timeout) {
-          timeout = setTimeout(later, remaining);
+     var IsDuplicateScrollEvent = 0;
+ 
+        $(document).ready(function () {
+            SetupGoogleAnalyticsTrackEvents();
+        });
+ 
+        function SetupGoogleAnalyticsTrackEvents()
+        {
+            TrackEventsForMinimumPageScroll();
         }
-        scrollPercent=result;
-        return result;
-      };
-    }
-
-
-    $window.on('scroll.scrollDepth', throttle(function() {
-      var docHeight = $(document).height(),
-        winHeight = window.innerHeight ? window.innerHeight : $window.height(),
-        scrollDistance = $window.scrollTop() + winHeight,
-        marks = calculateMarks(docHeight),
-        timing = +new Date - startTime;
-        
-      if (cache.length >= 4 + options.elements.length) {
-        $window.off('scroll.scrollDepth');
-        return;
-      }
-
-      if (options.elements) {
-        checkElements(options.elements, scrollDistance, timing);
-      }
-
-      if (options.percentage) {        
-        checkMarks(marks, scrollDistance, timing);
-      }
-    }, 500));
+ 
+        function TrackEventsForMinimumPageScroll()
+        {
+           $(window).scroll(function(){
+           scrollPercent = GetScrollPercent();
+            
+             if(scrollPercent > 90)
+             {
+               if(IsDuplicateScrollEvent == 0)
+               { 
+                 IsDuplicateScrollEvent = 1;
+//             
+       
+               }
+             }
+           }); 
+        }
+ 
+        function GetScrollPercent()
+        {
+             var bottom = $(window).height() + $(window).scrollTop();
+             var height = $(document).height();
+ 
+             return Math.round(100*bottom/height);
+        }
+                                 
+  
 
   
 
