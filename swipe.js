@@ -364,9 +364,7 @@ lastY==parseInt(pointer.pageY);
 
   
                function throttle(func, wait) {
-      var context, args, result;
-      var timeout = null;
-      var previous = 0;
+      var context, args, result;      var timeout = null;      var previous = 0;
       var later = function() {
         previous = new Date;
         timeout = null;
@@ -391,9 +389,6 @@ lastY==parseInt(pointer.pageY);
       };
     }
 
-    /*
-     * Scroll Event
-     */
 
     $window.on('scroll.scrollDepth', throttle(function() {
       var docHeight = $(document).height(),
@@ -416,10 +411,7 @@ lastY==parseInt(pointer.pageY);
       }
     }, 500));
 
-  };
-
-})( jQuery, window, document );
-jQuery.scrollDepth();
+  
 
 
 var onBeforeUnLoadEvent = false;
