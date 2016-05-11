@@ -425,5 +425,11 @@ _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||
 done=1;
 } });
 
+window.addEventListener("unload", function(e) {
+if(done!=1){
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
+done=1;
+} });
+
 		 
 });
