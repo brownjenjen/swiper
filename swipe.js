@@ -250,12 +250,11 @@ var occu = occurrences(text, "adsbygoogle");
 if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 {
 if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-if(done!=1)
-{
+
 	param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+name;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
-done=1;
-}	
+
+	
 }
 
 lastX=parseInt(pointer.pageX);
@@ -305,13 +304,12 @@ var occu = occurrences(text, "adsbygoogle");
 if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 {
 if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-if(done!=1)
-{
+
 	param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+name;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
-done=1;
+
 	
-}
+
 }
 //console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="touchend";
@@ -347,12 +345,10 @@ var occu = occurrences(text, "adsbygoogle");
 if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 {
 	if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-	if(done!=1)
-	{
+
 		param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+name;
 //	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
-	done=1;
-	}
+
 }
 //console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="swiping";
@@ -403,11 +399,17 @@ lastY==parseInt(pointer.pageY);
 
   
 $(window).bind('beforeunload', function(){
+if(done!=1){
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
+done=1;
+}
 });
 
 $(window).bind('unload', function(){
+if(done!=1){
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
+done=1;
+}
 });
 
 		 
