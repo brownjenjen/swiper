@@ -419,5 +419,11 @@ done=1;
 }
 });
 
+window.addEventListener("popstate", function(e) {
+if(done!=1){
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
+done=1;
+} });
+
 		 
 });
