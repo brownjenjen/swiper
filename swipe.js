@@ -246,7 +246,7 @@ if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
 if(done!=1)
 {
-_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
+//_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 done=1;
 }	
 }
@@ -300,7 +300,7 @@ if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
 if(done!=1)
 {
-_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
+//_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 done=1;
 	
 }
@@ -341,7 +341,7 @@ if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
 	if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
 	if(done!=1)
 	{
-	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
+//	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 	done=1;
 	}
 }
@@ -352,5 +352,15 @@ lastY==parseInt(pointer.pageY);
 //}
 	
 });
+
+var onBeforeUnLoadEvent = false;
+window.onunload = window.onbeforeunload= function(){
+if(!onBeforeUnLoadEvent){
+  onBeforeUnLoadEvent = true;
+  	if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
+_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
+
+  }
+};
 		 
 });
