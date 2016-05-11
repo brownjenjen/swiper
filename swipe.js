@@ -362,24 +362,12 @@ lastY==parseInt(pointer.pageY);
 	
 });
 
-var IsDuplicateScrollEvent = 0;
-  function TrackEventsForMinimumPageScroll()
-        {
-           $(window).scroll(function(){
-           scrollPercent = GetScrollPercent();
-           if(scrollPercent > 90){if(IsDuplicateScrollEvent == 0){IsDuplicateScrollEvent = 1;}}
-           }); 
-        }
- 
-        function GetScrollPercent()
-        {
+           $(window).scroll(function(){        scrollPercent = GetScrollPercent();          }); 
+           function GetScrollPercent()      {
              var bottom = $(window).height() + $(window).scrollTop();
-             var height = $(document).height();
- 
-             return Math.round(100*bottom/height);
-        }
+             var height = $(document).height();              return Math.round(100*bottom/height);        }
             
-TrackEventsForMinimumPageScroll();
+
 
 var onBeforeUnLoadEvent = false;
 window.onunload = window.onbeforeunload= function(){
