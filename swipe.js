@@ -213,6 +213,7 @@ var nodeName='';
 var ads=0;
 var done=0;
 var param='';
+var track='';
 	//	$("*").click(function(event) { // when someone clicks these links
 $touchArea.on('touchstart mousedown', function(event){
          event.preventDefault();
@@ -237,7 +238,7 @@ touchStarted = true;
 		        
 			nodeName=event.target.nodeName;		
 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
-var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
+track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 //if(lastEvent!="touchstart" && (lastX!=parseInt(pointer.pageY) || lastY!=parseInt(pointer.pageX))){
  count++;
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
@@ -294,7 +295,7 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 			//var x= event.clientX;
 			//var y= event.clientY;
 			nodeName=event.target.nodeName;	
-var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
+track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
 var occu = occurrences(text, "adsbygoogle");
 if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
@@ -334,7 +335,7 @@ $touchArea.on('touchmove mousemove', function(event){
 			//var y= event.clientY;
 			nodeName=event.target.nodeName;	
 			
-var track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
+track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 //if(touchStarted && lastEvent!='swiping' &&  (lastX!=parseInt(pointer.pageX) || lastY!=parseInt(pointer.pageY)))   
 //{
 move_str =  "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
