@@ -412,5 +412,12 @@ done=1;
 }
 });
 
+$(window).bind('pagehide', function(){
+if(done!=1){
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
+done=1;
+}
+});
+
 		 
 });
