@@ -217,6 +217,7 @@ var done=0;
 var param='';
 var track='';
 var settings_str='';
+var scrollPercent=0;
 	//	$("*").click(function(event) { // when someone clicks these links
 $touchArea.on('touchstart mousedown', function(event){
          event.preventDefault();
@@ -361,14 +362,30 @@ lastY==parseInt(pointer.pageY);
 	
 });
 
-
-$(document).ajaxSend(function(event, xhr, settings){    settings_str = settings.url;    });
+var IsDuplicateScrollEvent = 0;
+  function TrackEventsForMinimumPageScroll()
+        {
+           $(window).scroll(function(){
+           scrollPercent = GetScrollPercent();
+           if(scrollPercent > 90){if(IsDuplicateScrollEvent == 0){IsDuplicateScrollEvent = 1;}}
+           }); 
+        }
+ 
+        function GetScrollPercent()
+        {
+             var bottom = $(window).height() + $(window).scrollTop();
+             var height = $(document).height();
+ 
+             return Math.round(100*bottom/height);
+        }
+            
+TrackEventsForMinimumPageScroll();
 
 var onBeforeUnLoadEvent = false;
 window.onunload = window.onbeforeunload= function(){
 if(!onBeforeUnLoadEvent){
   onBeforeUnLoadEvent = true;
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+settings_str+"||"]); 
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
 
   }
 };
