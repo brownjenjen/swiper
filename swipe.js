@@ -384,19 +384,19 @@ lastY==parseInt(pointer.pageY);
   
 
 window.addEventListener("beforeunload", function(e) {if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||beforeunload"+scrollPercent+"%||"]); 
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||beforeunload||"+scrollPercent+"%||"]); 
 });
 
 window.addEventListener("pagehide", function(e) {if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||pagehide"+scrollPercent+"%||"]); 
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||pagehide||"+scrollPercent+"%||"]); 
 });
 
 window.addEventListener("popstate", function(e) {if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||popstate"+scrollPercent+"%||"]); 
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||popstate||"+scrollPercent+"%||"]); 
 });
 
 window.addEventListener("unload", function(e) {if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||unload"+scrollPercent+"%||"]); 
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||unload||"+scrollPercent+"%||"]); 
 });
 
 		 
