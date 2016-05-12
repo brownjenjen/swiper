@@ -246,10 +246,10 @@ track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.lo
 //if(lastEvent!="touchstart" && (lastX!=parseInt(pointer.pageY) || lastY!=parseInt(pointer.pageX))){
  count++;
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
-var occu = occurrences(text, "adsbygoogle");
+//var occu = occurrences(text, "adsbygoogle");
 
-if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+name;
+//if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
+param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+nodeName;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 
 lastX=parseInt(pointer.pageX);
@@ -295,9 +295,9 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 			nodeName=event.target.nodeName;	
 track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
-var occu = occurrences(text, "adsbygoogle");
-if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+name;
+//var occu = occurrences(text, "adsbygoogle");
+//if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
+param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+nodeName;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 
 //console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
@@ -330,9 +330,9 @@ track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.lo
 //if(touchStarted && lastEvent!='swiping' &&  (lastX!=parseInt(pointer.pageX) || lastY!=parseInt(pointer.pageY)))   
 //{
 move_str =  "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
-var occu = occurrences(text, "adsbygoogle");
-if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+name;
+//var occu = occurrences(text, "adsbygoogle");
+//if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
+param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+nodeName;
 //	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 //console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="swiping";
@@ -384,26 +384,31 @@ lastY==parseInt(pointer.pageY);
   
 
 window.addEventListener("beforeunload", function(e) {
+
 if(done!=1){
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||beforeunload"]); 
+if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||beforeunload"+scrollPercent+"%||"]); 
 done=1;
 } });
 
 window.addEventListener("pagehide", function(e) {
 if(done!=1){
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||pagehide"]); 
+	if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||pagehide"+scrollPercent+"%||"]); 
 done=1;
 } });
 
 window.addEventListener("popstate", function(e) {
 if(done!=1){
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||popstate"]); 
+	if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||popstate"+scrollPercent+"%||"]); 
 done=1;
 } });
 
 window.addEventListener("unload", function(e) {
 if(done!=1){
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||unload"]); 
+	if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||unload"+scrollPercent+"%||"]); 
 done=1;
 } });
 
