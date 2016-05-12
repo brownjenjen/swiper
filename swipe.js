@@ -382,22 +382,38 @@ lastY==parseInt(pointer.pageY);
   
 
   
-if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
+
 
 window.addEventListener("beforeunload", function(e) {
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||beforeunload||"]); 
+if(done!=1){	
+if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||beforeunload||"+scrollPercent+"%"]); 
+done=1;
+}
 });
 
 window.addEventListener("pagehide", function(e) {
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||pagehide||"]); 
+	if(done!=1){	
+if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||pagehide||"+scrollPercent+"%"]); 
+done=1;
+}
 });
 
 window.addEventListener("popstate", function(e) {
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||popstate||"]); 
+	if(done!=1){	
+if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||popstate||"+scrollPercent+"%"]); 
+done=1;
+}
 });
 
 window.addEventListener("unload", function(e) {
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||unload||"]); 
+	if(done!=1){	
+if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||unload||"+scrollPercent+"%"]); 
+done=1;
+}
 });
 
 		 
