@@ -247,15 +247,10 @@ track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.lo
  count++;
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
 var occu = occurrences(text, "adsbygoogle");
-if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
-{
+
 if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-
-	param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+name;
+param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+name;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
-
-	
-}
 
 lastX=parseInt(pointer.pageX);
 lastY=parseInt(pointer.pageY);
@@ -301,16 +296,10 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 move_str = "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
 var occu = occurrences(text, "adsbygoogle");
-if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
-{
 if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-
-	param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+name;
+param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+name;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 
-	
-
-}
 //console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="touchend";
 	
@@ -342,14 +331,9 @@ track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.lo
 //{
 move_str =  "["+count+"] |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
 var occu = occurrences(text, "adsbygoogle");
-if(nodeName=='INS' || (text.indexOf("adsbygoogle") !=-1) )
-{
-	if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-
-		param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+name;
+if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
+param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+name;
 //	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
-
-}
 //console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="swiping";
 lastX=parseInt(pointer.pageX);
@@ -398,36 +382,28 @@ lastY==parseInt(pointer.pageY);
   
 
   
-$(window).bind('beforeunload', function(){
-if(done!=1){
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
-done=1;
-}
-});
 
-$(window).bind('unload', function(){
+window.addEventListener("beforeunload", function(e) {
 if(done!=1){
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||beforeunload"]); 
 done=1;
-}
-});
+} });
 
-$(window).bind('pagehide', function(){
+window.addEventListener("pagehide", function(e) {
 if(done!=1){
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||pagehide"]); 
 done=1;
-}
-});
+} });
 
 window.addEventListener("popstate", function(e) {
 if(done!=1){
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||popstate"]); 
 done=1;
 } });
 
 window.addEventListener("unload", function(e) {
 if(done!=1){
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||"]); 
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||"+scrollPercent+"%||unload"]); 
 done=1;
 } });
 
