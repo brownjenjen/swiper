@@ -383,34 +383,21 @@ lastY==parseInt(pointer.pageY);
 
   
 
-window.addEventListener("beforeunload", function(e) {
-
-if(done!=1){
-if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
+window.addEventListener("beforeunload", function(e) {if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||beforeunload"+scrollPercent+"%||"]); 
-done=1;
-} });
+});
 
-window.addEventListener("pagehide", function(e) {
-if(done!=1){
-	if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
+window.addEventListener("pagehide", function(e) {if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||pagehide"+scrollPercent+"%||"]); 
-done=1;
-} });
+});
 
-window.addEventListener("popstate", function(e) {
-if(done!=1){
-	if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
+window.addEventListener("popstate", function(e) {if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||popstate"+scrollPercent+"%||"]); 
-done=1;
-} });
+});
 
-window.addEventListener("unload", function(e) {
-if(done!=1){
-	if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
+window.addEventListener("unload", function(e) {if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||unload"+scrollPercent+"%||"]); 
-done=1;
-} });
+});
 
 		 
 });
