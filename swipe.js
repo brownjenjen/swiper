@@ -305,7 +305,7 @@ lastEvent="touchend";
 	
 });
 
-
+/*
 $touchArea.on('touchmove mousemove', function(event){
          event.preventDefault();
          event.stopPropagation();
@@ -341,7 +341,7 @@ lastY==parseInt(pointer.pageY);
 //}
 	
 });
-
+*/
   
      var IsDuplicateScrollEvent = 0;
  
