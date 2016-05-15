@@ -237,6 +237,8 @@ touchStarted = true;
 			var type = event.type;
 			var width = $(document).width();
 			var height = $(document).height();
+			var classy = $(this).attr("class");
+			var idy =  = $(this).attr("id");
 			//var x= event.clientX;
 			//var y= event.clientY;
 		        
@@ -245,7 +247,7 @@ if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 //if(lastEvent!="touchstart" && (lastX!=parseInt(pointer.pageY) || lastY!=parseInt(pointer.pageX))){
  count++;
-move_str = "["+count+"] "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
+move_str = "["+count+"] "+classy+" "+idy+" "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
 //var occu = occurrences(text, "adsbygoogle");
 
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
@@ -290,11 +292,13 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 			var type = event.type;
 			var width = $(document).width();
 			var height = $(document).height();
+					var classy = $(this).attr("class");
+			var idy =  = $(this).attr("id");
 			//var x= event.clientX;
 			//var y= event.clientY;
 			nodeName=event.target.nodeName;	
 track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-move_str = "["+count+"] "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
+move_str = "["+count+"] "+classy+" "+idy+" "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
 //var occu = occurrences(text, "adsbygoogle");
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
 param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+nodeName;
