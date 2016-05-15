@@ -292,8 +292,8 @@ var uniqueContextPath = [];
         }
 
         var contextSelector = $(uniqueContextPath).map(function() { return getSelectorFromComponents(this); }).get().join(' ');
-        console.log( contextSelector );
-        console.log( $(contextSelector).length );
+       // console.log( contextSelector );
+       // console.log( $(contextSelector).length );
         $target.addClass(selectedTag);
 
 /* */		
@@ -301,11 +301,11 @@ if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 //if(lastEvent!="touchstart" && (lastX!=parseInt(pointer.pageY) || lastY!=parseInt(pointer.pageX))){
  count++;
-move_str = "["+count+"] "+contextSelector+" "+scrollPercent+"% "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
+move_str = "["+count+"] "+contextSelector+" "+scrollPercent+"% |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
 //var occu = occurrences(text, "adsbygoogle");
 
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
+param=window.location.href+"|"+document.referrer"|"+screen.width+"|"+screen.height+"|"+contextSelector;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 
 lastX=parseInt(pointer.pageX);
@@ -317,8 +317,8 @@ lastY=parseInt(pointer.pageY);
 //_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
 setTimeout(function (){
 if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
-param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+contextSelector;	
-move_str ="["+count+"] "+contextSelector+" "+scrollPercent+"% "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
+param=window.location.href+"|"+document.referrer"|"+screen.width+"|"+screen.height+"|"+contextSelector;	
+move_str ="["+count+"] "+contextSelector+" "+scrollPercent+"% |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
    //console.log("tap|"+pointer.pageX+"|"+pointer.pageY);
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
  lastEvent="tap";
@@ -378,8 +378,8 @@ var uniqueContextPath = [];
         }
 
         var contextSelector = $(uniqueContextPath).map(function() { return getSelectorFromComponents(this); }).get().join(' ');
-        console.log( contextSelector );
-        console.log( $(contextSelector).length );
+      //  console.log( contextSelector );
+      //  console.log( $(contextSelector).length );
         $target.addClass(selectedTag);
 
 /* */
@@ -389,10 +389,10 @@ var uniqueContextPath = [];
 			//var y= event.clientY;
 			nodeName=event.target.nodeName;	
 track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-move_str = "["+count+"] "+contextSelector+" "+scrollPercent+"% "+" "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
+move_str = "["+count+"] "+contextSelector+" "+scrollPercent+"% |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
 //var occu = occurrences(text, "adsbygoogle");
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
+param=window.location.href+"|"+document.referrer"|"+screen.width+"|"+screen.height+"|"+contextSelector;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 
 //console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
@@ -451,8 +451,8 @@ var uniqueContextPath = [];
         }
 
         var contextSelector = $(uniqueContextPath).map(function() { return getSelectorFromComponents(this); }).get().join(' ');
-        console.log( contextSelector );
-        console.log( $(contextSelector).length );
+       // console.log( contextSelector );
+      //  console.log( $(contextSelector).length );
         $target.addClass(selectedTag);
 
 /* */	
@@ -460,10 +460,10 @@ var uniqueContextPath = [];
 track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 //if(touchStarted && lastEvent!='swiping' &&  (lastX!=parseInt(pointer.pageX) || lastY!=parseInt(pointer.pageY)))   
 //{
-move_str =  "["+count+"] "+contextSelector+" "+scrollPercent+"% "+" "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
+move_str =  "["+count+"] "+contextSelector+" "+scrollPercent+"% " |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
 //var occu = occurrences(text, "adsbygoogle");
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
+param=window.location.href+"|"+document.referrer"|"+screen.width+"|"+screen.height+"|"+contextSelector;
 //	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 //console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="swiping";
