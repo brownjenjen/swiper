@@ -301,11 +301,11 @@ if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 //if(lastEvent!="touchstart" && (lastX!=parseInt(pointer.pageY) || lastY!=parseInt(pointer.pageX))){
  count++;
-move_str = "["+count+"] "+contextSelector+" "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
+move_str = "["+count+"] "+scrollPercent+"% "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
 //var occu = occurrences(text, "adsbygoogle");
 
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+nodeName;
+param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 
 lastX=parseInt(pointer.pageX);
@@ -317,7 +317,7 @@ lastY=parseInt(pointer.pageY);
 //_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
 setTimeout(function (){
 if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
-move_str ="["+count+"] "+contextSelector+" "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
+move_str ="["+count+"] "+scrollPercent+"% "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
    //console.log("tap|"+pointer.pageX+"|"+pointer.pageY);
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
  lastEvent="tap";
@@ -388,10 +388,10 @@ var uniqueContextPath = [];
 			//var y= event.clientY;
 			nodeName=event.target.nodeName;	
 track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
-move_str = "["+count+"] "+contextSelector+" "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
+move_str = "["+count+"] "+scrollPercent+"% "+" "+document.referrer+" |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
 //var occu = occurrences(text, "adsbygoogle");
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+nodeName;
+param=window.location.href+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 
 //console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
@@ -480,7 +480,6 @@ lastY==parseInt(pointer.pageY);
 
 window.addEventListener("beforeunload", function(e) {
 if(done!=1){	
-if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||beforeunload||"+scrollPercent+"%"]); 
 done=1;
 }
@@ -488,7 +487,6 @@ done=1;
 
 window.addEventListener("pagehide", function(e) {
 	if(done!=1){	
-if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||pagehide||"+scrollPercent+"%"]); 
 done=1;
 }
@@ -496,7 +494,6 @@ done=1;
 
 window.addEventListener("popstate", function(e) {
 	if(done!=1){	
-if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||popstate||"+scrollPercent+"%"]); 
 done=1;
 }
@@ -504,7 +501,6 @@ done=1;
 
 window.addEventListener("unload", function(e) {
 	if(done!=1){	
-if(scrollPercent>0){param=param+"|"+scrollPercent+"%";}
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||unload||"+scrollPercent+"%"]); 
 done=1;
 }
