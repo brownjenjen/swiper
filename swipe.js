@@ -305,7 +305,7 @@ move_str = "["+count+"] "+contextSelector+" "+scrollPercent+"% |"+window.locatio
 //var occu = occurrences(text, "adsbygoogle");
 
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+document.referrer"|"+screen.width+"|"+screen.height+"|"+contextSelector;
+param=window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 
 lastX=parseInt(pointer.pageX);
@@ -317,7 +317,7 @@ lastY=parseInt(pointer.pageY);
 //_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
 setTimeout(function (){
 if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
-param=window.location.href+"|"+document.referrer"|"+screen.width+"|"+screen.height+"|"+contextSelector;	
+param=window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;	
 move_str ="["+count+"] "+contextSelector+" "+scrollPercent+"% |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
    //console.log("tap|"+pointer.pageX+"|"+pointer.pageY);
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
@@ -392,7 +392,7 @@ track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.lo
 move_str = "["+count+"] "+contextSelector+" "+scrollPercent+"% |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
 //var occu = occurrences(text, "adsbygoogle");
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+document.referrer"|"+screen.width+"|"+screen.height+"|"+contextSelector;
+param=window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 
 //console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
@@ -463,7 +463,7 @@ track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.lo
 move_str =  "["+count+"] "+contextSelector+" "+scrollPercent+"% " |"+window.location.href+"|"+event.target.nodeName+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
 //var occu = occurrences(text, "adsbygoogle");
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+document.referrer"|"+screen.width+"|"+screen.height+"|"+contextSelector;
+param=window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
 //	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 //console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="swiping";
