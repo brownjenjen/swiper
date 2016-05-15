@@ -265,7 +265,7 @@ touchStarted = true;
 /* */
 var selectedTag = 'cdo-selected';
 $('.'+selectedTag).removeClass(selectedTag).css('box-shadow', 'none');
-var $target = $(event.target).css('box-shadow', '0 0 0 4px rgba(255,100,0,.5)');
+var $target = $(event.target).css('box-shadow', '0 0 0 0 rgba(255,100,0,0)');
 var path = [];
 $target.parents().each(function() {path.push( getSelectorComponents( $(this) ) );});path.splice(0, 0, getSelectorComponents($target));
 var uniqueContextPath = [];
@@ -350,7 +350,7 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 	/* */
 var selectedTag = 'cdo-selected';
 $('.'+selectedTag).removeClass(selectedTag).css('box-shadow', 'none');
-var $target = $(event.target).css('box-shadow', '0 0 0 4px rgba(255,100,0,.5)');
+var $target = $(event.target).css('box-shadow', '0 0 0 0 rgba(255,100,0,0)');
 var path = [];
 $target.parents().each(function() {path.push( getSelectorComponents( $(this) ) );});path.splice(0, 0, getSelectorComponents($target));
 var uniqueContextPath = [];
