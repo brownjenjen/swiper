@@ -238,7 +238,7 @@ touchStarted = true;
 			var width = $(document).width();
 			var height = $(document).height();
 			var classy = $(this).attr("class");
-			var idy =  = $(this).attr("id");
+			var idy  = $(this).attr("id");
 			//var x= event.clientX;
 			//var y= event.clientY;
 		        
@@ -292,8 +292,8 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 			var type = event.type;
 			var width = $(document).width();
 			var height = $(document).height();
-					var classy = $(this).attr("class");
-			var idy =  = $(this).attr("id");
+			var classy = $(this).attr("class");
+			var idy  = $(this).attr("id");
 			//var x= event.clientX;
 			//var y= event.clientY;
 			nodeName=event.target.nodeName;	
