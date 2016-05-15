@@ -218,6 +218,9 @@ var param='';
 var track='';
 var settings_str='';
 var scrollPercent=0;
+var classy='';
+var idy='';
+
 	//	$("*").click(function(event) { // when someone clicks these links
 $touchArea.on('touchstart mousedown', function(event){
          event.preventDefault();
@@ -237,12 +240,14 @@ touchStarted = true;
 			var type = event.type;
 			var width = $(document).width();
 			var height = $(document).height();
-			var classy = $(this).attr("class");
-			var idy  = $(this).attr("id");
 			//var x= event.clientX;
 			//var y= event.clientY;
 		        
-			nodeName=event.target.nodeName;		
+			nodeName=event.target.nodeName;	
+			classy = event.target.className;	
+			idy  = event.target.id;	
+			
+			
 if ( last ) {diff = event.timeStamp - last;}else{diff = event.timeStamp;}
 track = title+'|'+term+'|'+time+'|'+event.target.nodeName+'|'+href+'|'+window.location.href+'|'+tag+'|'+document.referrer+'|'+ua+'|';
 //if(lastEvent!="touchstart" && (lastX!=parseInt(pointer.pageY) || lastY!=parseInt(pointer.pageX))){
@@ -292,8 +297,8 @@ $touchArea.on('touchend mouseup touchcancel', function(event){
 			var type = event.type;
 			var width = $(document).width();
 			var height = $(document).height();
-			var classy = $(this).attr("class");
-			var idy  = $(this).attr("id");
+			classy = event.target.className;	
+			idy  = event.target.id;	
 			//var x= event.clientX;
 			//var y= event.clientY;
 			nodeName=event.target.nodeName;	
