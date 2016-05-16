@@ -321,11 +321,13 @@ if(pointer.pageY>ad_min[2] && pointer.pageY<ad_max[2]){ads=2;}
 
 if(ads!=-1)
 {
-move_str = "INS"+ ads+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
+move_str = "INS"+ ads+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
+param="INS"+ ads+"|"+window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||TOUCHSTART||"+scrollPercent+"%"]); 	
 }
 //var occu = occurrences(text, "adsbygoogle");
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
+
 
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 
@@ -341,10 +343,12 @@ lastY=parseInt(pointer.pageY);
 setTimeout(function (){
 if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
 
-param=window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;	
+
 if(ads!=-1)
 {
-move_str = "INS"+ ads+" ["+scrollPercent+"%] "+scrollPercent+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
+move_str = "INS"+ ads+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+scrollPercent+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
+param="INS"+ ads+"|"+window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;	
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||TAP||"+scrollPercent+"%"]); 
 }
 //console.log("tap|"+pointer.pageX+"|"+pointer.pageY);
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
@@ -425,11 +429,12 @@ track = title+'|'+term+'|'+time+'|'+contextSelector+'|'+href+'|'+window.location
 
 if(ads!=-1)
 {
-move_str = "INS"+ ads+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
+move_str ="INS"+ ads+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
+param="INS"+ ads+"|"+window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||TOUCHEND||"+scrollPercent+"%"]); 
 }
 //var occu = occurrences(text, "adsbygoogle");
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 
 //console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
@@ -504,11 +509,13 @@ if(pointer.pageY>ad_min[1] && pointer.pageY<ad_max[1]){ads=1;}
 if(pointer.pageY>ad_min[2] && pointer.pageY<ad_max[2]){ads=2;}
 if(ads!=-1)
 {
-move_str = "INS"+ ads+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
+move_str = "INS"+ ads+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
+param="INS"+ ads+"|"+window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
+_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||SWIPING||"+scrollPercent+"%"]); 	
 }
 //var occu = occurrences(text, "adsbygoogle");
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
-param=window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
+
 //	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 //console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="swiping";
@@ -559,7 +566,7 @@ lastY==parseInt(pointer.pageY);
 
   
 
-
+/*
 window.addEventListener("beforeunload", function(event) {
 if(done!=1){	
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||beforeunload||"+scrollPercent+"%"]); 
@@ -587,6 +594,6 @@ _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||unload||"+scrollPerc
 done=1;
 }
 });
-
+*/
 		 
 });
