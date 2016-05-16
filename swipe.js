@@ -245,7 +245,7 @@ var touchStarted = false,    currX = 0,    currY = 0,    cachedX = 0,    cachedY
 var lastX=0;var lastY=0;
 var move_str='';
 var nodeName='';
-var ads='-1';
+var ads=-1;
 var done=0;
 var param='';
 var track='';
@@ -353,11 +353,12 @@ _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||TAP||"+scrollPercent
 //console.log("tap|"+pointer.pageX+"|"+pointer.pageY);
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
  lastEvent="tap";
+ 
 	
 }
     },200);
 
-	
+ads=-1;	
 });
 
 
@@ -439,7 +440,7 @@ _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||TOUCHEND||"+scrollPe
 
 //console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="touchend";
-	
+	ads=-1;
 });
 
 
@@ -521,6 +522,7 @@ _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||SWIPING||"+scrollPer
 lastEvent="swiping";
 lastX=parseInt(pointer.pageX);
 lastY==parseInt(pointer.pageY);
+ads=-1;
 //}
 	
 });
