@@ -512,7 +512,7 @@ if(ads!=-1)
 {
 move_str = "INS"+ ads+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Swiping|"+event.type+"|," + move_str;
 param="INS"+ ads+"|"+window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
-_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||SWIPING||"+scrollPercent+"%"]); 	
+//_gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||SWIPING||"+scrollPercent+"%"]); 	
 }
 //var occu = occurrences(text, "adsbygoogle");
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
