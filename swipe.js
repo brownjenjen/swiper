@@ -178,12 +178,14 @@ $(document).ready(function() {
 	
 var ad_min=[];
 var ad_max=[];
+var ad_height=[];
 for(var i=0;i<3;i++){ 
 var ad = $('.adsbygoogle').eq(i);
 var position= ad.position();
 var offset= ad.offset();   /*console.log(position);*/
 ad_min[i]=offset.top;
 ad_max[i]=offset.top+ad.height();
+ad_height[i]=ad.height();
 console.log(offset.top+" "+ad.height());
 }
 
@@ -321,7 +323,7 @@ if(pointer.pageY>ad_min[2] && pointer.pageY<ad_max[2]){ads=2;}
 
 if(ads!=-1)
 {
-move_str = "INS"+ ads+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
+move_str = "INS"+ ads+" "+ad_height[ads]+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
 param="INS"+ ads+"|"+window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||TOUCHSTART||"+scrollPercent+"%"]); 	
 }
@@ -346,7 +348,7 @@ if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
 
 if(ads!=-1)
 {
-move_str = "INS"+ ads+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+scrollPercent+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
+move_str = "INS"+ ads+" "+ad_height[ads]+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+scrollPercent+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
 param="INS"+ ads+"|"+window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;	
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||TAP||"+scrollPercent+"%"]); 
 }
@@ -430,7 +432,7 @@ track = title+'|'+term+'|'+time+'|'+contextSelector+'|'+href+'|'+window.location
 
 if(ads!=-1)
 {
-move_str ="INS"+ ads+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
+move_str ="INS"+ ads+" "+ad_height[ads]+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
 param="INS"+ ads+"|"+window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||TOUCHEND||"+scrollPercent+"%"]); 
 }
