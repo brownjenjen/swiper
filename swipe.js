@@ -323,7 +323,7 @@ if(pointer.pageY>ad_min[2] && pointer.pageY<ad_max[2]){ads=2;}
 
 if(ads!=-1)
 {
-move_str = "INS"+ ads+" "+ad_height[ads]+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
+move_str = "INS"+ ads+" "+ad_height[ads]+" "+parseInt(ad_min[ads])+" "+parseInt(ad_max[ads])+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchstarted|"+event.type+"|,"+move_str;
 param="INS"+ ads+"|"+window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||TOUCHSTART||"+scrollPercent+"%"]); 	
 }
@@ -348,7 +348,7 @@ if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
 
 if(ads!=-1)
 {
-move_str = "INS"+ ads+" "+ad_height[ads]+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+scrollPercent+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
+move_str = "INS"+ ads+" "+ad_height[ads]+" "+parseInt(ad_min[ads])+" "+parseInt(ad_max[ads])+" ["+scrollPercent+"%] "+scrollPercent+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Tap|"+event.type+"|," +move_str;	
 param="INS"+ ads+"|"+window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;	
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||TAP||"+scrollPercent+"%"]); 
 }
@@ -432,7 +432,7 @@ track = title+'|'+term+'|'+time+'|'+contextSelector+'|'+href+'|'+window.location
 
 if(ads!=-1)
 {
-move_str ="INS"+ ads+" "+ad_height[ads]+" "+ad_min[ads]+" "+ad_max[ads]+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
+move_str ="INS"+ ads+" "+ad_height[ads]+" "+parseInt(ad_min[ads])+" "+parseInt(ad_max[ads])+" ["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+contextSelector+"|"+parseInt(pointer.pageX)+"|"+parseInt(pointer.pageY)+"|"+width+"|"+height+"|"+parseInt(event.timeStamp)+"|"+userip+"|Touchended|"+event.type+"|," +move_str;
 param="INS"+ ads+"|"+window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||TOUCHEND||"+scrollPercent+"%"]); 
 }
