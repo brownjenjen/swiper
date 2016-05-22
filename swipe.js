@@ -70,7 +70,7 @@ if(rando=='2')
 if(rando=='3')
 { sites="katherinephilli|josephrusse|waynecampbe|deniserodrigue|louiseturne|phyllissander|gregorytorre|clarencewalke|laurarichardso|karenstewa|alishiasmh|todori";}
 if(rando=='4')
-{sites="jasonpoww|andrewbaile|ronaldevan|markross|fredwa1|barbaraparke|kimberlycoo|annebrow|richardwrigh|deborahbryan|yve11azeanamaria|senkyosakki|henrylong1";}
+{sites="jasonpoww|andrewbaile|markross|fredwa1|barbaraparke|kimberlycoo|annebrow|richardwrigh|deborahbryan|yve11azeanamaria|senkyosakki|henrylong1";}
 if(rando=='5')
 {sites="alankelll|victorpete|frankgree|kevinbenne|nancyhowar|christinabarnes|edwardhil|loribarne|philipja|michaelwarr|janetmoor|judybuutgio|fredperkin";}
 if(rando=='6')
