@@ -62,7 +62,7 @@ var customizeForDevice = function(){
     else {
 var rando = Math.floor((Math.random() * 7) + 0);
 if(rando=='0')
-{ sites="davidroge|paulmartine|jerrypatterso|angelahernande|lauranelso|marilynbennett|carljone|douglasper|benjaminco|briancarte|patrickbak|rubyyoun|marilynbennett";}
+{ sites="davidroge|paulmartine|jerrypatterso|angelahernande|lauranelso|marilynbennett|carljone|douglasper|benjaminco|briancarte|patrickbak|rubyyoun|marilynbennett|marthahal|deborahjon|normaphillip|mildredfost";}
 if(rando=='1')
 { sites="uk24news|teresawatson|cynthiarober|melissajo|judithpatterso|georgecolema|danielhenderso|jeffreyhughe|mariejenki|beverlybutler|rachelsmit|craigcollin|barrosmye";}
 if(rando=='2')
@@ -72,7 +72,7 @@ if(rando=='3')
 if(rando=='4')
 {sites="jasonpoww|andrewbaile|markross|fredwa1|barbaraparke|kimberlycoo|annebrow|richardwrigh|deborahbryan|yve11azeanamaria|senkyosakki|henrylong1";}
 if(rando=='5')
-{sites="alankelll|frankgree|kevinbenne|nancyhowar|loribarne|philipja|janetmoor|judybuutgio|fredperkin";}
+{sites="alankelll|frankgree|kevinbenne|nancyhowar|loribarne|philipja|janetmoor|judybuutgio|fredperkin|lisaflor|carolgonzal|irenewoo|janetparr";}
 if(rando=='6')
 { sites="bobbyharri|nicoleedwar|patriciamitche|loisanderso|tammysco|earlpric|elizabethwillii|joerober|debranelso|dianealexa|cheryldav|sukhianano|susanclarkblr|judyramirez";}
 if(rando=='7')
