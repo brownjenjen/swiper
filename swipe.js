@@ -51,10 +51,10 @@ var customizeForDevice = function(){
 	  mac: ua.match(/(Mac)/)
     };
     if (checker.iphone){
- sites="juliarodrigue|cynthiapeterso|timothyhug|beverlyevan|steveramir|jackjackso|ryansande|gregorydavi|marthakinn|alanwal|jasonwat|alberttayl";
+ sites="juliarodrigue|cynthiapeterso|timothyhug|joanramire|steveramir|jackjackso|ryansande|annierodrigue|marthakinn|alanwal|sharonroge|alberttayl";
     }
 	 else if (checker.ipad){
- sites="anthonyjon|brianalexa|chrislogg|carlosnels|scottwri|carolynsm|tammyaa|walterleee|christinatoo|irenesanc|amypatter|jerrymil";
+ sites="anthonyjon|brianalexa|chrislogg|carlosnels|bonnieharri|carolynsm|jessicaturne|walterleee|christinatoo|irenesanc|amypatter|jerrymil";
     }
     else if (checker.mac){
  sites="nancybakk|rubyscoo|deborahdi|sandrabroo|gloriaall|thoewis|garybutl|angelabenn|toddjohnss";
