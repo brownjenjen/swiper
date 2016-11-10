@@ -64,7 +64,7 @@ var rando = Math.floor((Math.random() * 7) + 0);
 if(rando=='0')
 { sites="gertruderio|paulmartine|claracunningha|angelahernande|lauranelso|anitahoga|alisoncurti|marshafitzgeral|janiceobrie|sandymorg|marciacoo|jeanettefletche|marthahal|deborahjon|normaphillip|mildredfost";}
 if(rando=='1')
-{ sites="katherinemurp|kimberlylewi|paulahernande|phyllisrobinso|janetpar|georgecolema|danielhenderso|gloriamorr|sararober|theresataylo|wandaleee|margaretpric|barrosmye";}
+{ sites="katherinemurp|kimberlylewi|paulahernande|phyllisrobinso|janetpar|georgecolema|danielhenderso|gloriamorr|sararober|theresataylo|wandaleee|margaretpric|barrosmye|jasminehaye";}
 if(rando=='2')
 { sites="josegonzal|jessehernande|adamclar|carolcoope|gloriasanch|susantayl|mariagarcc|samuelmor|kathleenwh|jeremywils|theresabailey|ralphmar";}
 if(rando=='3')
