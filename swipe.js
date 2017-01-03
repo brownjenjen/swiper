@@ -3,7 +3,6 @@
         return match.substring(0,50) + "..."
     });
  }
-
  function occurrences(string, subString, allowOverlapping) {
 
     string += "";
@@ -92,7 +91,7 @@ $.ajax({url:'http://'+linkurl+'.tumblr.com/api/read/json?callback=?',async:true,
 var title_arr=[];
 var arr = [];
 arr =   data;
-//console.log(arr);
+console.log(arr);
 var entryHTML ='';
 var link = '';
 $("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 class='title' style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' >"+arr['tumblelog']['title'].replace(/^(.{25}[^\s]*).*/, "$1")+"</a></h2></div></div>");
@@ -108,7 +107,7 @@ if(title.indexOf("<a") !=-1){title = title.split("<a")[0].replace("<p>","");}
 title = title.replace("<p>","");
 title = title.replace("</p>","");
 }
-//console.log(title);
+console.log(title);
 var link = arr['posts'][i]['url'];
 var categories  = arr['posts'][i]['tags'];
 if(categories){
@@ -212,7 +211,7 @@ var timestamp = Number(new Date());
 user = ip+"|"+country_code+"|"+country_name+"|"+region_code+"|"+region_name+"|"+city+"|"+zip_code+"|"+time_zone+"|"+latitude+"|"+metro_code+"|"+timestamp+"|";
 if(ip!=userip){userip=ip;}
 //_gaq.push(['_trackEvent',ip, user, window.location.href+'|'+document.referrer]); 
-//console.log(ip, user, window.location.href+'|'+document.referrer);
+console.log(ip, user, window.location.href+'|'+document.referrer);
 }});
 
     var getSelectorComponents = function($el) {
@@ -340,7 +339,7 @@ lastX=parseInt(pointer.pageX);
 lastY=parseInt(pointer.pageY);
     last = event.timeStamp;
      lastEvent="touchstart";
-   //console.log("touchstart|"+pointer.pageX+"|"+pointer.pageY);
+   console.log("touchstart|"+pointer.pageX+"|"+pointer.pageY);
 //}
 //_gaq.push(['_trackEvent',window.location.hostname,tag+"|"+parseInt(cachedX)+"|"+parseInt(cachedY)+"|"+width+"("+screen.width+")|"+height+"("+screen.height+")|"+type ,track+"||"+user]); 
 setTimeout(function (){
@@ -353,7 +352,7 @@ move_str = "INS"+ ads+" "+ad_height[ads]+" "+parseInt(ad_min[ads])+" "+parseInt(
 param="INS"+ ads+"|"+window.location.href+"|"+document.referrer+"|"+screen.width+"|"+screen.height+"|"+contextSelector;	
 _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||TAP||"+scrollPercent+"%"]); 
 }
-//console.log("tap|"+pointer.pageX+"|"+pointer.pageY);
+console.log("tap|"+pointer.pageX+"|"+pointer.pageY);
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height,move_str ,track+"||"+user]); 
  lastEvent="tap";
  
@@ -441,7 +440,7 @@ _gaq.push(['_trackEvent',param,move_str ,track+"||"+user+"||TOUCHEND||"+scrollPe
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
 //_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
 
-//console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
+console.log("touchend|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="touchend";
 	ads=-1;
 });
@@ -523,7 +522,7 @@ move_str = "["+scrollPercent+"%] "+percent2+"% |"+window.location.href+"|"+conte
 //if(nodeName=='INS'){var name='INS';} else {var name=occu+'|ADS';}
 
 //	_gaq.push(['_trackEvent',window.location.href+"|"+screen.width+"|"+screen.height+"|"+name,move_str ,track+"||"+user+"||"+occu]); 
-//console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
+console.log("swiping|"+pointer.pageX+"|"+pointer.pageY);
 lastEvent="swiping";
 lastX=parseInt(pointer.pageX);
 lastY==parseInt(pointer.pageY);
