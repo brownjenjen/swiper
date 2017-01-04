@@ -54,7 +54,7 @@ var customizeForDevice = function(){
  sites="juliarodrigue|susanhilll|joreev|joanramire|candicepayn|lesliechandl|fredagilbe|annierodrigue|katherinehenr|belindaburge|sharonroge|alberttayl";
     }
 	 else if (checker.ipad){
- sites="eunicehan|brianalexa|chrislogg|celiaharrin|bonnieharri|florencewilk|jessicaturne|sophierichar|oliviagree|mabelqui|amypatter|ninafra";
+ sites="eunicehan|brianalexa|chrislogg|celiaharrin|bonnieharri|florencewilk|jessicaturne|sophierichar|oliviagree|mabelqui|amypatter";
     }
     else if (checker.mac){
  sites="dellasimo|jenniebelll|dixieston|margaretmarr|josefinajeffers|eunicekell|elisabarke|hattiewes|toddjohnss";
