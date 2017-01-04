@@ -51,30 +51,30 @@ var customizeForDevice = function(){
 	  mac: ua.match(/(Mac)/)
     };
     if (checker.iphone){
- sites="juliarodrigue|susanhilll|joreev|joanramire|candicepayn|lesliechandl|fredagilbe|annierodrigue|katherinehenr|belindaburge|sharonroge|alberttayl";
+ sites="jjuliarodrigue|susanhilll|joreev|joanramire|candicepayn|fredagilbe|annierodrigue|katherinehenr|belindaburge|sharonroge|alberttayl";
     }
 	 else if (checker.ipad){
- sites="eunicehan|brianalexa|chrislogg|celiaharrin|bonnieharri|florencewilk|jessicaturne|sophierichar|oliviagree|mabelqui|amypatter";
+ sites="brianalexa|chrislogg|bonnieharri|jessicaturne|amypatter";
     }
     else if (checker.mac){
- sites="dellasimo|jenniebelll|dixieston|margaretmarr|josefinajeffers|eunicekell|elisabarke|hattiewes|toddjohnss";
+ sites="dellasimo|jenniebelll|dixieston|margaretmarr|josefinajeffers|eunicekell|elisabarke|hattiewes|toddjohnss|marthahal|deborahjon|normaphillip|mildredfost";
     }
     else {
 var rando = Math.floor((Math.random() * 7) + 0);
 if(rando=='0')
-{ sites="eringrant|paulmartine|loriwatkins|angelahernande|lauranelso|jeannewhee|jackielov|mariagreee|susiehuds|loiswat|kellyberr|marthahal|deborahjon|normaphillip|mildredfost";}
+{ sites="eringrant|paulmartine|loriwatkins|angelahernande|lauranelso|jeannewhee|jackielov|mariagreee|susiehuds|loiswat|kellyberr";}
 if(rando=='1')
-{ sites="lynscot|kimberlylewi|paulahernande|phyllisrobinso|janetpar|georgecolema|eleanorbroc|gloriamorr|sararober|theresataylo|wandaleee|margaretpric|barrosmye|jasminehaye";}
+{ sites="kimberlylewi|paulahernande|phyllisrobinso|janetpar|georgecolema|gloriamorr|sararober|theresataylo|wandaleee|margaretpric|jasminehaye";}
 if(rando=='2')
 { sites="josegonzal|jessehernande|adamclar|carolcoope|gloriasanch|susantayl|mariagarcc|samuelmor|kathleenwh|jeremywils|theresabailey|ralphmar";}
 if(rando=='3')
 { sites="katherinephilli|josephrusse|waynecampbe|deniserodrigue|louiseturne|phyllissander|gregorytorre|clarencewalke|laurarichardso|karenstewa|alishiasmh|todori";}
 if(rando=='4')
-{sites="jasonpoww|andrewbaile|markross|fredwa1|barbaraparke|kimberlycoo|annebrow|richardwrigh|deborahbryan|yve11azeanamaria|senkyosakki|henrylong1|rachelfrazie";}
+{sites="jasonpoww|andrewbaile|markross|fredwa1|barbaraparke|kimberlycoo|annebrow|richardwrigh|deborahbryan|yve11azeanamaria|senkyosakki|henrylong1";}
 if(rando=='5')
-{sites="agnesleoo|phyllisveg|lilliangarci|martabenso|alyssacurr|karlawebb|laurietat|fredperkin|lisaflor|gretchenpatric|irenewoo|janetparr";}
+{sites="phyllisveg|lilliangarci|martabenso|alyssacurr|karlawebb|laurietat|fredperkin|lisaflor|gretchenpatric|irenewoo|janetparr";}
 if(rando=='6')
-{ sites="loracann|nicoleedwar|patriciamitche|loisanderso|tammysco|earlpric|elizabethwillii|joerober|debranelso|dianealexa|cheryldav|sukhianano|susanclarkblr|judyramirez";}
+{ sites="loracann|nicoleedwar|patriciamitche|loisanderso|tammysco|earlpric|elizabethwillii|joerober|debranelso|dianealexa|cheryldav|sukhianano|judyramirez";}
 if(rando=='7')
 {sites="iardashe|pamelabake|virgnahall|dianwrd|francesbrooks|coolteresamitchellme|julialewisstuff|bonnieadamsblog|amypetersonlove|awesomejanekellyblog|elizabethmillerposts|coolgloriaperezlove|kathleencoleman|ruthgriffinblog|barbarajonesfan|kellyjohnsonme|megaandreayoung|mariecollinsus|evelynmartinezblog|weroseharrisposts|stephaniegrayme|awesometammywhiteblr|superjanicewoodthings|yoursarahflores|phylliswrightthings|debrasanchez|megabrendaandersonblr|anniehughesme|christinewashington|thedeborahdavis";}
 }
