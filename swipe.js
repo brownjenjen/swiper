@@ -83,11 +83,12 @@ customizeForDevice();
 
 var label_thumb_iphone = function() {
 var entryHTML="";
+	sites="";
 var arr_sites = sites.split("|");
 arr_sites = arr_sites.filter(function(n){ return n != undefined }); 
 var rand = Math.floor((Math.random() * arr_sites.length) + 0);
 var linkurl = arr_sites[rand];
-/*	
+	
 $.ajax({url:'http://'+linkurl+'.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',success: function(data) {
 var title_arr=[];
 var arr = [];
@@ -95,9 +96,9 @@ arr =   data;
 //console.log(arr);
 var entryHTML ='';
 var link = '';
-*/
-//$("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 class='title' style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' >"+arr['tumblelog']['title'].replace(/^(.{25}[^\s]*).*/, "$1")+"</a></h2></div></div>");
-/*
+
+$("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 class='title' style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' >"+arr['tumblelog']['title'].replace(/^(.{25}[^\s]*).*/, "$1")+"</a></h2></div></div>");
+
 //for (var i=0;i< arr['posts'].length;i++)
 for (var i=0;i< arr['posts'].length;i++)		 
 {
@@ -135,12 +136,12 @@ entryHTML +='<div style="padding-bottom: 0px;padding-top:0px;color: #767676;font
 
 title_arr.push(title);
 }
-*/
+
 }
-/*
+
 document.getElementById('iphone').innerHTML =entryHTML;
 }});
-*/
+
 };
 
 //label_thumb_iphone();
@@ -162,7 +163,8 @@ b.params.hashnav&&b.hashnav&&b.hashnav.init(),b.params.a11y&&b.a11y&&b.a11y.init
         spaceBetween: 5,
         loop: true
    	});
-
+*/
+/*
       var cb = function() {
         var l = document.createElement('link'); l.rel = 'stylesheet';
                                    l.href = 'http://www.idangero.us/swiper/dist/css/swiper.css';
@@ -172,8 +174,8 @@ b.params.hashnav&&b.hashnav&&b.hashnav.init(),b.params.a11y&&b.a11y&&b.a11y.init
                                        webkitRequestAnimationFrame || msRequestAnimationFrame;
                                        if (raf) raf(cb);
         else window.addEventListener('load', cb);
-
 */
+
 $(document).ready(function() {
 //_gaq.push(['_trackEvent','Load: '+ linkurl+'|'+document.title+'|'+arr['tumblelog']['name']+'|'+arr['posts'].length, window.location.href]); 
 	//$("*").each(function() {
