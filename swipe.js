@@ -3,6 +3,7 @@
         return match.substring(0,50) + "..."
     });
  }
+
  function occurrences(string, subString, allowOverlapping) {
 
     string += "";
