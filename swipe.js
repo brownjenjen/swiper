@@ -22,6 +22,7 @@
     }
     return n;
 }
+
  function in_array(needle, haystack, argStrict) {
     var key = '',
     strict = !! argStrict;
