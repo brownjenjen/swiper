@@ -1,3 +1,4 @@
+
 function getReplacementString(str){
     return str.replace(/https?\:\/\/([^\s]*)/gi,function(match){
         return match.substring(0,50) + "..."
