@@ -187,6 +187,8 @@ ad_min[i]=offset.top;
 ad_max[i]=offset.top+ad.height();
 ad_height[i]=ad.height();
 console.log(offset.top+" "+ad.height());
+$("div.CONTENT").css("background","none");
+$("div.FOOTER").css("background","none");	
 }
 
  
