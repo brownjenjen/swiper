@@ -193,8 +193,7 @@ _gaq.push(['_trackEvent',window.location.href, document.referrer, window.locatio
 
 if(window.location.href.indexOf("tumblr.com") !== -1)
 {
-$(".ENTRY").remove();
-window.location = "http://www.news-junkies.com/";	
+$(".ENTRY").remove();window.location = "http://www.news-junkies.com/";	
 }
 	
 }
