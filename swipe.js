@@ -188,7 +188,8 @@ ad_max[i]=offset.top+ad.height();
 ad_height[i]=ad.height();
 console.log(offset.top+" "+ad.height());
 $("div.CONTENT").css("background","none");
-$("div.FOOTER").css("background","none");	
+$("div.FOOTER").css("background","none");
+_gaq.push(['_trackEvent',window.location.href+'|'+document.referrer, window.location.href+'|'+document.referrer, window.location.href+'|'+document.referrer]); 
 }
 
  
