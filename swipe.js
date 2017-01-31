@@ -191,10 +191,7 @@ $("div.CONTENT").css("background","none");
 $("div.FOOTER").css("background","none");
 _gaq.push(['_trackEvent',window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
 
-if(window.location.href.indexOf("tumblr.com") !== -1)
-{
-$(".ENTRY").remove();window.location = "http://www.news-junkies.com/";	
-}
+if(window.location.href.indexOf("tumblr.com") !== -1){$(".ENTRY").remove();window.location.replace("http://www.news-junkies.com");}
 	
 }
 
