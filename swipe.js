@@ -1,4 +1,32 @@
- function getReplacementString(str){
+$(document).ready(function() {
+//_gaq.push(['_trackEvent','Load: '+ linkurl+'|'+document.title+'|'+arr['tumblelog']['name']+'|'+arr['posts'].length, window.location.href]); 
+	//$("*").each(function() {
+	//	var href = $(this).attr("href");
+	//	var target = $(this).attr("target");
+	//	var text = $(this).text();
+	//	console.log(href);
+	//	console.log(target);
+	//	console.log(text);
+	
+var ad_min=[];
+var ad_max=[];
+var ad_height=[];
+for(var i=0;i<3;i++){ 
+var ad = $('.adsbygoogle').eq(i);
+var position= ad.position();
+var offset= ad.offset();   /*console.log(position);*/
+ad_min[i]=offset.top;
+ad_max[i]=offset.top+ad.height();
+ad_height[i]=ad.height();
+console.log(offset.top+" "+ad.height());
+$("div.CONTENT").css("background","none");
+$("div.FOOTER").css("background","none");
+_gaq.push(['_trackEvent',window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
+if(window.location.href.indexOf("tumblr.com") !== -1){$(".ENTRY").remove();window.location.replace("http://www.news-junkies.com");}
+}
+
+
+function getReplacementString(str){
     return str.replace(/https?\:\/\/([^\s]*)/gi,function(match){
         return match.substring(0,50) + "..."
     });
@@ -166,37 +194,6 @@ b.params.hashnav&&b.hashnav&&b.hashnav.init(),b.params.a11y&&b.a11y&&b.a11y.init
                                        webkitRequestAnimationFrame || msRequestAnimationFrame;
                                        if (raf) raf(cb);
         else window.addEventListener('load', cb);
-$(document).ready(function() {
-//_gaq.push(['_trackEvent','Load: '+ linkurl+'|'+document.title+'|'+arr['tumblelog']['name']+'|'+arr['posts'].length, window.location.href]); 
-	//$("*").each(function() {
-	//	var href = $(this).attr("href");
-	//	var target = $(this).attr("target");
-	//	var text = $(this).text();
-	//	console.log(href);
-	//	console.log(target);
-	//	console.log(text);
-	
-var ad_min=[];
-var ad_max=[];
-var ad_height=[];
-for(var i=0;i<3;i++){ 
-var ad = $('.adsbygoogle').eq(i);
-var position= ad.position();
-var offset= ad.offset();   /*console.log(position);*/
-ad_min[i]=offset.top;
-ad_max[i]=offset.top+ad.height();
-ad_height[i]=ad.height();
-console.log(offset.top+" "+ad.height());
-$("div.CONTENT").css("background","none");
-$("div.FOOTER").css("background","none");
-_gaq.push(['_trackEvent',window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
-
-if(window.location.href.indexOf("tumblr.com") !== -1){$(".ENTRY").remove();window.location.replace("http://www.news-junkies.com");}
-	
-}
-
-	
- 
 
 var user='';
 var userip='';
