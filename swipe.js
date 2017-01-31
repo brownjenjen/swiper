@@ -7,7 +7,6 @@ $(document).ready(function() {
 	//	console.log(href);
 	//	console.log(target);
 	//	console.log(text);
-	
 var ad_min=[];
 var ad_max=[];
 var ad_height=[];
