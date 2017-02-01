@@ -188,12 +188,12 @@ $("div.CONTENT").css("background","none");
 $("div.FOOTER").css("background","none");
 $(".CAPTION p").css("font-size","24px").css("line-height","26px").css("text-align","center").css("color","#999");
 var woher = '';
+if(document.referrer.indexOf("news.com") !== -1){woher="INT";}	
 if(document.referrer.indexOf("t.co") !== -1){woher="TW";}
 if(document.referrer.indexOf("twitter") !== -1){woher="TW";}
 if(document.referrer.indexOf("facebook") !== -1){woher="FB";}	
 if(document.referrer.indexOf("pinterest") !== -1){woher="PI";}
 if(document.referrer.indexOf("umblr.com") !== -1){woher="TU";}
-if(document.referrer.indexOf("news.com") !== -1){woher="INT";}	
 if(window.location.href.indexOf("tumblr.com") !== -1){woher="EXT";}
 _gaq.push(['_trackEvent',woher+'|'+window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
 woher='';
