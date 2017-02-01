@@ -191,7 +191,8 @@ $("div.CONTENT").css("background","none");
 $("div.FOOTER").css("background","none");
 _gaq.push(['_trackEvent',window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
 if(window.location.href.indexOf("tumblr.com") !== -1){
-	$(".ENTRY").remove();
+	//$(".ENTRY").remove();
+	$("body").remove();
 	_gaq.push(['_trackEvent','EXT|'+window.location.hostname, window.location.href+'|'+document.referrer, window.location.href+'|'+document.referrer]); 
 	//window.location.replace("http://www.news-junkies.com");
 }	
