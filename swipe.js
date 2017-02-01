@@ -194,7 +194,7 @@ $("div.CONTENT").css("background","none");
 $("div.FOOTER").css("background","none");
 $(".CAPTION p").css("font-size","24px").css("line-height","26px").css("text-align","center").css("color","#999");
 var woher = '';
-if(document.referrer.indexOf("//t.co/") !== -1){woher="TW";}
+if(document.referrer.indexOf("t.co") !== -1){woher="TW";}
 if(document.referrer.indexOf("twitter") !== -1){woher="TW";}
 if(document.referrer.indexOf("facebook") !== -1){woher="FB";}	
 if(document.referrer.indexOf("pinterest") !== -1){woher="PI";}		
