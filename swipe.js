@@ -177,7 +177,6 @@ $(document).ready(function() {
 	//	console.log(href);
 	//	console.log(target);
 	//	console.log(text);
-var woher = '';
 var ad_min=[];
 var ad_max=[];
 var ad_height=[];
@@ -194,7 +193,7 @@ console.log(offset.top+" "+ad.height());
 $("div.CONTENT").css("background","none");
 $("div.FOOTER").css("background","none");
 $(".CAPTION p").css("font-size","24px").css("line-height","26px").css("text-align","center").css("color","#999");
-
+var woher = '';
 if(window.location.href.indexOf("//t.co/") !== -1){woher="TW";}
 if(window.location.href.indexOf("twitter") !== -1){woher="TW";}
 if(window.location.href.indexOf("facebook") !== -1){woher="FB";}	
