@@ -177,6 +177,7 @@ $(document).ready(function() {
 	//	console.log(href);
 	//	console.log(target);
 	//	console.log(text);
+var ref = '';
 var ad_min=[];
 var ad_max=[];
 var ad_height=[];
@@ -188,17 +189,22 @@ ad_min[i]=offset.top;
 ad_max[i]=offset.top+ad.height();
 ad_height[i]=ad.height();
 console.log(offset.top+" "+ad.height());
+}
+
 $("div.CONTENT").css("background","none");
 $("div.FOOTER").css("background","none");
 $(".CAPTION p").css("font-size","24px").css("line-height","26px").css("text-align","center").css("color","#999");
-_gaq.push(['_trackEvent',window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
+
+if(window.location.href.indexOf("t.co") !== -1){ref="TW|";}
+if(window.location.href.indexOf("facebook") !== -1){ref="FB|";}	
+if(window.location.href.indexOf("pinterest") !== -1){ref="PI|";}		
+if(window.location.href.indexOf("tumblr.com") !== -1){ref="EXT|";}
+_gaq.push(['_trackEvent',ref+window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
 if(window.location.href.indexOf("tumblr.com") !== -1){
 	//$(".ENTRY").remove();
 	$("body").remove();
-	_gaq.push(['_trackEvent','EXT|'+window.location.hostname, window.location.href+'|'+document.referrer, window.location.href+'|'+document.referrer]); 
 	//window.location.replace("http://www.news-junkies.com");
 }	
-}
 
 	
 var user='';
@@ -220,7 +226,7 @@ var metro_code= location.metro_code;
 var timestamp = Number(new Date());
 user = ip+"|"+country_code+"|"+country_name+"|"+region_code+"|"+region_name+"|"+city+"|"+zip_code+"|"+time_zone+"|"+latitude+"|"+metro_code+"|"+timestamp+"|";
 if(ip!=userip){userip=ip;}
-_gaq.push(['_trackEvent','IP|'+ip, user, window.location.href+'|'+document.referrer]); 
+//_gaq.push(['_trackEvent','IP|'+ip, user, window.location.href+'|'+document.referrer]); 
 //console.log(ip, user, window.location.href+'|'+document.referrer);
 }});
 
