@@ -198,7 +198,7 @@ if(document.referrer.indexOf("t.co") !== -1){woher="TW";}
 if(document.referrer.indexOf("twitter") !== -1){woher="TW";}
 if(document.referrer.indexOf("facebook") !== -1){woher="FB";}	
 if(document.referrer.indexOf("pinterest") !== -1){woher="PI";}
-if(document.referrer.indexOf("tumblr") !== -1){woher="TU";}
+if(document.referrer.indexOf("umblr.com") !== -1){woher="TU";}
 if(window.location.href.indexOf("tumblr.com") !== -1){woher="EXT";}
 _gaq.push(['_trackEvent',woher+'|'+window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
 woher='';
