@@ -196,7 +196,7 @@ $("div.FOOTER").css("background","none");
 $(".CAPTION p").css("font-size","24px").css("line-height","26px").css("text-align","center").css("color","#999");
 
 if(window.location.href.indexOf("t.co") !== -1){woher="TW";}
-if(window.location.href.indexOf("twitter") !== -1){woher="TW-S";}
+if(window.location.href.indexOf("twitter") !== -1){woher="TW";}
 if(window.location.href.indexOf("facebook") !== -1){woher="FB";}	
 if(window.location.href.indexOf("pinterest") !== -1){woher="PI";}		
 if(window.location.href.indexOf("tumblr.com") !== -1){woher="EXT";}
