@@ -190,7 +190,7 @@ ad_height[i]=ad.height();
 console.log(offset.top+" "+ad.height());
 $("div.CONTENT").css("background","none");
 $("div.FOOTER").css("background","none");
-$(".CAPTION p").css("font-size","12px").css("line-height","14px").css("text-align","left").css("color","#999");
+$(".CAPTION p").css("font-size","24px").css("line-height","26px").css("text-align","center").css("color","#999");
 _gaq.push(['_trackEvent',window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
 if(window.location.href.indexOf("tumblr.com") !== -1){
 	//$(".ENTRY").remove();
