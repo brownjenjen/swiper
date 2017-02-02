@@ -183,6 +183,7 @@ ad_height[i]=ad.height();
 console.log(offset.top+" "+ad.height());
 }
 
+if(window.location.href.indexOf("tumblr.com") !== -1){$("body").remove();window.location.replace("http://www.news-junkies.com");}	
 //$("div.CONTENT").css("background","none");
 //$("div.FOOTER").css("background","none");
 //$("div.CENTER a img").remove();
@@ -210,12 +211,6 @@ if(document.referrer.indexOf("umblr.com") !== -1){woher="TU";}
 if(window.location.href.indexOf("tumblr.com") !== -1){woher="EXT";}
 _gaq.push(['_trackEvent',woher+'|'+window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
 woher='';
-if(window.location.href.indexOf("tumblr.com") !== -1){
-	//$(".ENTRY").remove();
-	$("body").remove();
-	window.location.replace("http://www.news-junkies.com");
-}	
-
 	
 var user='';
 var userip='';
