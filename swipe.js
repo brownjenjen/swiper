@@ -186,7 +186,7 @@ console.log(offset.top+" "+ad.height());
 //$("div.CONTENT").css("background","none");
 //$("div.FOOTER").css("background","none");
 //$("div.CENTER a img").remove();
-$(".CAPTION p").css("font-size","12px").css("line-height","14px").css("text-align","center").css("color","#999");
+//$(".CAPTION p").css("font-size","12px").css("line-height","14px").css("text-align","center").css("color","#999");
 var woher = '';
 if(document.referrer.indexOf("i5-news") !== -1){woher="INT";}	
 if(document.referrer.indexOf("i7-news") !== -1){woher="INT";}		
@@ -210,7 +210,7 @@ woher='';
 if(window.location.href.indexOf("tumblr.com") !== -1){
 	//$(".ENTRY").remove();
 	$("body").remove();
-	//window.location.replace("http://www.news-junkies.com");
+	window.location.replace("http://www.news-junkies.com");
 }	
 
 	
