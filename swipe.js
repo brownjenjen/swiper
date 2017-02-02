@@ -183,12 +183,21 @@ ad_height[i]=ad.height();
 console.log(offset.top+" "+ad.height());
 }
 
-$("div.CONTENT").css("background","none");
-$("div.FOOTER").css("background","none");
-$("div.CENTER a img").remove();
-$(".CAPTION p").css("font-size","24px").css("line-height","26px").css("text-align","center").css("color","#999");
+//$("div.CONTENT").css("background","none");
+//$("div.FOOTER").css("background","none");
+//$("div.CENTER a img").remove();
+//$(".CAPTION p").css("font-size","24px").css("line-height","26px").css("text-align","center").css("color","#999");
 var woher = '';
-if(document.referrer.indexOf("news.com") !== -1){woher="INT";}	
+if(document.referrer.indexOf("i5-news") !== -1){woher="INT";}	
+if(document.referrer.indexOf("i7-news") !== -1){woher="INT";}		
+if(document.referrer.indexOf("i9-news") !== -1){woher="INT";}		
+if(document.referrer.indexOf("a6-news") !== -1){woher="INT";}		
+if(document.referrer.indexOf("a8-news") !== -1){woher="INT";}		
+if(document.referrer.indexOf("a10-news") !== -1){woher="INT";}		
+if(document.referrer.indexOf("s6-news") !== -1){woher="INT";}		
+if(document.referrer.indexOf("jkmesh") !== -1){woher="INT";}			
+if(document.referrer.indexOf("news-junkies") !== -1){woher="INT";}		
+	
 if(document.referrer.indexOf("t.co") !== -1){woher="TW";}
 if(document.referrer.indexOf("twitter") !== -1){woher="TW";}
 if(document.referrer.indexOf("facebook") !== -1){woher="FB";}	
