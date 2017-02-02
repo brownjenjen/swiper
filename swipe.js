@@ -199,6 +199,7 @@ if(document.referrer.indexOf("jkmesh") !== -1){woher="INT";}
 if(document.referrer.indexOf("news-junkies") !== -1){woher="INT";}		
 if(document.referrer.indexOf("news897") !== -1){woher="INT";}		
 
+if(document.referrer.indexOf("paper.li") !== -1){woher="PA";}	
 if(document.referrer.indexOf("google") !== -1){woher="GO";}
 if(document.referrer.indexOf("bing") !== -1){woher="BI";}	
 if(document.referrer.indexOf("t.co") !== -1){woher="TW";}
