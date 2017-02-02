@@ -183,9 +183,9 @@ ad_height[i]=ad.height();
 console.log(offset.top+" "+ad.height());
 }
 
-$("div.CONTENT").css("background","none");
-$("div.FOOTER").css("background","none");
-$("div.CENTER a img").remove();
+//$("div.CONTENT").css("background","none");
+//$("div.FOOTER").css("background","none");
+//$("div.CENTER a img").remove();
 $(".CAPTION p").css("font-size","12px").css("line-height","14px").css("text-align","center").css("color","#999");
 var woher = '';
 if(document.referrer.indexOf("i5-news") !== -1){woher="INT";}	
