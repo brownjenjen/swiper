@@ -183,8 +183,9 @@ ad_height[i]=ad.height();
 console.log(offset.top+" "+ad.height());
 }
 
-$("div.CONTENT").css("background","none");
-$("div.FOOTER").css("background","none");
+//$("div.CONTENT").css("background","none");
+//$("div.FOOTER").css("background","none");
+$("div.CENTER a img").remove();
 $(".CAPTION p").css("font-size","24px").css("line-height","26px").css("text-align","center").css("color","#999");
 var woher = '';
 if(document.referrer.indexOf("news.com") !== -1){woher="INT";}	
