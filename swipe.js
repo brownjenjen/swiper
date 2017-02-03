@@ -198,6 +198,7 @@ if(document.referrer.indexOf("a10-news") !== -1){woher="INT";}
 if(document.referrer.indexOf("s6-news") !== -1){woher="INT";}		
 if(document.referrer.indexOf("jkmesh") !== -1){woher="INT";}			
 if(document.referrer.indexOf("news-junkies") !== -1){woher="INT";}		
+if(document.referrer.indexOf("ustravelapp") !== -1){woher="INT";}		
 if(document.referrer.indexOf("news897") !== -1){woher="INT";}		
 
 if(document.referrer.indexOf("yandex") !== -1){woher="YA";}			
