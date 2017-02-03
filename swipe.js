@@ -201,6 +201,7 @@ if(document.referrer.indexOf("news-junkies") !== -1){woher="INT";}
 if(document.referrer.indexOf("ustravelapp") !== -1){woher="INT";}		
 if(document.referrer.indexOf("news897") !== -1){woher="INT";}		
 
+if(document.referrer.indexOf("msn") !== -1){woher="BI";}				
 if(document.referrer.indexOf("yandex") !== -1){woher="YA";}			
 if(document.referrer.indexOf("flipboard") !== -1){woher="FL";}		
 if(document.referrer.indexOf("yahoo") !== -1){woher="YA";}	
