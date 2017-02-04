@@ -162,6 +162,11 @@ var swiper = new Swiper('.swiper-container', {
 
 
 $(document).ready(function() {
+var adheader = document.getElementsByClassName("ad-header")[0];
+if (typeof adheader !== 'undefined'){
+_gaq.push(['_trackEvent','ADS|'+window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
+}	
+	
 if(window.location.hostname.indexOf("tumblr.com") !== -1){
 	//$("body").remove();
 	//window.location.replace("http://www.news-junkies.com");
@@ -224,8 +229,6 @@ if(document.referrer.indexOf("pinterest") !== -1){woher="PI";}
 if(document.referrer.indexOf("umblr.com") !== -1){woher="TU";}
 if(window.location.href.indexOf("tumblr.com") !== -1){woher="EXT";}
 
-var adheader = document.getElementsByClassName("ad-header")[0];
-if (typeof adheader !== 'undefined'){woher="ADS";}	
 	
 _gaq.push(['_trackEvent',woher+'|'+window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
 woher='';
