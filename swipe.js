@@ -221,9 +221,10 @@ if(document.referrer.indexOf("umblr.com") !== -1){woher="TU";}
 if(window.location.href.indexOf("tumblr.com") !== -1){woher="EXT";}
 
 var adheader = document.getElementsByClassName("ad-header")[0];
+if (typeof adheader !== 'undefined'){
 var adheader_inner = adheader.innerHTML;
 if(adheader_inner.indexOf("SPONSORED") !== -1){woher="ADS";}
-	
+}	
 _gaq.push(['_trackEvent',woher+'|'+window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
 woher='';
 	
