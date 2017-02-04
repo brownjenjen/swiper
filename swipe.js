@@ -166,6 +166,8 @@ if(window.location.hostname.indexOf("tumblr.com") !== -1){
 	$("body").remove();
 	window.location.replace("http://www.news-junkies.com");
 }
+	
+	
 //_gaq.push(['_trackEvent','Load: '+ linkurl+'|'+document.title+'|'+arr['tumblelog']['name']+'|'+arr['posts'].length, window.location.href]); 
 	//$("*").each(function() {
 	//	var href = $(this).attr("href");
@@ -187,8 +189,7 @@ ad_height[i]=ad.height();
 console.log(offset.top+" "+ad.height());
 }
 
-	
-//$("div.CONTENT").css("background","none");
+	//$("div.CONTENT").css("background","none");
 //$("div.FOOTER").css("background","none");
 //$("div.CENTER a img").remove();
 //$(".CAPTION p").css("font-size","12px").css("line-height","14px").css("text-align","center").css("color","#999");
@@ -218,6 +219,11 @@ if(document.referrer.indexOf("facebook") !== -1){woher="FB";}
 if(document.referrer.indexOf("pinterest") !== -1){woher="PI";}
 if(document.referrer.indexOf("umblr.com") !== -1){woher="TU";}
 if(window.location.href.indexOf("tumblr.com") !== -1){woher="EXT";}
+
+var adheader = document.getElementsByClassName("ad-header")[0];
+var adheader_inner = adheader.innerHTML;
+if(adheader_inner.indexOf("SPONSORED") !== -1){woher="ADS";}
+	
 _gaq.push(['_trackEvent',woher+'|'+window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
 woher='';
 	
