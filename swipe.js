@@ -168,8 +168,8 @@ _gaq.push(['_trackEvent','ADS|'+window.location.href, document.referrer, window.
 }	
 	
 if(window.location.hostname.indexOf("tumblr.com") !== -1){
-	//$("body").remove();
-	//window.location.replace("http://www.news-junkies.com");
+	$(".POSTS").remove();
+	window.location.replace("http://www.news-junkies.com");
 }
 	
 	
