@@ -163,8 +163,8 @@ var swiper = new Swiper('.swiper-container', {
 
 $(document).ready(function() {
 if(window.location.hostname.indexOf("tumblr.com") !== -1){
-	$("body").remove();
-	window.location.replace("http://www.news-junkies.com");
+	//$("body").remove();
+	//window.location.replace("http://www.news-junkies.com");
 }
 	
 	
