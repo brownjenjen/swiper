@@ -183,10 +183,13 @@ for(var i=0;i<3;i++){
 var ad = $('.adsbygoogle').eq(i);
 var position= ad.position();
 var offset= ad.offset();   /*console.log(position);*/
+if (typeof offset !== 'undefined'){
 ad_min[i]=offset.top;
 ad_max[i]=offset.top+ad.height();
+console.log("top: "+offset.top);
+}
 ad_height[i]=ad.height();
-console.log(offset.top+" "+ad.height());
+console.log("height: "+ad.height());
 }
 
 	//$("div.CONTENT").css("background","none");
