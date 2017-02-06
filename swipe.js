@@ -220,6 +220,7 @@ if(document.referrer.indexOf("yandex") !== -1){woher="YN";}
 if(document.referrer.indexOf("flipboard") !== -1){woher="FL";}		
 if(document.referrer.indexOf("yahoo") !== -1){woher="YA";}	
 if(document.referrer.indexOf("paper.li") !== -1){woher="PA";}	
+if(document.referrer.indexOf("goo.gl") !== -1){woher="GO";}
 if(document.referrer.indexOf("google") !== -1){woher="GO";}
 if(document.referrer.indexOf("bing") !== -1){woher="BI";}	
 if(document.referrer.indexOf("t.co") !== -1){woher="TW";}
