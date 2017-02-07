@@ -241,6 +241,7 @@ woher='';
 var user='';
 var userip='';
 var count=0;
+/*
 $.ajax({ url: '//freegeoip.net/json/',async:true, type: 'POST', dataType: 'jsonp', success: function(location) 
 { 
 var ip = location.ip; 
@@ -260,7 +261,7 @@ if(ip!=userip){userip=ip;}
 //_gaq.push(['_trackEvent','IP|'+ip, user, window.location.href+'|'+document.referrer]); 
 //console.log(ip, user, window.location.href+'|'+document.referrer);
 }});
-
+*/
     var getSelectorComponents = function($el) {
         var components = [];
         
