@@ -72,6 +72,7 @@ if(window.location.href.indexOf("tumblr.com") !== -1){woher="EXT";}
 	
 _gaq.push(['_trackEvent',woher+'|'+window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
 woher='';
+$("script").remove();
 });
 
 
