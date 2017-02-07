@@ -30,7 +30,7 @@ ad_min[i]=offset.top;
 ad_max[i]=offset.top+ad.height();
 ad_height[i]=ad.height();
 console.log(offset.top+" "+ad.height());
-_gaq.push(['_trackEvent',i+'|'+window.location.href, offset.top+' '+ad_height[i], window.location.href+'|'+document.referrer]); 	
+_gaq.push(['_trackEvent',window.location.href,i+' '+offset.top+' '+ad_height[i], window.location.href+'|'+document.referrer]); 	
 }
 
 
