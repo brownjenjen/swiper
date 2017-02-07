@@ -30,7 +30,7 @@ ad_min[i]=offset.top;
 ad_max[i]=offset.top+ad.height();
 ad_height[i]=ad.height();
 console.log(offset.top+" "+ad.height());
-_gaq.push(['_trackEvent',window.location.href,i+' '+offset.top+' '+ad_height[i], window.location.href+'|'+document.referrer]); 	
+//_gaq.push(['_trackEvent',window.location.href,i+' '+offset.top+' '+ad_height[i], window.location.href+'|'+document.referrer]); 	
 }
 
 
@@ -71,7 +71,7 @@ if(document.referrer.indexOf("scoop") !== -1){woher="SC";}
 if(window.location.href.indexOf("tumblr.com") !== -1){woher="EXT";}
 
 	
-_gaq.push(['_trackEvent',woher+'|'+window.location.href, document.referrer, window.location.href+'|'+document.referrer]); 
+_gaq.push(['_trackEvent',woher+'|'+window.location.href,ad_height.toString()+'|'+document.referrer, window.location.href+'|'+document.referrer]); 
 woher='';
 });
 
