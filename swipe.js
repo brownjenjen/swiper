@@ -229,6 +229,7 @@ if(document.referrer.indexOf("facebook") !== -1){woher="FB";}
 if(document.referrer.indexOf("pinterest") !== -1){woher="PI";}
 if(document.referrer.indexOf("umblr.com") !== -1){woher="TU";}
 if(document.referrer.indexOf("linkis") !== -1){woher="LI";}
+if(document.referrer.indexOf("scoop") !== -1){woher="SC";}	
 if(window.location.href.indexOf("tumblr.com") !== -1){woher="EXT";}
 
 	
