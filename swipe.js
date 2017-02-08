@@ -60,17 +60,21 @@ var customizeForDevice = function(){
  sites="dellasimo|dellasimo";
     }
     else {
-var rando = Math.floor((Math.random() * 4) + 0);
+var rando = Math.floor((Math.random() * 6) + 0);
 if(rando=='0')
-{ sites="eringrant|eringrant";}
+{sites="reginamurr|dawnlindse";}
 if(rando=='1')
-{ sites="josegonzal|josegonzal";}
+{sites="dawnlindse|reginamurr";}
 if(rando=='2')
-{sites="phyllisveg|phyllisveg";}
+{sites="josegonzal|phyllisveg";}
 if(rando=='3')
-{ sites="loracann|loracann";}
+{sites="phyllisveg|josegonzal";}
 if(rando=='4')
-{sites="iardashe|iardashe";}
+{ sites="loracann|eringrant";}
+if(rando=='5')
+{ sites="eringrant|loracann";}
+if(rando=='6')
+{sites="iardashe|reginamurr|dawnlindse|josegonzal|phyllisveg|loracann|eringrant";}
 }
 }
 customizeForDevice();
