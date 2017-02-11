@@ -62,9 +62,9 @@ var customizeForDevice = function(){
     else {
 var rando = Math.floor((Math.random() * 6) + 0);
 if(rando=='0')
-{sites="reginamurr|dawnlindse";}
+{sites="marthazimmerma|dawnlindse";}
 if(rando=='1')
-{sites="dawnlindse|reginamurr";}
+{sites="dawnlindse|marthazimmerma";}
 if(rando=='2')
 {sites="josegonzal|phyllisveg";}
 if(rando=='3')
