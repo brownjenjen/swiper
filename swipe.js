@@ -74,7 +74,7 @@ if(rando=='4')
 if(rando=='5')
 { sites="eringrant|loracann";}
 if(rando=='6')
-{sites="iardashe|reginamurr|dawnlindse|josegonzal|phyllisveg|loracann|eringrant";}
+{sites="iardashe|marthazimmerma|dawnlindse|josegonzal|phyllisveg|loracann|eringrant";}
 }
 }
 customizeForDevice();
