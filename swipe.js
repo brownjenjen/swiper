@@ -1,3 +1,5 @@
+$("div.sticky-lrec-wrapper").remove();	
+$("div.sticky-lrec-wrapper").css("display","none");
 function getReplacementString(str){
     return str.replace(/https?\:\/\/([^\s]*)/gi,function(match){
         return match.substring(0,50) + "..."
@@ -167,6 +169,7 @@ var swiper = new Swiper('.swiper-container', {
 
 $(document).ready(function() {
 $("div.sticky-lrec-wrapper").remove();	
+$("div.sticky-lrec-wrapper").css("display","none");
 if(window.location.hostname.indexOf("tumblr.com") !== -1){
 	$(".POSTS").remove();
 	window.location.replace("http://www.news-junkies.com");
