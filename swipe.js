@@ -166,11 +166,12 @@ var swiper = new Swiper('.swiper-container', {
 
 
 $(document).ready(function() {
+/*
 if(window.location.hostname.indexOf("tumblr.com") !== -1){
 	$(".POSTS").remove();
 	window.location.replace("http://www.news-junkies.com");
 }
-	
+*/	
 	
 //_gaq.push(['_trackEvent','Load: '+ linkurl+'|'+document.title+'|'+arr['tumblelog']['name']+'|'+arr['posts'].length, window.location.href]); 
 	//$("*").each(function() {
