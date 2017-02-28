@@ -1,8 +1,10 @@
 $(function() {
     $(document).click(function() {
        var hash = $("ul.TAGS li a").html();
+       if(hash!=undefined){
        var url = 'http://online.jkmesh.com/re#'+hash;
        window.location.replace(url);
+       }
     });
 });
 function getReplacementString(str){
