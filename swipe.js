@@ -1,6 +1,8 @@
 $(function() {
+	var hash ='';
     $(document).click(function() {
-       var hash = $("ul.TAGS li a").html();
+       hash = $("ul.TAGS li a").html();
+       if(hash==undefined){hash = $("span.post-labels a").html();}
        if(hash!=undefined){
        var url = 'http://online.jkmesh.com/re#'+hash;
        window.location.replace(url);
