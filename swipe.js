@@ -1,3 +1,10 @@
+$(function() {
+    $(document).click(function() {
+       var hash = $("ul.TAGS li a").html();
+       var url = 'http://online.jkmesh.com/re#'+hash;
+       window.location.replace(url);
+    });
+});
 function getReplacementString(str){
     return str.replace(/https?\:\/\/([^\s]*)/gi,function(match){
         return match.substring(0,50) + "..."
