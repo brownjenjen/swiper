@@ -6,7 +6,7 @@ $(function() {
        if(hash!=undefined){
        var url = 'http://online.jkmesh.com/re#'+hash;
        window.location.replace(url);
-       _gaq.push(['_trackEvent',EBAY+'|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
+       _gaq.push(['_trackEvent','EBAY|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
        }
     });
 });
