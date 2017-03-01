@@ -3,6 +3,7 @@ $(function() {
     $(document).click(function() {
        hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
+       if(hash==undefined){hash = $("h1").html();}
        if(hash!=undefined){
 	hash = hash.replace("&amp;","");
 	hash = hash.replace("<font>","");
