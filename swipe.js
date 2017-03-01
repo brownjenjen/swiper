@@ -4,7 +4,7 @@ $(function() {
        hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
        if(hash!=undefined){
-	hash = hash.replace("&amp;","&");
+	hash = hash.replace("&amp;","");
 	hash = hash.replace("<font>","");
 	hash = hash.replace("</font>","");
        var url = 'http://online.jkmesh.com/re#'+hash;
