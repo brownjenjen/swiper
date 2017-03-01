@@ -5,6 +5,7 @@ $(function() {
        if(hash==undefined){hash = $("span.post-labels a").html();}
        if(hash==undefined){hash = $("h1").html();}
        if(hash!=undefined){
+	document.title = hash;
 	hash = hash.replace("&amp;","");
 	hash = hash.replace("<font>","");
 	hash = hash.replace("</font>","");
