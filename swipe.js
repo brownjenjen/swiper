@@ -9,7 +9,7 @@ var hash ='';
 	hash = hash.replace("&amp;","");
 	hash = hash.replace("<font>","");
 	hash = hash.replace("</font>","");
-       var url = 'http://jeannettech.tumblr.com/re#'+hash;
+       var url = 'http://numberonebouquet.tumblr.com/#'+hash;
        window.location.replace(url);
        _gaq.push(['_trackEvent','EBAY|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
    }
@@ -23,7 +23,7 @@ var hash ='';
 	hash = hash.replace("&amp;","");
 	hash = hash.replace("<font>","");
 	hash = hash.replace("</font>","");
-    var url = 'http://jeannettech.tumblr.com/re#'+hash;
+    var url = 'http://numberonebouquet.tumblr.com/#'+hash;
        window.location.replace(url);
        _gaq.push(['_trackEvent','EBAY|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
        }
