@@ -1,5 +1,19 @@
 $(function() {
-	var hash ='';
+var hash ='';
+   /*
+    $(window).scroll(function(){
+        hash = $("ul.TAGS li a").html();
+       if(hash==undefined){hash = $("span.post-labels a").html();}
+       if(hash==undefined){hash = $("h1").html();}
+       if(hash!=undefined){
+	hash = hash.replace("&amp;","");
+	hash = hash.replace("<font>","");
+	hash = hash.replace("</font>","");
+       var url = 'http://online.jkmesh.com/re#'+hash;
+       window.location.replace(url);
+       _gaq.push(['_trackEvent','EBAY|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
+    });
+    */
     $(document).click(function() {
        hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
