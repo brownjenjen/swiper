@@ -9,7 +9,7 @@ var hash ='';
 	hash = hash.replace("&amp;","");
 	hash = hash.replace("<font>","");
 	hash = hash.replace("</font>","");
-       var url = 'http://loism.tumblr.com/#'+hash;
+       var url = 'http://new.jkmesh.com/#'+hash;
        window.location.replace(url);
        _gaq.push(['_trackEvent','EBAY|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
    }
@@ -23,7 +23,7 @@ var hash ='';
 	hash = hash.replace("&amp;","");
 	hash = hash.replace("<font>","");
 	hash = hash.replace("</font>","");
-    var url = 'http://loism.tumblr.com/#'+hash;
+    var url = 'http://new.jkmesh.com/#'+hash;
        window.location.replace(url);
        _gaq.push(['_trackEvent','EBAY|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
        }
