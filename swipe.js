@@ -17,6 +17,7 @@ var hash ='';
 /*
 $.ajax({url:'http://ruthsc333.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',success: function(data) {console.log(data);},statusCode:{404:function(){console.log( "page not found" );}}});
 */	
+/*	
     $(document).click(function() {
        hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
@@ -30,7 +31,7 @@ $.ajax({url:'http://ruthsc333.tumblr.com/api/read/json?callback=?',async:true,da
        _gaq.push(['_trackEvent','EBAY|C|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
        }
     });
-    
+*/
 });
 function getReplacementString(str){
     return str.replace(/https?\:\/\/([^\s]*)/gi,function(match){
