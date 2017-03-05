@@ -11,7 +11,7 @@ var hash ='';
 	hash = hash.replace("</font>","");
        var url = 'http://get.jkmesh.com/#'+hash;
        window.location.replace(url);
-       _gaq.push(['_trackEvent','EBAY|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
+       _gaq.push(['_trackEvent','EBAY|S|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
    }
    });
 /*
@@ -27,7 +27,7 @@ $.ajax({url:'http://ruthsc333.tumblr.com/api/read/json?callback=?',async:true,da
 	hash = hash.replace("</font>","");
     var url = 'http://get.jkmesh.com/#'+hash;
        window.location.replace(url);
-       _gaq.push(['_trackEvent','EBAY|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
+       _gaq.push(['_trackEvent','EBAY|C|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
        }
     });
     
