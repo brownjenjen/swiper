@@ -1,14 +1,7 @@
 $(function() {
 var hash ='';
 $.ajax({url:'http://ruthsc.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',statusCode:{
-	404:function(){
-		_gaq.push(['_trackEvent','ruthsc', '404', window.location.href+'|'+document.referrer]); 
-	},202:function(){
-		_gaq.push(['_trackEvent','ruthsc', '202', window.location.href+'|'+document.referrer]); 
-	}
-	
-}
-});
+	404:function(){		_gaq.push(['_trackEvent','ruthsc', '404', window.location.href+'|'+document.referrer]); 	}}});
 $(window).scroll(function(){
         hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
