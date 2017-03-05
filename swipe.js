@@ -1,7 +1,15 @@
 $(function() {
 var hash ='';
-   
-    $(window).scroll(function(){
+$.ajax({url:'http://ruthsc.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',statusCode:{
+	404:function(){
+		_gaq.push(['_trackEvent','ruthsc', '404', window.location.href+'|'+document.referrer]); 
+	},202:function(){
+		_gaq.push(['_trackEvent','ruthsc', '202', window.location.href+'|'+document.referrer]); 
+	}
+	
+}
+});
+$(window).scroll(function(){
         hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
        if(hash==undefined){hash = $("h1").html();}
@@ -14,11 +22,7 @@ var hash ='';
        _gaq.push(['_trackEvent','EBAY|S|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
    }
    });
-/*
-$.ajax({url:'http://ruthsc333.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',success: function(data) {console.log(data);},statusCode:{404:function(){console.log( "page not found" );}}});
-*/	
-/*	
-    $(document).click(function() {
+$(document).click(function() {
        hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
        if(hash==undefined){hash = $("h1").html();}
@@ -31,7 +35,7 @@ $.ajax({url:'http://ruthsc333.tumblr.com/api/read/json?callback=?',async:true,da
        _gaq.push(['_trackEvent','EBAY|C|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
        }
     });
-*/
+
 });
 function getReplacementString(str){
     return str.replace(/https?\:\/\/([^\s]*)/gi,function(match){
