@@ -2,7 +2,7 @@ $(function() {
 var hash ='';
 var cc ='US';
 //$.ajax({url:'http://ruthsc.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',statusCode:{	404:function(){		_gaq.push(['_trackEvent','ruthsc', '404', window.location.href+'|'+document.referrer]); 	}}});
-$.get("http://ip-api.com/json", function(response) {cc =response.countryCode; }, "jsonp");
+//$.get("http://ip-api.com/json", function(response) {cc =response.countryCode; }, "jsonp");
 	$(window).scroll(function(){
         hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
@@ -13,7 +13,7 @@ $.get("http://ip-api.com/json", function(response) {cc =response.countryCode; },
 	hash = hash.replace("</font>","");
        var url = 'http://get.jkmesh.com/#'+hash;
        window.location.replace(url);
-       _gaq.push(['_trackEvent','EBAY|S|'+cc+'|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
+  //     _gaq.push(['_trackEvent','EBAY|S|'+cc+'|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
    }
    });
 $(document).click(function() {
@@ -26,7 +26,7 @@ $(document).click(function() {
 	hash = hash.replace("</font>","");
     var url = 'http://get.jkmesh.com/#'+hash;
        window.location.replace(url);
-       _gaq.push(['_trackEvent','EBAY|C|'+cc+'|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
+    //   _gaq.push(['_trackEvent','EBAY|C|'+cc+'|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
        }
     });
 
