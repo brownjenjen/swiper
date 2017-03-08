@@ -12,7 +12,7 @@ hash = $("ul.TAGS li a").html();
 	hash = hash.replace("&amp;","");
 	hash = hash.replace("<font>","");
 	hash = hash.replace("</font>","");
-       var url = 'http://get.jkmesh.com/#'+hash;
+       var url = 'http://get.jkmesh.com/#'+decodeURI(hash);
        window.location.replace(url);
        }	
 }
