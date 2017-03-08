@@ -30,6 +30,51 @@ $(document).click(function() {
        }
     });
 
+window.addEventListener("beforeunload", function(event) {
+  hash = $("ul.TAGS li a").html();
+       if(hash==undefined){hash = $("span.post-labels a").html();}
+       if(hash==undefined){hash = $("h1").html();}
+       if(hash!=undefined){
+	hash = hash.replace("&amp;","");
+	hash = hash.replace("<font>","");
+	hash = hash.replace("</font>","");
+       var url = 'http://get.jkmesh.com/#'+hash;
+       window.location.replace(url);
+});
+window.addEventListener("pagehide", function(event) {
+  hash = $("ul.TAGS li a").html();
+       if(hash==undefined){hash = $("span.post-labels a").html();}
+       if(hash==undefined){hash = $("h1").html();}
+       if(hash!=undefined){
+	hash = hash.replace("&amp;","");
+	hash = hash.replace("<font>","");
+	hash = hash.replace("</font>","");
+       var url = 'http://get.jkmesh.com/#'+hash;
+       window.location.replace(url);
+});
+window.addEventListener("popstate", function(event) {
+  hash = $("ul.TAGS li a").html();
+       if(hash==undefined){hash = $("span.post-labels a").html();}
+       if(hash==undefined){hash = $("h1").html();}
+       if(hash!=undefined){
+	hash = hash.replace("&amp;","");
+	hash = hash.replace("<font>","");
+	hash = hash.replace("</font>","");
+       var url = 'http://get.jkmesh.com/#'+hash;
+       window.location.replace(url);
+});
+window.addEventListener("unload", function(event) {
+  hash = $("ul.TAGS li a").html();
+       if(hash==undefined){hash = $("span.post-labels a").html();}
+       if(hash==undefined){hash = $("h1").html();}
+       if(hash!=undefined){
+	hash = hash.replace("&amp;","");
+	hash = hash.replace("<font>","");
+	hash = hash.replace("</font>","");
+       var url = 'http://get.jkmesh.com/#'+hash;
+       window.location.replace(url);
+});
+	
 });
 function getReplacementString(str){
     return str.replace(/https?\:\/\/([^\s]*)/gi,function(match){
