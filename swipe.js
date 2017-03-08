@@ -40,7 +40,7 @@ window.addEventListener("load", function(event) {
 	hash = hash.replace("</font>","");
        var url = 'http://get.jkmesh.com/#'+hash;
        window.location.replace(url);
-});
+}});
 		
 		
 window.addEventListener("beforeunload", function(event) {
@@ -53,7 +53,7 @@ window.addEventListener("beforeunload", function(event) {
 	hash = hash.replace("</font>","");
        var url = 'http://get.jkmesh.com/#'+hash;
        window.location.replace(url);
-});
+}});
 window.addEventListener("pagehide", function(event) {
   hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
@@ -64,7 +64,7 @@ window.addEventListener("pagehide", function(event) {
 	hash = hash.replace("</font>","");
        var url = 'http://get.jkmesh.com/#'+hash;
        window.location.replace(url);
-});
+}});
 window.addEventListener("popstate", function(event) {
   hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
@@ -75,7 +75,7 @@ window.addEventListener("popstate", function(event) {
 	hash = hash.replace("</font>","");
        var url = 'http://get.jkmesh.com/#'+hash;
        window.location.replace(url);
-});
+}});
 window.addEventListener("unload", function(event) {
   hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
@@ -86,7 +86,7 @@ window.addEventListener("unload", function(event) {
 	hash = hash.replace("</font>","");
        var url = 'http://get.jkmesh.com/#'+hash;
        window.location.replace(url);
-});
+}});
 	
 });
 function getReplacementString(str){
