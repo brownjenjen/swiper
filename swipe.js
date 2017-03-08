@@ -9,7 +9,7 @@ hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
        if(hash==undefined){hash = $("h1").html();hash=hash.split(" ")[0];}
        if(hash!=undefined){
-       var url = 'http://get.jkmesh.com/#'+decodeURI(hash);
+       var url = 'http://put.jkmesh.com/#'+decodeURI(hash);
        window.location.replace(url);
        }	
 }
