@@ -10,7 +10,8 @@ hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("h1").html();hash=hash.split(" ")[0];}
        if(hash!=undefined){
        hash=hash.replace("&","");
-       var url = 'http://put.jkmesh.com/#'+decodeURI(hash);
+       hash=hash.replace("%20"," ");       
+       var url = 'http://put.jkmesh.com/#'+hash;
        window.location.replace(url);
        }	
 }
