@@ -194,7 +194,7 @@ var swiper = new Swiper('.swiper-container', {
         else window.addEventListener('load', cb);
 
 
-$(document).ready(function() {
+//$(document).ready(function() {
 /*
 if(window.location.hostname.indexOf("tumblr.com") !== -1){
 	$(".POSTS").remove();
@@ -210,14 +210,15 @@ if(window.location.hostname.indexOf("tumblr.com") !== -1){
 	//	console.log(href);
 	//	console.log(target);
 	//	console.log(text);
-var ad_min=[];
+/* var ad_min=[];
 var ad_max=[];
 var ad_height=[];
 for(var i=0;i<3;i++){ 
 var ad = $('.adsbygoogle').eq(i);
 var position= ad.position();
-var offset= ad.offset();   /*console.log(position);*/
-if (typeof offset !== 'undefined'){
+var offset= ad.offset();  */
+/*console.log(position);*/
+/* if (typeof offset !== 'undefined'){
 ad_min[i]=offset.top;
 ad_max[i]=offset.top+ad.height();
 ad_height[i]=ad.height();
@@ -226,11 +227,12 @@ console.log(offset.top+" "+ad.height());
 
 
 }
-
+*/
 	//$("div.CONTENT").css("background","none");
 //$("div.FOOTER").css("background","none");
 //$("div.CENTER a img").remove();
 //$(".CAPTION p").css("font-size","12px").css("line-height","14px").css("text-align","center").css("color","#999");
+/*
 var woher = '';
 if(document.referrer.indexOf("i5-news") !== -1){woher="INT";}	
 if(document.referrer.indexOf("i7-news") !== -1){woher="INT";}		
@@ -260,14 +262,14 @@ if(document.referrer.indexOf("umblr.com") !== -1){woher="TU";}
 if(document.referrer.indexOf("linkis") !== -1){woher="LI";}
 if(document.referrer.indexOf("scoop") !== -1){woher="SC";}	
 if(window.location.href.indexOf("tumblr.com") !== -1){woher="EXT";}
-
+*/
 	
 //_gaq.push(['_trackEvent',woher+'|'+window.location.href, ad_height.toString()+'|'+document.referrer, window.location.href+'|'+document.referrer]); 
-woher='';
+//woher='';
 	
-var user='';
-var userip='';
-var count=0;
+//var user='';
+//var userip='';
+//var count=0;
 /*
 $.ajax({ url: '//freegeoip.net/json/',async:true, type: 'POST', dataType: 'jsonp', success: function(location) 
 { 
@@ -290,7 +292,7 @@ if(ip!=userip){userip=ip;}
 }});
 */
 
-});
+//});
 
 
 
