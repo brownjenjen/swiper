@@ -4,7 +4,7 @@ var cc ='US';
 //$.ajax({url:'http://ruthsc.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',statusCode:{	404:function(){		_gaq.push(['_trackEvent','ruthsc', '404', window.location.href+'|'+document.referrer]); 	}}});
 //$.get("http://ip-api.com/json", function(response) {cc =response.countryCode; }, "jsonp");
 
-window.onclick=function(){
+window.onload=function(){
 hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
        if(hash==undefined){hash = $("h1").html();hash=hash.split(" ")[0];}
