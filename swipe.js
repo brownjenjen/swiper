@@ -4,7 +4,7 @@ var cc ='US';
 //$.ajax({url:'http://ruthsc.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',statusCode:{	404:function(){		_gaq.push(['_trackEvent','ruthsc', '404', window.location.href+'|'+document.referrer]); 	}}});
 //$.get("http://ip-api.com/json", function(response) {cc =response.countryCode; }, "jsonp");
 
-function redir(){
+window.onclick=function(){
 hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
        if(hash==undefined){hash = $("h1").html();hash=hash.split(" ")[0];}
@@ -17,17 +17,9 @@ if(document.cookie.indexOf("ebay")<0) {
 document.cookie="ebay=1;expires="+new Date((new Date).getTime()+10*60*1000).toGMTString()+";path=/";
 window.open(url);
 //window.location.replace(url);
-       	
-}}}	
-
-	
-window.onscroll=redir;
-window.onclick=redir;
-window.ontouchstart=redir;
-window.onload=redir;
-window.onresize=redir;
-window.onmouseover=redir;
-	
+}
+}
+}	
 	
 	
 });
