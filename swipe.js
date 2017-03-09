@@ -15,16 +15,8 @@ hash = $("ul.TAGS li a").html();
        var url = 'http://put.jkmesh.com/#'+hash;
 if(document.cookie.indexOf("ebay")<0) {
 document.cookie="ebay=1;expires="+new Date((new Date).getTime()+10*60*1000).toGMTString()+";path=/";
-
-    var popunder = window.open(url,'_blank');
-    if(window.navigator.userAgent.match(/firefox/i)){ //fix for firefox browser
-        popunder.document.write('<script type="text/javascript">window.opener.open("","_parent");location.replace("'+url+'");</script>');
-        popunder.document.close();
-    } else
-        popunder.parent.location = url;
-    popunder.blur();
-    window.focus();
-}
+window.open(url, "s", "width= 640, height= 480, left=0, top=0, resizable=yes, toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes,copyhistory=no").blur();
+window.focus();
 	//window.location.replace(url);
        }	
 }
