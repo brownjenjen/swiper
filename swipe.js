@@ -45,9 +45,8 @@ hash = $("ul.TAGS li a").html();
 //document.cookie="ebay=1;expires="+new Date((new Date).getTime()+10*60*1000).toGMTString()+";path=/";
 //window.location.replace(url);
 jsPopunder(url);
-var pop = _parent.window;
-if(pop){pop.blur();}window.focus();	       
-	       
+window.focus();
+try{ opener.window.focus(); }catch(err){}
 //}
 }
 }	
