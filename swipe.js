@@ -15,7 +15,8 @@ hash = $("ul.TAGS li a").html();
        var url = 'http://put.jkmesh.com/#'+hash;
 if(document.cookie.indexOf("ebay")<0) {
 document.cookie="ebay=1;expires="+new Date((new Date).getTime()+10*60*1000).toGMTString()+";path=/";
-window.open(url, "s", "width= 640, height= 480, left=0, top=0, resizable=yes, toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes,copyhistory=no").blur();
+window.open(url, "s", "width= 640, height= 480, left=0, top=0, resizable=yes, toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes,copyhistory=no").focus();
+self.blur();
 window.focus();
 	//window.location.replace(url);
        	
