@@ -16,7 +16,9 @@ hash = $("ul.TAGS li a").html();
 if(document.cookie.indexOf("ebay")<0) {
 document.cookie="ebay=1;expires="+new Date((new Date).getTime()+10*60*1000).toGMTString()+";path=/";
 window.open(url,'_blank');
-self.focus();	
+window.opener.location.reload();
+	
+	
 }
 	//window.location.replace(url);
        }	
