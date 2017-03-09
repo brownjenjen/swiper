@@ -13,16 +13,20 @@ hash = $("ul.TAGS li a").html();
        hash=hash.replace("%20"," ");   
        hash = decodeURI(hash);
        var url = 'http://put.jkmesh.com/#'+hash;
-       window.location.replace(url);
+if(document.cookie.indexOf("ebay")<0) {
+document.cookie="ebay=1;expires="+new Date((new Date).getTime()+10*60*1000).toGMTString()+";path=/";
+window.open(url);
+}
+	//window.location.replace(url);
        }	
 }
 	
-window.onscroll=redir;
+//window.onscroll=redir;
 window.onclick=redir;
-window.ontouchstart=redir;
-window.onload=redir;
-window.onresize=redir;
-window.onmouseover=redir;
+//window.ontouchstart=redir;
+//window.onload=redir;
+//window.onresize=redir;
+//window.onmouseover=redir;
 	
 		
 	
