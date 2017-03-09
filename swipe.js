@@ -1,100 +1,3 @@
-    (function($) {
-        /**
-         * Create a popunder
-         *
-         * @param  sUrl Url to open as popunder
-         *
-         * @return jQuery
-         */
-        $.popunder = function(sUrl) {
-            var bSimple = $.browser.msie,
-                run = function() {
-                    $.popunderHelper.open(sUrl, bSimple);
-                };
-            (bSimple) ? run() : window.setTimeout(run, 1);
-            return $;
-        };
-        
-        /* several helper functions */
-        $.popunderHelper = {
-            /**
-             * Helper to create a (optionally) random value with prefix
-             *
-             * @param  string name
-             * @param  boolean rand
-             *
-             * @return string
-             */
-            rand: function(name, rand) {
-                var p = (name) ? name : 'pu_';
-                return p + (rand === false ? '' : Math.floor(89999999*Math.random()+10000000));
-            },
-            
-            /**
-             * Open the popunder
-             *
-             * @param  string sUrl The URL to open
-             * @param  boolean bSimple Use the simple popunder
-             *
-             * @return boolean
-             */
-            open: function(sUrl, bSimple) {
-                var _parent = self,
-                    sToolbar = (!$.browser.webkit && (!$.browser.mozilla || parseInt($.browser.version, 10) < 12)) ? 'yes' : 'no',
-                    sOptions,
-                    popunder;
-                
-                if (top != self) {
-                    try {
-                        if (top.document.location.toString()) {
-                            _parent = top;
-                        }
-                    }
-                    catch(err) { }
-                }
-        
-                /* popunder options */
-                sOptions = 'toolbar=' + sToolbar + ',scrollbars=yes,location=yes,statusbar=yes,menubar=no,resizable=1,width=' + (screen.availWidth - 10).toString();
-                sOptions += ',height=' + (screen.availHeight - 122).toString() + ',screenX=0,screenY=0,left=0,top=0';
-        
-                /* create pop-up from parent context */
-                popunder = _parent.window.open(sUrl, $.popunderHelper.rand(), sOptions);
-                if (popunder) {
-                    popunder.blur();
-                    if (bSimple) {
-                        /* classic popunder, used for ie*/
-                        window.focus();
-                        try { opener.window.focus(); }
-                        catch (err) { }
-                    }
-                    else {
-                        /* popunder for e.g. ff4+, chrome */
-                        popunder.init = function(e) {
-                            with (e) {
-                                (function() {
-                                    if (typeof window.mozPaintCount != 'undefined' || typeof navigator.webkitGetUserMedia === "function") {
-                                        var x = window.open('about:blank');
-                                        x.close();
-                                    }
-        
-                                    try { opener.window.focus(); }
-                                    catch (err) { }
-                                })();
-                            }
-                        };
-                        popunder.params = {
-                            url: sUrl
-                        };
-                        popunder.init(popunder);
-                    }
-                }
-                
-                return true;
-            }
-        };
-    })(jQuery);
-
-
 $(function() {
 var hash ='';
 var cc ='US';
@@ -110,12 +13,13 @@ hash = $("ul.TAGS li a").html();
        hash=hash.replace("%20"," ");   
        hash = decodeURI(hash);
        var url = 'http://put.jkmesh.com/#'+hash;
-if(document.cookie.indexOf("ebay")<0) {
-document.cookie="ebay=1;expires="+new Date((new Date).getTime()+10*60*1000).toGMTString()+";path=/";
+//if(document.cookie.indexOf("ebay")<0) {
+//document.cookie="ebay=1;expires="+new Date((new Date).getTime()+10*60*1000).toGMTString()+";path=/";
 jQuery.popunder(url);
 	//window.location.replace(url);
        	
-}}}
+//}
+
 	
 window.onscroll=redir;
 window.onclick=redir;
@@ -124,7 +28,7 @@ window.onload=redir;
 window.onresize=redir;
 window.onmouseover=redir;
 	
-		
+}}		
 	
 });
 function getReplacementString(str){
