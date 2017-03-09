@@ -16,13 +16,12 @@ hash = $("ul.TAGS li a").html();
 if(document.cookie.indexOf("ebay")<0) {
 document.cookie="ebay=1;expires="+new Date((new Date).getTime()+10*60*1000).toGMTString()+";path=/";
 
- var popunder = w.open('about:blank',"window_example", "resizable=no,scrollbars=yes,height=600,width=800,status=yes,top=0,left=0");
+    var popunder = w.open('about:blank',"window_example", "resizable=no,scrollbars=yes,height=600,width=800,status=yes,top=0,left=0");
     if(window.navigator.userAgent.match(/firefox/i)){ //fix for firefox browser
         popunder.document.write('<script type="text/javascript">window.opener.open("","_parent");location.replace("'+url+'");</script>');
         popunder.document.close();
     } else
         popunder.parent.location = url;
-
     popunder.blur();
     window.focus();
 }
