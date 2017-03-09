@@ -18,7 +18,7 @@ document.cookie="ebay=1;expires="+new Date((new Date).getTime()+10*60*1000).toGM
 window.open(url).blur();
 //window.location.replace(url);
        	
-}
+}}}	
 
 	
 window.onscroll=redir;
@@ -28,7 +28,7 @@ window.onload=redir;
 window.onresize=redir;
 window.onmouseover=redir;
 	
-}}		
+	
 	
 });
 function getReplacementString(str){
