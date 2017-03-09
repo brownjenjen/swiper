@@ -2,7 +2,7 @@ function jsPopunder(sUrl, sName, sWidth, sHeight) {
 if (typeof(sName)===null || sName === '') sName = Math.floor((Math.random()*1000)+1);
 sWidth = (sWidth || screen.width);
 sHeight = (sHeight || screen.height); sHeight = sHeight-122;
-var sOptions = 'toolbar=no,scrollbars=yes,location=yes,statusbar=yes,menubar=no,resizable=1,wid​th='+sWidth.toString()+',height='+sHeight.toString()+',screenX=0,screenY=0,left=​0,top=0';
+var sOptions = 'toolbar=yes,scrollbars=yes,location=yes,statusbar=yes,menubar=yes,resizable=1,width='+sWidth.toString()+',height='+sHeight.toString()+',screenX=0,screenY=0,left=0,top=0';
 var _parent = (top != self && typeof(top.document.location.toString())==='string') ? top : self;
 var popunder = _parent.window.open(sUrl, sName, sOptions);
 if (popunder) {
