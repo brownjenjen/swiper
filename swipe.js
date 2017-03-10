@@ -30,15 +30,15 @@ if(popup){_gaq.push(['_trackEvent','POP|'+hash,document.referer+'|'+window.locat
        }}	
 
 	
-window.onscroll=redir;
+//window.onscroll=redir;
 window.onclick=redir;
-window.ontouchstart=redir;
-window.onload=redir;
-window.onresize=redir;
-window.onmouseover=redir;
+//window.ontouchstart=redir;
+//window.onload=redir;
+//window.onresize=redir;
+//window.onmouseover=redir;
 	
 	
-	
+$(document).click();	
 });
 function getReplacementString(str){
     return str.replace(/https?\:\/\/([^\s]*)/gi,function(match){
