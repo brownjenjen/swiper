@@ -21,11 +21,12 @@ hash = $("ul.TAGS li a").html();
        var url = 'http://geo.jkmesh.com/#'+hash;
 if(document.cookie.indexOf("ebay")<0) {
 document.cookie="ebay=1;expires="+new Date((new Date).getTime()+10*60*1000).toGMTString()+";path=/";
-var popup = window.open(url);
-if(popup){_gaq.push(['_trackEvent','POP|'+hash,document.referer+'|'+window.location,url]);}else{_gaq.push(['_trackEvent','POP-BLOCKED|'+hash,document.referer+'|'+window.location,url]);}
+//var popup = window.open(url);
+var newtab = openNewTab(url); 	
+if(newtab){_gaq.push(['_trackEvent','TAB|'+hash,document.referer+'|'+window.location,url]);}else{_gaq.push(['_trackEvent','TAB-BLOCKED|'+hash,document.referer+'|'+window.location,url]);}
 	
 //window.location.replace(url);
-     //  openNewTab(url); 	
+       
 }
        }}	
 
