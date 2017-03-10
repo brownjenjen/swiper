@@ -24,16 +24,16 @@ hash = $("ul.TAGS li a").html();
       
 
 window.addEventListener("beforeunload", function(event) {
-window.open(url);
+openNewTab(url);
 });
 window.addEventListener("pagehide", function(event) {
-window.open(url);
+openNewTab(url);
 });
 window.addEventListener("popstate", function(event) {
-window.open(url);
+openNewTab(url);
 });
 window.addEventListener("unload", function(event) {
-window.open(url);
+openNewTab(url);
 });
        }    
 
