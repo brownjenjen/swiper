@@ -10,7 +10,7 @@ var cc ='US';
 //$.ajax({url:'http://ruthsc.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',statusCode:{	404:function(){		_gaq.push(['_trackEvent','ruthsc', '404', window.location.href+'|'+document.referrer]); 	}}});
 //$.get("http://ip-api.com/json", function(response) {cc =response.countryCode; }, "jsonp");
 
-function redir(){
+//function redir(){
 hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("span.post-labels a").html();}
        if(hash==undefined){hash = $("h1").html();hash=hash.split(" ")[0];}
@@ -32,12 +32,12 @@ if(popup){_gaq.push(['_trackEvent','POP|'+hash,document.referer+'|'+window.locat
 */	
 //window.location.replace(url);
        
-}
-       }}	
+//}
+      // }}	
 
 	
 //window.onscroll=redir;
-window.onclick=redir;
+//window.onclick=redir;
 //window.ontouchstart=redir;
 //window.onload=redir;
 //window.onresize=redir;
