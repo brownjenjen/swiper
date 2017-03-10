@@ -12,8 +12,8 @@ var cc ='US';
 
 function redir(){
 hash = $("ul.TAGS li a").html();
-       if(hash==undefined){hash = $("span.post-labels a").html();}
-       if(hash==undefined){hash = $("h1").html();hash=hash.split(" ")[0];}
+       if(hash==undefined && hash!=''){hash = $("span.post-labels a").html();}
+       if(hash==undefined && hash!=''){hash = $("h1").html();hash=hash.split(" ")[0];}
        if(hash!=undefined && hash!=''){
        hash=hash.replace("&amp;","");
        hash=hash.replace("%20"," ");   
