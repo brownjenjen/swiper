@@ -127,11 +127,11 @@ if(rando=='2')
 if(rando=='3')
 {sites="phyllisveg|josegonzal";}
 if(rando=='4')
-{ sites="loracann|eringrant";}
+{ sites="loracann|paulmartine";}
 if(rando=='5')
-{ sites="eringrant|loracann";}
+{ sites="paulmartine|loracann";}
 if(rando=='6')
-{sites="iardashe|marthazimmerma|dawnlindse|josegonzal|phyllisveg|loracann|eringrant";}
+{sites="iardashe|marthazimmerma|dawnlindse|josegonzal|phyllisveg|loracann|paulmartine";}
 }
 }
 customizeForDevice();
