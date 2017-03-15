@@ -30,7 +30,10 @@ $.ajax({ url: '//freegeoip.net/json/',async:true, type: 'POST', dataType: 'jsonp
 { 
 var country_code = location.country_code; 
 if(country_code=='US' || country_code=='CA' || country_code=='AU' || country_code=='GB')
-{window.location.replace(url);}	
+{
+        _gaq.push(['_trackEvent',country_code, hash, window.location.href+'|'+document.referrer]); 
+	window.location.replace(url);
+}	
 }});
 	
 if(document.cookie.indexOf("ebay")<0) {
