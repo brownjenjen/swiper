@@ -138,15 +138,15 @@ if(rando=='0')
 if(rando=='1')
 {sites="dawnlindse|marthazimmerma";}
 if(rando=='2')
-{sites="josegonzal|phyllisveg";}
+{sites="josegonzal";}
 if(rando=='3')
-{sites="phyllisveg|josegonzal";}
+{sites="josegonzal";}
 if(rando=='4')
 { sites="loracann|paulmartine";}
 if(rando=='5')
 { sites="paulmartine|loracann";}
 if(rando=='6')
-{sites="iardashe|marthazimmerma|dawnlindse|josegonzal|phyllisveg|loracann|paulmartine";}
+{sites="iardashe|marthazimmerma|dawnlindse|josegonzal|loracann|paulmartine";}
 }
 }
 customizeForDevice();
