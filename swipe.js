@@ -138,9 +138,9 @@ if(rando=='0')
 if(rando=='1')
 {sites="dawnlindse|marthazimmerma";}
 if(rando=='2')
-{sites="josegonzal";}
+{sites="josegonzal|josegonzal";}
 if(rando=='3')
-{sites="josegonzal";}
+{sites="josegonzal|josegonzal";}
 if(rando=='4')
 { sites="loracann|paulmartine";}
 if(rando=='5')
