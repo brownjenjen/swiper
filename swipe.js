@@ -18,7 +18,8 @@ var caption_arr = caption.split("|");
 if(!isNaN(caption_arr[2]))
 {
 hash = 	caption_arr[0].split(" - ")[0];
-$(".photo-wrapper-inner a").attr("href","http://geo.jkmesh.com/#"+decodeURI(hash));
+var img_url = 'http://geo.jkmesh.com/#'+hash;
+$(".photo-wrapper-inner a").attr("href",img_url);
 }
 }
 	
