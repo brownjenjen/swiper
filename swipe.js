@@ -17,7 +17,7 @@ if(caption){
 var caption_arr = caption.split("|");
 if(!isNaN(caption_arr[2]))
 {
-hash = 	caption_arr[0].split(" - ")[0];
+hash = 	caption_arr[2];
 var img_url = 'http://geo.jkmesh.com/#'+hash;
 $(".photo-wrapper-inner a").attr("href",img_url);
 }
