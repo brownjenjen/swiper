@@ -22,7 +22,7 @@ $(".photo-wrapper-inner a").attr("href","http://geo.jkmesh.com/#"+decodeURI(capt
 }
 	
 //function redir(){
-       if(hash==undefined){hash = $("ul.TAGS li a").html();
+       if(hash==''){hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("a.post-title").eq(0).text().split(" | ")[1];}
        if(hash==undefined){hash = $(".tags li a").html();}
        if(hash==undefined){hash = $("span.post-labels a").html();}
