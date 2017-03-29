@@ -7,13 +7,22 @@ function openNewTab(link) {
 
 
 $(function() {
-var hash ='';
+var hash='';
 var cc ='';
 //$.ajax({url:'http://ruthsc.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',statusCode:{	404:function(){		_gaq.push(['_trackEvent','ruthsc', '404', window.location.href+'|'+document.referrer]); 	}}});
 //$.get("http://ip-api.com/json", function(response) {cc =response.countryCode; }, "jsonp");
-
+var caption = $("figcaption p").html();
+if(caption){
+var caption_arr = caption.split("|");
+if(!isNaN(caption_arr[2]))
+{
+hash = 	caption_arr[0].split(" - ")[0];
+$(".photo-wrapper-inner a").attr("href","http://geo.jkmesh.com/#"+decodeURI(caption_arr[0].split(" - ")[0]));
+}
+}
+	
 //function redir(){
-hash = $("ul.TAGS li a").html();
+       if(hash==undefined){hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $("a.post-title").eq(0).text().split(" | ")[1];}
        if(hash==undefined){hash = $(".tags li a").html();}
        if(hash==undefined){hash = $("span.post-labels a").html();}
