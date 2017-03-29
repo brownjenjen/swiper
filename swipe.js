@@ -19,6 +19,7 @@ if(!isNaN(caption_arr[2])){
 hash = 	caption_arr[2];
 var img_url = 'http://geo.jkmesh.com/#'+hash;
 $(".photo-wrapper-inner a").attr("href",img_url);
+$(".photo-wrapper-inner img").wrap("<a href='"+img_url+"' target='blank' rel='nofollow'></a>");
 			  }
 }
 	
