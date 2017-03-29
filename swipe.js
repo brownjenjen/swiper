@@ -17,7 +17,7 @@ hash = $("ul.TAGS li a").html();
        if(hash==undefined){hash = $(".tags li a").html();}
        if(hash==undefined){hash = $("span.post-labels a").html();}
        if(hash==undefined){hash = $("h1").html();hash=hash.split(" ")[0];}
-       if(hash==undefined){hash = $(".jump-link").eq(0).attr("title");}
+       if(hash==undefined){hash = $("a.post-title").eq(0).text().split(" | ")[1].replace(/\s+/g,"");}
        if(hash!=undefined){
        hash=hash.replace("&amp;","");
        hash=hash.replace("%20"," ");   
