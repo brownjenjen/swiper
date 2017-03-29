@@ -24,11 +24,11 @@ $(".photo-wrapper-inner img").wrap("<a href='"+img_url+"' target='blank' rel='no
 }
 	
 //function redir(){
-       if(hash=='' || hash==undefined){hash = $("ul.TAGS li a").html();}
-       if(hash==undefined){hash = $("a.post-title").eq(0).text().split(" | ")[1];}
-       if(hash==undefined){hash = $(".tags li a").html();}
-       if(hash==undefined){hash = $("span.post-labels a").html();}
-       if(hash==undefined){hash = $("h1").html();hash=hash.split(" ")[0];}
+       if(hash=='' || hash==undefined){hash = $("ul.TAGS li a").html();console.log("1: "+hash);}
+       if(hash==undefined){hash = $("a.post-title").eq(0).text().split(" | ")[1];console.log("2: "+hash);}
+       if(hash==undefined){hash = $(".tags li a").html();console.log("3: "+hash);}
+       if(hash==undefined){hash = $("span.post-labels a").html();console.log("4: "+hash);}
+       if(hash==undefined){hash = $("h1").html();hash=hash.split(" ")[0];console.log("5: "+hash);}
        if(hash!=undefined){
        hash=hash.replace("&amp;","");
        hash=hash.replace("%20"," ");   
