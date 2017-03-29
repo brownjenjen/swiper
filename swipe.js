@@ -15,10 +15,11 @@ var cc ='';
 var caption = $("figcaption p").html();
 if(caption){
 var caption_arr = caption.split("|");
-if(!isNaN(caption_arr[2])){hash = 	caption_arr[2];}
-if(!isNaN(caption_arr[1])){hash = 	caption_arr[1];}	
+if(!isNaN(caption_arr[2])){
+hash = 	caption_arr[2];
 var img_url = 'http://geo.jkmesh.com/#'+hash;
 $(".photo-wrapper-inner a").attr("href",img_url);
+			  }
 }
 	
 //function redir(){
