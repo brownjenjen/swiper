@@ -24,13 +24,13 @@ $(".photo-wrapper-inner img").wrap("<a href='"+img_url+"' target='blank' rel='no
 }
 	
 //function redir(){
-var nr1 = $("ul.TAGS li a").html();
+var nr1 = $("ul.TAGS li a").text();
 if(nr1!=undefined && hash==''){hash=nr1;console.log("1: "+hash)}	
 var nr2 = $("a.post-title").eq(0).text().split(" | ")[1];
 if(nr2!=undefined && hash==''){hash=nr2;console.log("2: "+hash)}	
-var nr3 = $(".tags li a").html();
+var nr3 = $(".tags li a").text();
 if(nr3!=undefined && hash==''){hash=nr3;console.log("3: "+hash)}	
-var nr4 = $("h1").html();
+var nr4 = $("h1").text();
 if(nr4!=undefined && hash==''){hash=nr4.split(" ")[0];console.log("4: "+hash)}	
       
 if(hash!=''){
