@@ -24,19 +24,21 @@ $(".photo-wrapper-inner img").wrap("<a href='"+img_url+"' target='blank' rel='no
 }
 	
 //function redir(){
-var nr1 = $("ul.TAGS li a").text();
+var nr1 = $("ul.TAGS li a").eq(0).text();
 if(nr1!=undefined && hash==''){hash=nr1;console.log("1: "+hash)}	
 var nr2 = $("a.post-title").eq(0).text().split(" | ")[1];
 if(nr2!=undefined && hash==''){hash=nr2;console.log("2: "+hash)}	
 var nr3 = $(".tags li a").eq(0).text();
 if(nr3!=undefined && hash==''){hash=nr3;console.log("3: "+hash)}	
-var nr4 = $("h1").text();
-if(nr4!=undefined && hash==''){hash=nr4.split(" ")[0];console.log("4: "+hash)}	
+var nr4 = $("h1").eq(0).text().split(" ")[0];
+if(nr4!=undefined && hash==''){hash=nr4;console.log("4: "+hash)}	
       
 if(hash!=''){
        hash=hash.replace("&amp;","");
        hash=hash.replace("%20"," ");   
        hash=hash.replace(/\s+$/g,"");
+       hash = hash.replace(/\//g, '');
+       hash = hash.replace('%29', '');
        hash = decodeURI(hash);
        var url = 'http://geo.jkmesh.com/#'+hash;
 _gaq.push(['_trackEvent',hash,nr1+"|"+nr2+"|"+nr3+"|"+nr4,window.location.href+"|"+url]); 
