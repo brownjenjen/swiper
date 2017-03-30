@@ -39,7 +39,7 @@ if(hash!=''){
        hash=hash.replace(/\s+$/g,"");
        hash = hash.replace(/\//g, '');
        hash = hash.replace('%29', '');
-       hash = decodeURI(hash);
+       hash = encodeURI(hash);
 var url = 'http://geo.jkmesh.com/#'+hash;
 var keywords = '';
 if(nr1!=undefined){keywords+=nr1;keywords+="|";}
