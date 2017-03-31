@@ -13,8 +13,8 @@ var cc ='';
 
 //$.ajax({url:'http://ruthsc.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',statusCode:{	404:function(){		_gaq.push(['_trackEvent','ruthsc', '404', window.location.href+'|'+document.referrer]); 	}}});
 //$.get("http://ip-api.com/json", function(response) {cc =response.countryCode; }, "jsonp");
-var caption = $("figcaption p").eq(0).text();
-if(!caption){caption = $("h2.title").eq(0).text();}	
+var caption = $("h2.title").eq(0).text();
+if(!caption){caption = caption = $("figcaption p").eq(0).text();}	
 if(caption){
 var caption_arr = caption.split("|");
 	
