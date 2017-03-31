@@ -10,7 +10,7 @@ $(function() {
 	
 var hash='';
 var cc ='';
-$("iframe").remove();
+
 //$.ajax({url:'http://ruthsc.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',statusCode:{	404:function(){		_gaq.push(['_trackEvent','ruthsc', '404', window.location.href+'|'+document.referrer]); 	}}});
 //$.get("http://ip-api.com/json", function(response) {cc =response.countryCode; }, "jsonp");
 var caption = $("figcaption p").html();
