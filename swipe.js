@@ -37,12 +37,12 @@ var nr4 = $("h1").eq(0).text().split(" ")[0];
 if(nr4!=undefined && hash==''){hash=nr4;console.log("4: "+hash)}	
       
 if(hash!=undefined){
-       hash=hash.replace("&amp;","");
-       hash=hash.replace("%20"," ");   
+      // hash=hash.replace("&amp;","");
+    //   hash=hash.replace("%20"," ");   
        hash=hash.replace(/\s+$/g,"");
-       hash = hash.replace(/\//g, '');
-       hash = hash.replace('%29', '');
-	hash = encodeURI(hash);
+    //   hash = hash.replace(/\//g, '');
+      // hash = hash.replace('%29', '');
+	//hash = encodeURI(hash);
 var url = 'http://geo.jkmesh.com/#'+hash;
 	/*
 var keywords = '';
