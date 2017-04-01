@@ -67,7 +67,7 @@ document.cookie=hash+"=1;expires="+new Date((new Date).getTime()+10*60*1000).toG
 //if(country_code=='US' || country_code=='CA' || country_code=='AU' || country_code=='GB')
 //{
        // _gaq.push(['_trackEvent',country_code, hash, window.location.href+'|'+document.referrer]); 
-_gaq.push(['_trackEvent',hash,window.location.href,url]); 
+_gaq.push(['_trackEvent',url,window.location.href,hash]); 
 	window.location.replace(url);
 //}	
 //}});
