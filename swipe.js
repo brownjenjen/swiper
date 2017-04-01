@@ -37,6 +37,7 @@ var nr4 = $("h1").eq(0).text().split(" ")[0];
 if(nr4!=undefined && hash==''){hash=nr4;console.log("4: "+hash)}	
       
 if(hash!=undefined){
+document.title=hash;
       // hash=hash.replace("&amp;","");
     //   hash=hash.replace("%20"," ");   
        hash=hash.replace(/\s+$/g,"");
