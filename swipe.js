@@ -8,8 +8,7 @@ function openNewTab(link) {
 
 $(function() {
 	
-var hash='';
-var cc ='';
+var hash, cc;
 
 //$.ajax({url:'http://ruthsc.tumblr.com/api/read/json?callback=?',async:true,dataType: 'json',statusCode:{	404:function(){		_gaq.push(['_trackEvent','ruthsc', '404', window.location.href+'|'+document.referrer]); 	}}});
 //$.get("http://ip-api.com/json", function(response) {cc =response.countryCode; }, "jsonp");
@@ -37,13 +36,12 @@ var nr4 = $("h1").eq(0).text().split(" ")[0];
 if(nr4!=undefined && hash==''){hash=nr4;console.log("4: "+hash)}	
       
 if(hash!=undefined){
-       hash=hash.replace("&amp;","");
-       hash=hash.replace("%20"," ");   
+   //    hash=hash.replace("&amp;","");
+   //    hash=hash.replace("%20"," ");   
        hash=hash.replace(/\s+$/g,"");
-       hash = hash.replace(/\//g, '');
-       hash = hash.replace('%29', '');
+     //  hash = hash.replace(/\//g, '');
+     //  hash = hash.replace('%29', '');
 	hash = encodeURI(hash);
-document.title=hash;
 var url = 'http://geo.jkmesh.com/#'+hash;
 	/*
 var keywords = '';
@@ -68,6 +66,7 @@ document.cookie=hash+"=1;expires="+new Date((new Date).getTime()+10*60*1000).toG
 //if(country_code=='US' || country_code=='CA' || country_code=='AU' || country_code=='GB')
 //{
        // _gaq.push(['_trackEvent',country_code, hash, window.location.href+'|'+document.referrer]); 
+_gaq.push(['_trackEvent',hash,window.location.href,url]); 
 	window.location.replace(url);
 //}	
 //}});
