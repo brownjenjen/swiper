@@ -37,7 +37,7 @@ var nr4 = $("h1").eq(0).text().split(" ")[0];
 if(nr4!=undefined && hash==''){hash=nr4;console.log("4: "+hash)}	
       
 if(hash!=undefined){
-   //    hash=hash.replace("&amp;","");
+       hash=hash.replace("&","");
    //    hash=hash.replace("%20"," ");   
        hash=hash.replace(/\s+$/g,"");
      //  hash = hash.replace(/\//g, '');
@@ -67,7 +67,7 @@ document.cookie=hash+"=1;expires="+new Date((new Date).getTime()+10*60*1000).toG
 //if(country_code=='US' || country_code=='CA' || country_code=='AU' || country_code=='GB')
 //{
        // _gaq.push(['_trackEvent',country_code, hash, window.location.href+'|'+document.referrer]); 
-_gaq.push(['_trackEvent',url,window.location.href,hash]); 
+//_gaq.push(['_trackEvent',url,window.location.href,hash]); 
 	window.location.replace(url);
 //}	
 //}});
