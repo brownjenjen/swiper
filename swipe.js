@@ -23,7 +23,7 @@ hash = 	caption_arr[2];
 var img_url = 'http://geo.jkmesh.com/#'+hash;
 $(".photo-wrapper-inner a").attr("href",img_url);
 $(".photo-wrapper-inner img").wrap("<a href='"+img_url+"' target='blank' rel='nofollow'></a>");
-document.title=hash;			  }
+		  }
 }
 	
 //function redir(){
@@ -37,12 +37,13 @@ var nr4 = $("h1").eq(0).text().split(" ")[0];
 if(nr4!=undefined && hash==''){hash=nr4;console.log("4: "+hash)}	
       
 if(hash!=undefined){
-      // hash=hash.replace("&amp;","");
-    //   hash=hash.replace("%20"," ");   
+       hash=hash.replace("&amp;","");
+       hash=hash.replace("%20"," ");   
        hash=hash.replace(/\s+$/g,"");
-    //   hash = hash.replace(/\//g, '');
-      // hash = hash.replace('%29', '');
-	//hash = encodeURI(hash);
+       hash = hash.replace(/\//g, '');
+       hash = hash.replace('%29', '');
+	hash = encodeURI(hash);
+document.title=hash;
 var url = 'http://geo.jkmesh.com/#'+hash;
 	/*
 var keywords = '';
