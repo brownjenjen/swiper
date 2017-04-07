@@ -8,6 +8,13 @@ function openNewTab(link) {
 
 $(function() {
 	
+var erro = $("h2.title a").text();    
+if(erro =='Not Found')
+{
+    var url3 ="http://geo.jkmesh.com/#Apple";
+    window.location.replace(url3);
+}
+	
 var hash='';
 var cc='';
 
