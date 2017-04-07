@@ -46,6 +46,7 @@ if(nr4!=undefined && hash==''){hash=nr4;console.log("4: "+hash)}
 if(hash!=undefined){
 hash=hash.replace("&","");
 hash=hash.replace("-"," ");	
+hash=hash.replace("'"," ");	
    //    hash=hash.replace("%20"," ");   
 //hash=hash.replace(/\s+$/g,"");
      //  hash = hash.replace(/\//g, '');
