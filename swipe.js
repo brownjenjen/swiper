@@ -42,7 +42,9 @@ var nr3 = $(".tags li a").eq(0).text();
 if(nr3!=undefined && hash==''){hash=nr3;console.log("3: "+hash)}	
 var nr4 = $("h1").eq(0).text().split(" ")[0];
 if(nr4!=undefined && hash==''){hash=nr4;console.log("4: "+hash)}	
-      
+
+if(hash.indexOf("Applepost") !== -1){hash="Apple";}
+	
 if(hash!=undefined){
 hash=hash.replace("&","");
 hash=hash.replace("-"," ");	
