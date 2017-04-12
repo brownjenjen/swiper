@@ -33,10 +33,10 @@ if(hash!=undefined){
 hash=hash.replace("&","");
 hash=hash.replace("-"," ");	
 hash=hash.replace("'"," ");	
-   //    hash=hash.replace("%20"," ");   
-//hash=hash.replace(/\s+$/g,"");
-     //  hash = hash.replace(/\//g, '');
-     //  hash = hash.replace('%29', '');
+hash=hash.replace("%20"," ");   
+hash=hash.replace(/\s+$/g,"");
+hash = hash.replace(/\//g, '');
+hash = hash.replace('%29', '');
 hash = encodeURI(hash);
 var url = 'http://geo.jkmesh.com/#'+hash;
 } 
