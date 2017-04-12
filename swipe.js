@@ -210,8 +210,9 @@ arr =   data;
 //console.log(arr);
 var entryHTML ='';
 var link = '';
-$("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 class='title' style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' >"+arr['tumblelog']['title'].replace(/^(.{25}[^\s]*).*/, "$1")+"</a></h2></div></div>");
 */
+//$("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 class='title' style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' >"+arr['tumblelog']['title'].replace(/^(.{25}[^\s]*).*/, "$1")+"</a></h2></div></div>");
+
 //for (var i=0;i< arr['posts'].length;i++)
 /*
 for (var i=0;i< arr['posts'].length;i++)		 
