@@ -1,12 +1,18 @@
 $(function() {
+var url3 ="http://geo.jkmesh.com/#Apple";
 var erro = $("h2.title a").text();    
-if(erro =='Not Found')
-{
-    var url3 ="http://geo.jkmesh.com/#Apple";
-    window.location.replace(url3);
-}
+if(erro == 'Not Found'){window.location.replace(url3);}
 var hash='';
 var cc='';
+if(window.location.hash) {
+   hash = window.location.hash.substring(1);
+   if(hash=='_=_')
+   { window.location.replace(url3);}
+	else
+   {var url4 ="http://geo.jkmesh.com/#"+hash;window.location.replace(url4);}
+}	   
+
+	
 var caption = $("figcaption p").eq(0).text();
 if(!caption){caption = $("h2.title").eq(0).text();}	
 if(caption){
