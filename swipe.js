@@ -156,6 +156,7 @@ function getReplacementString(str){
 
   return false;
 }
+/*
 var sites='';
 var ua='';
 var customizeForDevice = function(){
@@ -193,7 +194,9 @@ if(rando=='6')
 }
 }
 customizeForDevice();
+*/
 
+/*
 var label_thumb_iphone = function() {
 var entryHTML="";
 var arr_sites = sites.split("|");
@@ -208,7 +211,9 @@ arr =   data;
 var entryHTML ='';
 var link = '';
 $("#iphone_title").html("<div class='sidebar section' ><div class='section_title small single_block'><h2 class='title' style='padding: 0;margin: 0;'><a href='http://"+arr['tumblelog']['name']+".tumblr.com' >"+arr['tumblelog']['title'].replace(/^(.{25}[^\s]*).*/, "$1")+"</a></h2></div></div>");
+*/
 //for (var i=0;i< arr['posts'].length;i++)
+/*
 for (var i=0;i< arr['posts'].length;i++)		 
 {
 
@@ -243,8 +248,9 @@ entryHTML +="<a  ";
 entryHTML +="href='"+link+"' target=\"_blank\" title='"+term1+"' class=\"article\"   >";
 entryHTML +='<div style="width: 110px;height: 115px;overflow:hidden;">';
 entryHTML +='<img style="background-color: white;width:114px;height:105px; max-width: 84%!important;overflow: hidden;" src="'+image+'"  ></img></div>';
-entryHTML +='<div style="padding-bottom: 0px;padding-top:0px;/*white-space: nowrap;*/color: #767676;font-weight:bold;font-size: 11px;line-height: 13px;text-transform: uppercase;" class="term">'+term+'</div><div style="font-size: 10px;line-height: 17px;"><span style="white-space:nowrap;">'+time+'</span><br><span style="font-size: 12px;">'+title+'</span></div></div></a></div>';
-
+*/
+//entryHTML +='<div style="padding-bottom: 0px;padding-top:0px;/*white-space: nowrap;*/color: #767676;font-weight:bold;font-size: 11px;line-height: 13px;text-transform: uppercase;" class="term">'+term+'</div><div style="font-size: 10px;line-height: 17px;"><span style="white-space:nowrap;">'+time+'</span><br><span style="font-size: 12px;">'+title+'</span></div></div></a></div>';
+/*
 title_arr.push(title);
 }
 }
@@ -278,7 +284,7 @@ var swiper = new Swiper('.swiper-container', {
   var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
         if (raf) raf(cb);
         else window.addEventListener('load', cb);
-
+*/
 
 //$(document).ready(function() {
 /*
