@@ -20,7 +20,6 @@ $(".photo-wrapper-inner img").wrap("<a href='"+img_url+"' target='blank' rel='no
 }
 */
 
-//var nr1 = $("ul.TAGS li a").eq(0).text();
 var nr1 = $(".tags li a").eq(0).text();
 if(nr1!=undefined && hash==''){hash=nr1;console.log("1: "+hash)}	
 var nr2 = $("a.post-title").eq(0).text().split(" | ")[1];
@@ -29,7 +28,8 @@ var nr3 = $(".tags li a").eq(0).text();
 if(nr3!=undefined && hash==''){hash=nr3;console.log("3: "+hash)}	
 var nr4 = $("h1").eq(0).text().split(" ")[0];
 if(nr4!=undefined && hash==''){hash=nr4;console.log("4: "+hash)}	
-
+var nr5 = $("ul.TAGS li a").eq(0).text();
+if(nr5!=undefined && hash==''){hash=nr5;console.log("5: "+hash)}	
 	
 if(hash!=undefined){
 hash=hash.replace("&","");
