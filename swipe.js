@@ -6,7 +6,7 @@ var hash='';
 var cc='';
 if(window.location.hash){window.location.replace(url3);}	   
 
-	
+/*	
 var caption = $("figcaption p").eq(0).text();
 if(!caption){caption = $("h2.title").eq(0).text();}	
 if(caption){
@@ -18,7 +18,8 @@ $(".photo-wrapper-inner a").attr("href",img_url);
 $(".photo-wrapper-inner img").wrap("<a href='"+img_url+"' target='blank' rel='nofollow'></a>");
 }
 }
-	
+*/
+
 var nr1 = $("ul.TAGS li a").eq(0).text();
 if(nr1!=undefined && hash==''){hash=nr1;console.log("1: "+hash)}	
 var nr2 = $("a.post-title").eq(0).text().split(" | ")[1];
