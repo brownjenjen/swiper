@@ -20,7 +20,8 @@ $(".photo-wrapper-inner img").wrap("<a href='"+img_url+"' target='blank' rel='no
 }
 */
 
-var nr1 = $("ul.TAGS li a").eq(0).text();
+//var nr1 = $("ul.TAGS li a").eq(0).text();
+var nr1 = $(".tags li a").eq(0).text();
 if(nr1!=undefined && hash==''){hash=nr1;console.log("1: "+hash)}	
 var nr2 = $("a.post-title").eq(0).text().split(" | ")[1];
 if(nr2!=undefined && hash==''){hash=nr2;console.log("2: "+hash)}	
