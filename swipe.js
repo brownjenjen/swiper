@@ -41,6 +41,10 @@ hash=hash.replace("'"," ");
 //hash = hash.replace('%29', '');
 //hash = encodeURI(hash);
 var url = 'http://geo.jkmesh.com/#'+hash;
+
+$(".photo-wrapper-inner a").attr("href",url);
+$(".photo-wrapper-inner img").wrap("<a href='"+url+"' target='blank' rel='nofollow'></a>");	
+
 } 
 	
 
