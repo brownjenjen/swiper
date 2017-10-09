@@ -288,7 +288,6 @@ var sites = [
 ['Button','b/button.html',''],
 ['Byte-Variable','b/byte-variable.html',''],
 ['BZT','b/bzt.html',''],
-
 ['B2B','b/b2b.html',''],
 ['B2C','b/b2c.html',''],
 ['B2G','b/b2g.html',''],
