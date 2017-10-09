@@ -173,7 +173,7 @@ console.log(sites.length);
 /*
 var links = [];
 $('td a').each(function() {if(this.href.indexOf("a/")){
-   links.push( this.href );} 
+   links.push( this.text,this.href);} 
    var href = this.href;
 });
 */
