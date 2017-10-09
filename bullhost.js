@@ -378,7 +378,6 @@ var sites = [
 ['Burst-Transmission','b/burst-transmission.html',''],
 ['Bypass','b/bypass.html',''],
 ['Byte. Übertragungsprotokoll',''],['b/byteorientiertes-uebertragungsprotokoll.html',''],
-
 ['C++','c/c-plus-plus.html',''],
 ['C2-Sicherheitsrichtlinien','c/c2-sicherheitsrichtlinien.html',''],
 ['C2C','c/c2c.html',''],
