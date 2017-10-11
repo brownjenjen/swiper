@@ -270,7 +270,7 @@ var sites = [
 ['Bookware','b/bookware.html',''],
 ['Bootblock','b/bootblock.html',''],
 ['Booten','b/booten.html',''],
-['Borlan','b/borlan.html',''],
+['Borland','b/borland.html',''],
 ['Bourne-Shell','b/bourne-shell.html',''],
 ['Bpp','b/bpp.html',''],
 ['Brainware','b/brainware.html',''],
