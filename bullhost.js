@@ -1203,7 +1203,7 @@ var sites = [
 ['Lernprogramm','l/lernprogramm.html',''],
 ['Level','l/level.html',''],
 ['LEX','l/lex.html',''],
-['LGA-CPU-Sockel','l/lga-cpu-sockel.html',''],
+['LGA775-CPU-Sockel','l/lga775-cpu-sockel.html',''],
 ['LHA','l/lha.html',''],
 ['Lichtwellenleiter','l/lichtwellenleiter.html',''],
 ['Lies-mich-Datei','l/lies-mich-datei.html',''],
