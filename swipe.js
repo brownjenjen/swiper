@@ -1,5 +1,5 @@
 $(function() {
-var url3 ="http://ap.jkmesh.com/#Apple";
+var url3 ="http://pre.jkmesh.com/#Apple";
 var erro = $("h2.title a").text();    
 if(erro == 'Not Found'){window.location.replace(url3);}
 var hash='';
@@ -40,7 +40,7 @@ hash=hash.replace("'"," ");
 //hash = hash.replace(/\//g, '');
 //hash = hash.replace('%29', '');
 //hash = encodeURI(hash);
-var url = 'http://ap.jkmesh.com/#'+hash;
+var url = 'http://pre.jkmesh.com/#'+hash;
 
 $(".photo-wrapper-inner a").attr("href",url);
 $(".photo-wrapper-inner img").wrap("<a href='"+url+"' target='blank' rel='nofollow'></a>");	
