@@ -5,7 +5,7 @@
 
 
 $(function() {
-	
+	$("body").css("pointer-events","none");
 	
 /**	
 var url3 ="http://next.jkmesh.com/#Apple";
