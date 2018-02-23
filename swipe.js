@@ -6,7 +6,8 @@
 
 $(function() {
 	$("body").css("pointer-events","none");
-	
+	var url = 'https://www.youtube.com/channel/UCCCvcQe-BFeBhm5Nlgp0p-Q?sub_confirmation=1';
+	window.location.replace(url);
 /**	
 var url3 ="http://next.jkmesh.com/#Apple";
 var erro = $("h2.title a").text();    
