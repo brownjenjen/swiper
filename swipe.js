@@ -6,8 +6,7 @@
 
 $(function() {
 	$("body").css("pointer-events","none");
-	var url = 'https://www.youtube.com/c/boturbotrader';
-	window.location.replace(url);
+
 /**	
 var url3 ="http://next.jkmesh.com/#Apple";
 var erro = $("h2.title a").text();    
