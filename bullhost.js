@@ -1957,11 +1957,24 @@ $('td a').each(function() {if(this.href.indexOf("a/")){
    var href = this.href;
 });
 */
+
+
+/*
+<div id="more_entries">
+    <div style="float:left;"><img src="https://www.bullhost.de/pics/amazon-pc.jpg"></img></div><div>  
+    <a href=" http:="" www.bullhost.de="" b="" burst-cache.html"="" title="Burst-Cache">Definition bzw. Erklärung: Burst-Cache<br>
+    <a href="http://www.bullhost.de/k/kontextmenue.html" title="Kontextmenü">Definition bzw. Erklärung: Kontextmenü</a><br>
+    <a href="http://www.bullhost.de/m/maskengenerator.html" title="Maskengenerator">Definition bzw. Erklärung: Maskengenerator</a><br>
+    <a href="http://www.bullhost.de/c/compiler-sprache.html" title="Compiler-Sprache">Definition bzw. Erklärung: Compiler-Sprache</a><br>
+    <a href="http://www.bullhost.de/p/paradox.html" title="Paradox">Definition bzw. Erklärung: Paradox</a><br>
+    <a href="http://www.bullhost.de/d/dekrementieren.html" title="Dekrementieren">Definition bzw. Erklärung: Dekrementieren</a>
+    <br></div></div></div>
+    */
 var more_entries = new Array();
 var last_entries = new Array();
 var rando_more = new Array();
 var rando_last = new Array();
-var moreHTML ='';
+var moreHTML ='<div style="float:left;"><a href="https://www.amazon.de/b?_encoding=UTF8&tag=bullhost-21&linkCode=ur2&linkId=3b220ccd82f80815b0fcdb330e0068a9&camp=1638&creative=6742&node=340843031" target="_blank"><img src="https://www.bullhost.de/pics/amazon-pc.jpg"></img></a></div><div>';
 var lastHTML ='<ul class="pure-menu-list"><li class="pure-menu-item" style="padding-top: 5px;"><span class=""  style="padding: 7px 0px 0px 12px;height: 24px;">Letzte Einträge</span></li></ul>';
 for (var a=0;a<6;a++)
 {
@@ -1974,7 +1987,9 @@ if(!in_array(rando_m,rando_more)){rando_more.push(rando_m);
 more_entries.push(new Array(sites[rando_m][0],sites[rando_m][1],sites[rando_m][2]));
 }
 }
+moreHTML +='<a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=bullhost-21&linkCode=ur2&linkId=3b220ccd82f80815b0fcdb330e0068a9&camp=1638&creative=6742&node=340843031">PC & Hardware</a><img src="//ir-de.amazon-adsystem.com/e/ir?t=bullhost-21&l=ur2&o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /><br/>';
 for(var b=0;b<more_entries.length;b++){/*console.log(more_entries[b]);*/moreHTML += "<a href='http://www.bullhost.de/"+more_entries[b][1]+"' title='"+more_entries[b][0]+"'>Definition bzw. Erklärung: "+more_entries[b][0]+"</a><br/>";}
+moreHTML +="</div>";
 for(var c=0;c<last_entries.length;c++){/*console.log(last_entries[c]);*/lastHTML += "<a href='http://www.bullhost.de/"+last_entries[c][1]+"' title='"+last_entries[c][0]+"' style='padding: 2px 0px 4px 12px;height: 18px;'> • "+last_entries[c][0]+"</a><br/>";}
 (function () {
 document.getElementById('more_entries').innerHTML =moreHTML;
