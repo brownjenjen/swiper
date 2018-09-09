@@ -1974,9 +1974,9 @@ var more_entries = new Array();
 var last_entries = new Array();
 var rando_more = new Array();
 var rando_last = new Array();
-var moreHTML ='<div style="float:left;padding-right: 10px;"><a rel="nofollow" href="https://www.amazon.de/b?_encoding=UTF8&tag=bullhost-21&linkCode=ur2&linkId=3b220ccd82f80815b0fcdb330e0068a9&camp=1638&creative=6742&node=340843031" target="_blank"><img src="https://www.bullhost.de/pics/amazon-pc.jpg"></img></a></div><div>';
+var moreHTML ='<div style="float:left;padding-right: 10px;"><a rel="nofollow" href="https://www.amazon.de/b?_encoding=UTF8&tag=bullhost-21&linkCode=ur2&linkId=3b220ccd82f80815b0fcdb330e0068a9&camp=1638&creative=6742&node=340843031" target="_blank"><img src="https://www.bullhost.de/pics/amazon-pc2.jpg"></img></a></div><div>';
 var lastHTML ='<ul class="pure-menu-list"><li class="pure-menu-item" style="padding-top: 5px;"><span class=""  style="padding: 7px 0px 0px 12px;height: 24px;">Letzte Einträge</span></li></ul>';
-for (var a=0;a<5;a++)
+for (var a=0;a<4;a++)
 {
 var rando_l = Math.floor((Math.random() * last.length) + 0);
 var rando_m = Math.floor((Math.random() * sites.length) + 0);
